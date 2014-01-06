@@ -67,6 +67,19 @@ android
     
 }
 
+// config required for the license checking plugin
+sourceSets 
+{
+    main
+    {
+        java.srcDirs = android.sourceSets.main.java.srcDirs
+    }
+    instrumentTest
+    {
+        java.srcDirs = android.sourceSets.instrumentTest.java.srcDirs
+    }
+}
+
 // To use: gradle sonarRunner
 sonarRunner 
 {
