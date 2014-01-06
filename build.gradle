@@ -11,6 +11,9 @@ buildscript
 	{
         // gradle android tools
         classpath 'com.android.tools.build:gradle:0.6.3'
+
+		// manage license headers
+		classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.5.+' 
     }
 }
 
@@ -50,6 +53,17 @@ configure(allprojects)
         mavenCentral()
         mavenLocal()
     }
+	
+	// Check source code for license
+	// This plugin will automatically run in the check phase but to update headers use:
+	// gradlew licenseFormatMain licenseFormatTest licenseFormatInstrumentTest
+	apply plugin: 'license'
+	license 
+	{
+		header rootProject.file('./LICENSE-HEADER')
+		strictCheck true
+		ext.year = Calendar.getInstance().get(Calendar.YEAR)
+	}
 }
 
 // Base Config for a local sonar installation
