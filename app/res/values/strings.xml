@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AAA Companion App</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_hello_world">Hello world!</string>
+    <string name="main_click_me">Click me</string>
+    <string name="main_ouch">Ouch!</string>
+    
+</resources>

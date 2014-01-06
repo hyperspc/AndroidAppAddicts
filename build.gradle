@@ -1,0 +1,97 @@
+buildscript 
+{
+	repositories 
+	{
+		// maven central and local maven repo
+		mavenLocal()
+		mavenCentral()
+	}
+	
+    dependencies 
+	{
+        // gradle android tools
+        classpath 'com.android.tools.build:gradle:0.6.3'
+    }
+}
+
+// Project properties
+project.group = 'com.sage42.androidappaddicts'
+project.version = '2.0.0'
+
+// These are the common version numbers, etc for the rest of the gradle files
+configure(allprojects) 
+{
+	// version numbers
+    ext.androidVersion              = '4.1.1.4'
+    ext.androidSDKVersion           = '19'
+    ext.androidBuildToolsVersion    = '18.1.1'
+    ext.androidSupportVersion       = '18.0.1'
+    ext.androidCompileSdkVersion    = 19
+	ext.androidMinSdkVersion        = 14
+	ext.androidTargetSdkVersion     = 19
+	ext.androidAnnotationsVersion   = '2.7.1'
+	ext.robotiumVersion             = '4.3'
+	ext.dexmakerVersion             = '1.0'
+	ext.dexmakerMockitoVersion      = '1.0'
+    ext.mockitoVersion              = '1.9.5'
+
+	// Repositories
+	buildscript 
+	{
+		repositories 
+		{
+			// maven central and local maven repo
+			mavenLocal()
+			mavenCentral()
+		}
+	}
+    repositories 
+	{
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+// Base Config for a local sonar installation
+// To use: gradle sonarRunner
+apply plugin: 'sonar-runner'
+sonarRunner 
+{
+    sonarProperties 
+    {
+        // Project Name
+        // This can be anything, whatever describes your project
+        property 'sonar.projectName', 'Android App Addicts'
+
+        // Project Key
+        // this should be unique, so the namespace of the app is a good option
+        property 'sonar.projectKey', 'com.sage42.androidappaddicts'
+        
+        // Comma separated list of sub projects
+        // This will often match the values in the settings.gradle
+        property 'sonar.modules', 'app,lib'
+        
+        // Mapping list for modules to their actual directories
+        property 'app.sonar.projectBaseDir', './app/'
+        property 'lib.sonar.projectBaseDir', './lib/'
+        
+        // Project Version
+        property 'sonar.projectVersion', '1.0'
+        
+        // java version
+        property 'sonar.java.target', '1.6'
+        
+        // sonar connection parameters
+        property 'sonar.host.url', 'http://localhost:9000'
+        property 'sonar.jdbc.url', 'jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true'
+        property 'sonar.jdbc.driverClassName', 'com.mysql.jdbc.Driver'
+        property 'sonar.jdbc.username', 'sonar'
+        property 'sonar.jdbc.password', 'sonar'
+        
+		property 'sonar.surefire.reportsPath', 'test-results'
+        property 'sonar.dynamicAnalysis', 'reuseReports'
+        property 'sonar.binaries', 'build/classes/main'
+        property 'sonar.java.coveragePlugin', 'jacoco'
+        property 'sonar.jacoco.reportPath', 'build/tmp/jacoco/jacoco.exec'
+	}
+}

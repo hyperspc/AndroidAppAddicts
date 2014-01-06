@@ -1,0 +1,3 @@
+// This file is not needed as this directory is not used as project as far as gradle is concerned.
+// In a pure gradle (or Android Studio) world, the code in this project would be stored in app/src/test/java
+// but is separated here so that Eclipse can be used.

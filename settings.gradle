@@ -1,0 +1,5 @@
+// android app project
+include ':app'
+
+// java library project
+include ':lib'
