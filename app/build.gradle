@@ -7,8 +7,7 @@ apply plugin: 'signing'
 // android annotations
 apply from: '../gradleScripts/androidAnnotations.gradle'
 
-dependencies
-{
+dependencies {
     // include the lib project
     compile project(':lib')
 
@@ -20,31 +19,27 @@ dependencies
 }
 
 // Config for the android plugin
-android
-{
+android {
     // build tools and compile values (see parent build.gradle file)
     buildToolsVersion "$androidBuildToolsVersion"
     compileSdkVersion androidCompileSdkVersion
-    
-    defaultConfig
-    {
+
+    defaultConfig {
         // target values (see parent build.gradle file)
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
 
         // test package name
-        // NOTE: must match the package in the test directory and must be different from the app package        
+        // NOTE: must match the package in the test directory and must be different from the app package
         testPackageName "org.sage42.sample.app.test"
-        
+
         // standard android test runner
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
 
-    sourceSets
-    {
+    sourceSets {
         // define the file locations for the app
-        main
-        {
+        main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['src/main/java']
             resources.srcDirs = ['src/main/resources']
@@ -55,38 +50,32 @@ android
         }
 
         // define the file locations for the android test code
-        instrumentTest 
-        {
-            manifest.srcFile '../test/AndroidManifest.xml'
-            java.srcDirs = ['../test/src/test/java']
-            resources.srcDirs = ['../test/src/test/resources']
-            res.srcDirs = ['res']
-            assets.srcDirs = ['assets']
-        }
+//        instrumentTest {
+//            manifest.srcFile '../test/AndroidManifest.xml'
+//            java.srcDirs = ['../test/src/test/java']
+//            resources.srcDirs = ['../test/src/test/resources']
+//            res.srcDirs = ['res']
+//            assets.srcDirs = ['assets']
+//        }
     }
-    
+
 }
 
 // config required for the license checking plugin
-sourceSets 
-{
-    main
-    {
+sourceSets {
+    main {
         java.srcDirs = android.sourceSets.main.java.srcDirs
     }
-    instrumentTest
-    {
-        java.srcDirs = android.sourceSets.instrumentTest.java.srcDirs
-    }
+//    instrumentTest {
+//        java.srcDirs = android.sourceSets.instrumentTest.java.srcDirs
+//    }
 }
 
 // To use: gradle sonarRunner
-sonarRunner 
-{
-    sonarProperties 
-    {
+sonarRunner {
+    sonarProperties {
         property 'sonar.projectName', 'sample-app'
-        
+
         properties['sonar.sources'] = android.sourceSets.main.java.srcDirs
         properties['sonar.tests'] = android.sourceSets.instrumentTest.java.srcDirs
         properties['sonar.binaries'] = file('build/classes/debug')
