@@ -11,7 +11,7 @@ import com.sage42.androidappaddicts.R;
  * Fragment to display the current events.
  */
 @EFragment(R.layout.fragment3)
-public class Fragment3 extends Fragment
+public class AppSuggestionFragment extends Fragment
 {
 
     /**

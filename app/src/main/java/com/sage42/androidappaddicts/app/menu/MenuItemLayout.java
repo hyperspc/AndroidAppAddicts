@@ -19,12 +19,6 @@ public class MenuItemLayout extends RelativeLayout
     @ViewById(R.id.menu_item_content)
     protected TextView mContent;
 
-    @ViewById(R.id.menu_item_header_underline)
-    protected View     mUnderline;
-
-    @ViewById(R.id.menu_item_content_underline)
-    protected View     mContentUnderline;
-
     /**
      * Default constructor.
      * 
@@ -47,17 +41,13 @@ public class MenuItemLayout extends RelativeLayout
         {
             this.mHeader.setText(data.getTitleResId());
             this.mHeader.setVisibility(View.VISIBLE);
-            this.mUnderline.setVisibility(View.VISIBLE);
             this.mContent.setVisibility(View.GONE);
-            this.mContentUnderline.setVisibility(View.GONE);
         }
         else
         {
             this.mContent.setText(data.getTitleResId());
             this.mHeader.setVisibility(View.GONE);
-            this.mUnderline.setVisibility(View.GONE);
             this.mContent.setVisibility(View.VISIBLE);
-            this.mContentUnderline.setVisibility(View.VISIBLE);
         }
 
         if (data.getIconResId() != null)

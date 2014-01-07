@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/std_padding"
-    android:paddingRight="@dimen/std_padding"
-    android:orientation="vertical" >
+    android:paddingRight="@dimen/std_padding" >
 
     <TextView
         android:id="@+id/menu_item_header"
@@ -12,28 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <View
-        android:id="@+id/menu_item_header_underline"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/menu_item_header"
-        android:layout_height="1dp"
-        android:background="@color/general_title_divider_color" />
-    
-     <View
-        android:id="@+id/menu_item_content_underline"
-          android:layout_below="@+id/menu_item_header"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/general_divider_color" />
-
     <TextView
         android:id="@+id/menu_item_content"
         style="@style/AppTheme.MenuItem"
-          android:layout_below="@+id/menu_item_content_underline"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_launcher" />
-    
-       
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

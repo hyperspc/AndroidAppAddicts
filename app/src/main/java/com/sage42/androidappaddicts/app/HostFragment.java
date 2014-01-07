@@ -10,8 +10,8 @@ import com.sage42.androidappaddicts.R;
 /**
  * Fragment to display the current events.
  */
-@EFragment(R.layout.fragment4)
-public class Fragment4 extends Fragment
+@EFragment(R.layout.fragment2)
+public class HostFragment extends Fragment
 {
 
     /**

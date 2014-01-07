@@ -6,10 +6,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.Fragment1_;
-import com.sage42.androidappaddicts.app.Fragment2_;
-import com.sage42.androidappaddicts.app.Fragment3_;
-import com.sage42.androidappaddicts.app.Fragment4_;
+import com.sage42.androidappaddicts.app.AppSuggestionFragment_;
+import com.sage42.androidappaddicts.app.CategoryFragment_;
+import com.sage42.androidappaddicts.app.EpisodeFragment_;
+import com.sage42.androidappaddicts.app.HostFragment_;
 
 /**
  * Response to menu list click events.
@@ -38,20 +38,20 @@ public class MenuDrawClickListener implements OnItemClickListener
         // switch the fragment content to match the selected menu item
         switch (position)
         {
-            case MenuData.MENU_FRAGMENT1:
-                this.mCallback.showFragment(new Fragment1_(), R.string.fragment1, false);
+            case MenuData.FRAGMENT_CATEGORY:
+                this.mCallback.showFragment(new EpisodeFragment_(), R.string.fragment_episode_title, false);
                 break;
 
-            case MenuData.MENU_FRAGMENT2:
-                this.mCallback.showFragment(new Fragment2_(), R.string.fragment2, false);
+            case MenuData.FRAGMENT_EPISODE:
+                this.mCallback.showFragment(new CategoryFragment_(), R.string.fragment_category_title, false);
                 break;
 
-            case MenuData.MENU_FRAGMENT3:
-                this.mCallback.showFragment(new Fragment3_(), R.string.fragment3, false);
+            case MenuData.FRAGMENT_APP_SUGGESTION:
+                this.mCallback.showFragment(new AppSuggestionFragment_(), R.string.fragment_suggest_title, false);
                 break;
 
-            case MenuData.MENU_FRAGMENT4:
-                this.mCallback.showFragment(new Fragment4_(), R.string.fragment4, false);
+            case MenuData.FRAGMENT_HOST:
+                this.mCallback.showFragment(new HostFragment_(), R.string.fragment_host_title, false);
                 break;
 
             default:

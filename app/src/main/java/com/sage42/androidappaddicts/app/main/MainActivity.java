@@ -17,10 +17,12 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.Fragment1_;
+import com.sage42.androidappaddicts.app.EpisodeFragment_;
+import com.sage42.androidappaddicts.app.about.AboutFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener;
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener.IMenuDrawCallbacks;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
+import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
  * Copyright (C) 2013- Sage 42 App Sdn Bhd Licensed under the Apache License,
@@ -88,7 +90,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         this.mMenuList.setAdapter(new MenuListAdapter(this));
         this.mMenuList.setOnItemClickListener(new MenuDrawClickListener(this));
 
-        this.showFragment(new Fragment1_(), R.string.fragment1, false);
+        this.showFragment(new EpisodeFragment_(), R.string.fragment_episode_title, false);
 
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -99,7 +101,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         // final MenuInflater inflater = new
         // MenuInflater(this.getActionBar().getThemedContext());
         // inflater.inflate(R.menu.main_menu, menu);
-
+        initSearchView(menu);
         return true;
     }
 
@@ -122,6 +124,13 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
                     }
                 }
                 return true;
+            case R.id.action_about:
+                this.showFragment(new AboutFragment_(), R.string.fragment_episode_title, true);
+                break;
+            case R.id.action_share:
+                IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
+                                + this.getResources().getString(R.string.app_market_address));
+                break;
             default:
                 break;
         }
@@ -193,5 +202,46 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
             fragmentManager.popBackStack(backStackId, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         }
 
+    }
+
+    private void initSearchView(final Menu menu)
+    {
+        //
+        // MenuInflater inflater = getMenuInflater();
+        // inflater.inflate(R.menu.main, menu);
+        //
+        // final SearchManager searchManager = (SearchManager)
+        // this.getSystemService(Context.SEARCH_SERVICE);
+        // final MenuItem searchViewMenuItem =
+        // menu.findItem(R.id.action_search);
+        // final SearchView searchView = (SearchView)
+        // searchViewMenuItem.getActionView();
+        // searchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+
+        // searchView.setOnSuggestionListener(new OnSuggestionListener()
+        // {
+        //
+        // @Override
+        // public boolean onSuggestionSelect(int position)
+        // {
+        // return false;
+        // }
+        //
+        // /*
+        // * (non-Javadoc)
+        // * @see
+        // * com.actionbarsherlock.widget.SearchView.OnSuggestionListener#
+        // * onSuggestionClick(int)
+        // */
+        // @SuppressWarnings("resource")
+        // @Override
+        // public boolean onSuggestionClick(int position)
+        // {
+        // final CursorAdapter c = searchView.getSuggestionsAdapter();
+        // final Cursor cur = c.getCursor();
+        // cur.moveToPosition(position);
+        // return false;
+        // }
+        // });
     }
 }
