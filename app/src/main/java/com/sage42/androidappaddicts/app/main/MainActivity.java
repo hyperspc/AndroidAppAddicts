@@ -155,15 +155,6 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         return false;
     }
 
-    // /**
-    // * Click event of the "Click me" button
-    // */
-    // @Click(R.id.main_click_me)
-    // protected void onClickClickMe()
-    // {
-    // Toast.makeText(this, R.string.main_ouch, Toast.LENGTH_LONG).show();
-    // }
-
     @Override
     public void showFragment(Fragment fragment, int titleResId, boolean addToBackstack)
     {
