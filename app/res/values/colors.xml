@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="menu_divider">#cccccc</color>
+    <color name="general_text_primary">#565656</color>
+    <color name="general_title_divider_color">#cccccc</color>
+    <color name="general_divider_color">#70999999</color>
+    <color name="general_title_color">#aaaaaa</color>
+
+</resources>
