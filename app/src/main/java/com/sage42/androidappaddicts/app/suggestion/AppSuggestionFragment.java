@@ -1,4 +1,4 @@
-package com.sage42.androidappaddicts.app;
+package com.sage42.androidappaddicts.app.suggestion;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
@@ -10,8 +10,8 @@ import com.sage42.androidappaddicts.R;
 /**
  * Fragment to display the current events.
  */
-@EFragment(R.layout.fragment2)
-public class HostFragment extends Fragment
+@EFragment(R.layout.suggestion_fragment)
+public class AppSuggestionFragment extends Fragment
 {
 
     /**

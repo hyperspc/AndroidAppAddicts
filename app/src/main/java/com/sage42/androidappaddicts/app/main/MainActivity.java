@@ -2,6 +2,7 @@ package com.sage42.androidappaddicts.app.main;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
 
@@ -9,20 +10,27 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.SearchManager;
+import android.content.Context;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MenuItem.OnActionExpandListener;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.EpisodeFragment_;
 import com.sage42.androidappaddicts.app.about.AboutFragment_;
+import com.sage42.androidappaddicts.app.applist.EpisodeFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener;
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener.IMenuDrawCallbacks;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
+import com.sage42.androidappaddicts.app.search.SearchResultFragment_;
 import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
+import com.sage42.androidappaddicts.app.suggestion.AppSuggestionFragment;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
@@ -46,7 +54,16 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
     @ViewById(R.id.main_menu_layout)
     protected ListView            mMenuList;
 
+    @InstanceState
+    protected boolean             mIsSuggestion = false;
+
     private ActionBarDrawerToggle mDrawerToggle;
+
+    private SearchView            mSearchView;
+    private MenuItem              mSearchViewMenuItem;
+
+    @InstanceState
+    protected boolean             mNotFirstRun;
 
     /**
      * Initialize the title, drawer, menu drawer and ActionBar.
@@ -91,7 +108,12 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         this.mMenuList.setAdapter(new MenuListAdapter(this));
         this.mMenuList.setOnItemClickListener(new MenuDrawClickListener(this));
 
-        this.showFragment(new EpisodeFragment_(), R.string.fragment_episode_title, false);
+        // show default content (events)
+        if (this.mNotFirstRun == false)
+        {
+            this.showFragment(new EpisodeFragment_(), R.string.fragment_episode_title, false);
+            this.mNotFirstRun = true;
+        }
 
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -125,6 +147,9 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
                     }
                 }
                 return true;
+            case R.id.action_search:
+                this.showFragment(new SearchResultFragment_(), R.string.fragment_search_title, true);
+                break;
             case R.id.action_about:
                 this.showFragment(new AboutFragment_(), R.string.fragment_episode_title, true);
                 break;
@@ -141,6 +166,36 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
 
         // Handle your other action bar items...
         return super.onOptionsItemSelected(item);
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see
+     * com.actionbarsherlock.app.SherlockFragmentActivity#onPrepareOptionsMenu
+     * (android.view.Menu)
+     */
+    @Override
+    public boolean onPrepareOptionsMenu(final Menu menu)
+    {
+
+        if (this.mIsSuggestion)
+        {
+            menu.findItem(R.id.action_submit_suggestion).setVisible(true);
+            menu.findItem(R.id.action_search).setVisible(false);
+            menu.findItem(R.id.action_about).setVisible(false);
+            menu.findItem(R.id.action_share).setVisible(false);
+            menu.findItem(R.id.action_settings).setVisible(false);
+            return super.onPrepareOptionsMenu(menu);
+        }
+        // If the nav drawer is open, hide action items related to the content
+        // view
+        final boolean drawerOpen = this.mDrawerLayout.isDrawerOpen(this.mMenuList);
+        menu.findItem(R.id.action_submit_suggestion).setVisible(false);
+        menu.findItem(R.id.action_search).setVisible(!drawerOpen);
+        menu.findItem(R.id.action_about).setVisible(!drawerOpen);
+        menu.findItem(R.id.action_share).setVisible(!drawerOpen);
+        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+        return super.onPrepareOptionsMenu(menu);
     }
 
     /**
@@ -187,6 +242,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         }
         transaction.commit();
 
+        this.mIsSuggestion = (fragment instanceof AppSuggestionFragment);
         // close the drawer
         this.mDrawerLayout.closeDrawer(this.mMenuList);
     }
@@ -210,19 +266,32 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
 
     private void initSearchView(final Menu menu)
     {
-        //
-        // MenuInflater inflater = getMenuInflater();
-        // inflater.inflate(R.menu.main, menu);
-        //
-        // final SearchManager searchManager = (SearchManager)
-        // this.getSystemService(Context.SEARCH_SERVICE);
-        // final MenuItem searchViewMenuItem =
-        // menu.findItem(R.id.action_search);
-        // final SearchView searchView = (SearchView)
-        // searchViewMenuItem.getActionView();
-        // searchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+        final Context context = this;
+        final SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
+        this.mSearchViewMenuItem = menu.findItem(R.id.action_search);
+        this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
+        this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+        this.mSearchView.setIconifiedByDefault(true);
+        this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
+        {
 
-        // searchView.setOnSuggestionListener(new OnSuggestionListener()
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item)
+            {
+                Toast.makeText(context, "CLOSING", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
+                getAvailableBackStack();
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item)
+            {
+                //  Toast.makeText(context, "SEARCHVIEW START", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
+                return true;
+            }
+
+        });
+        // this.mSearchView.setOnSuggestionListener(new OnSuggestionListener()
         // {
         //
         // @Override

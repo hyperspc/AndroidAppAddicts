@@ -7,5 +7,6 @@
     <color name="general_title_divider_color">#cccccc</color>
     <color name="general_divider_color">#70999999</color>
     <color name="general_title_color">#aaaaaa</color>
-
+    <color name="shadow">#40787878</color>
+    <color name="background_light_gray">#90eaeaea</color>
 </resources>

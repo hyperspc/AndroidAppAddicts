@@ -1,4 +1,4 @@
-package com.sage42.androidappaddicts.app;
+package com.sage42.androidappaddicts.app.search;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
@@ -10,8 +10,8 @@ import com.sage42.androidappaddicts.R;
 /**
  * Fragment to display the current events.
  */
-@EFragment(R.layout.fragment4)
-public class EpisodeFragment extends Fragment
+@EFragment(R.layout.search_result_fragment)
+public class SearchResultFragment extends Fragment
 {
 
     /**

@@ -7,6 +7,7 @@
         <item name="android:paddingLeft">@dimen/std_padding</item>
         <item name="android:paddingRight">@dimen/std_padding</item>
         <item name="android:drawablePadding">@dimen/std_padding</item>
+          <item name="android:background">@drawable/btn_click_background</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/general_text_primary</item>
         <item name="android:minHeight">48dp</item>

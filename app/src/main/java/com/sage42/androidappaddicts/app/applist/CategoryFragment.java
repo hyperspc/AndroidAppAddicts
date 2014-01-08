@@ -1,4 +1,4 @@
-package com.sage42.androidappaddicts.app;
+package com.sage42.androidappaddicts.app.applist;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
@@ -10,7 +10,7 @@ import android.app.Fragment;
 /**
  * Fragment to display the current events.
  */
-@EFragment(R.layout.fragment1)
+@EFragment(R.layout.category_fragment)
 public class CategoryFragment extends Fragment 
 {
 

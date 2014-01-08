@@ -6,10 +6,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.AppSuggestionFragment_;
-import com.sage42.androidappaddicts.app.CategoryFragment_;
-import com.sage42.androidappaddicts.app.EpisodeFragment_;
-import com.sage42.androidappaddicts.app.HostFragment_;
+import com.sage42.androidappaddicts.app.applist.CategoryFragment_;
+import com.sage42.androidappaddicts.app.applist.EpisodeFragment_;
+import com.sage42.androidappaddicts.app.host.HostFragment_;
+import com.sage42.androidappaddicts.app.suggestion.AppSuggestionFragment_;
 
 /**
  * Response to menu list click events.
