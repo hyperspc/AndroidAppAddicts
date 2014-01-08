@@ -83,7 +83,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
             @Override
             public void onDrawerClosed(final View view)
             {
-                // MainActivity.this.getSherlock().getActionBar().setTitle(MainActivity.this.mTitle);
+                // MainActivity.this.getActionBar().setTitle(MainActivity.this.mTitle);
                 // creates call to onPrepareOptionsMenu()
                 MainActivity.this.invalidateOptionsMenu();
             }
