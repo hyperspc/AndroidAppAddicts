@@ -22,6 +22,7 @@ import com.sage42.androidappaddicts.app.about.AboutFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener;
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener.IMenuDrawCallbacks;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
+import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
@@ -130,6 +131,9 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
             case R.id.action_share:
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
                                 + this.getResources().getString(R.string.app_market_address));
+                break;
+            case R.id.action_settings:
+                this.showFragment(new SettingsFragment_(), R.string.fragment_episode_title, true);
                 break;
             default:
                 break;
