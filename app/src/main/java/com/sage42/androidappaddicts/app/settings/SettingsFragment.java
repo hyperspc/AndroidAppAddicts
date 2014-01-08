@@ -28,7 +28,7 @@ public class SettingsFragment extends Fragment
     void init()
     {
         // add page title
-        this.getActivity().getActionBar().setTitle(R.string.about_title);
+        this.getActivity().getActionBar().setTitle(R.string.settings_title);
 
         this.mList.setAdapter(new SettingsMenuListAdapter(this.getActivity()));
         this.mList.setOnItemClickListener(new SettingsMenuDrawClickListener());

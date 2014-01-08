@@ -27,7 +27,7 @@ public class HostFragment extends Fragment
     @AfterViews
     void init()
     {
-        // do nothing
+        this.getActivity().getActionBar().setTitle(R.string.fragment_host_title);
     }
 
     @ItemClick(R.id.host_grid)

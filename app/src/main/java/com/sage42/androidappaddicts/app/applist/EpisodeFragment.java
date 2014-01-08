@@ -20,7 +20,7 @@ public class EpisodeFragment extends Fragment
     @AfterViews
     void init()
     {
-
+        this.getActivity().getActionBar().setTitle(R.string.fragment_episode_title);
     }
 
 }

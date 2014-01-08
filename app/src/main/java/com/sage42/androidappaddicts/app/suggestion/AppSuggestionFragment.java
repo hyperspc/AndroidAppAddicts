@@ -20,7 +20,7 @@ public class AppSuggestionFragment extends Fragment
     @AfterViews
     void init()
     {
-
+        this.getActivity().getActionBar().setTitle(R.string.fragment_suggest_title);
     }
 
 }

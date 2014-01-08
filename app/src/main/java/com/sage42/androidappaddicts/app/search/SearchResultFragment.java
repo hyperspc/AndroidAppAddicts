@@ -20,7 +20,7 @@ public class SearchResultFragment extends Fragment
     @AfterViews
     void init()
     {
-
+        this.getActivity().getActionBar().setTitle(R.string.fragment_search_title);
     }
 
 }
