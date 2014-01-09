@@ -1,16 +1,14 @@
 package com.sage42.androidappaddicts.app.menu;
 
 /**
- * Please note: categoryResId when it is not null it will render a category
- * title. This means to add "sections" to the menu you only need to add this to
- * the first item in the section.
+ * Please note: categoryResId when it is not null it will render a category title. This means to add "sections" to the
+ * menu you only need to add this to the first item in the section.
  */
 public class MenuItem
 {
-    private Integer       mIconResId;
-    private Integer       mTitleResId;
-    private boolean       mCategoryMarker;
-    private final boolean mClickable;
+    private Integer mIconResId;
+    private Integer mTitleResId;
+    private boolean mCategoryMarker;
 
     /**
      * Default constructor.
@@ -19,14 +17,13 @@ public class MenuItem
      * @param titleResId
      * @param categoryMarker
      */
-    public MenuItem(final Integer iconResId, final Integer titleResId, final boolean categoryMarker,
-                    final boolean clickable)
+    public MenuItem(final Integer iconResId, final Integer titleResId, final boolean categoryMarker)
     {
         super();
         this.mIconResId = iconResId;
         this.mTitleResId = titleResId;
         this.mCategoryMarker = categoryMarker;
-        this.mClickable = clickable;
+
     }
 
     /**
@@ -67,16 +64,6 @@ public class MenuItem
     public void setTitleResId(final Integer titleResId)
     {
         this.mTitleResId = titleResId;
-    }
-
-    /**
-     * check the menu item a catergory .
-     * 
-     * @return
-     */
-    public boolean isClickable()
-    {
-        return this.mClickable;
     }
 
     /**

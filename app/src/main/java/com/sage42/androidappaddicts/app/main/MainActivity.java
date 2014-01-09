@@ -23,25 +23,25 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.about.AboutFragment_;
-import com.sage42.androidappaddicts.app.applist.EpisodeFragment_;
+import com.sage42.androidappaddicts.app.about.*;
+import com.sage42.androidappaddicts.app.applist.*;
+import com.sage42.androidappaddicts.app.search.*;
+import com.sage42.androidappaddicts.app.settings.*;
+
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener;
 import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener.IMenuDrawCallbacks;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
-import com.sage42.androidappaddicts.app.search.SearchResultFragment_;
-import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
+
 import com.sage42.androidappaddicts.app.suggestion.AppSuggestionFragment;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
- * Copyright (C) 2013- Sage 42 App Sdn Bhd Licensed under the Apache License,
- * Version 2.0 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2013- Sage 42 App Sdn Bhd Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions and limitations under the
+ * License.
  */
 @EActivity(R.layout.main_activity)
 @OptionsMenu(R.menu.main)
@@ -124,7 +124,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         // final MenuInflater inflater = new
         // MenuInflater(this.getActionBar().getThemedContext());
         // inflater.inflate(R.menu.main_menu, menu);
-        initSearchView(menu);
+        this.initSearchView(menu);
         return true;
     }
 
@@ -170,9 +170,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
 
     /*
      * (non-Javadoc)
-     * @see
-     * com.actionbarsherlock.app.SherlockFragmentActivity#onPrepareOptionsMenu
-     * (android.view.Menu)
+     * @see com.actionbarsherlock.app.SherlockFragmentActivity#onPrepareOptionsMenu (android.view.Menu)
      */
     @Override
     public boolean onPrepareOptionsMenu(final Menu menu)
@@ -224,7 +222,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
     }
 
     @Override
-    public void showFragment(Fragment fragment, int titleResId, boolean addToBackstack)
+    public void showFragment(final Fragment fragment, final int titleResId, final boolean addToBackstack)
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
         final FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -242,7 +240,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         }
         transaction.commit();
 
-        this.mIsSuggestion = (fragment instanceof AppSuggestionFragment);
+        this.mIsSuggestion = fragment instanceof AppSuggestionFragment;
         // close the drawer
         this.mDrawerLayout.closeDrawer(this.mMenuList);
     }
@@ -276,15 +274,15 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         {
 
             @Override
-            public boolean onMenuItemActionCollapse(MenuItem item)
+            public boolean onMenuItemActionCollapse(final MenuItem item)
             {
                 Toast.makeText(context, "CLOSING", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
-                getAvailableBackStack();
+                MainActivity.this.getAvailableBackStack();
                 return true;
             }
 
             @Override
-            public boolean onMenuItemActionExpand(MenuItem item)
+            public boolean onMenuItemActionExpand(final MenuItem item)
             {
                 //  Toast.makeText(context, "SEARCHVIEW START", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
                 return true;

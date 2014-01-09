@@ -16,6 +16,7 @@
         android:id="@+id/menu_item_content"
         style="@style/AppTheme.MenuItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_launcher" />
 
 </RelativeLayout>

@@ -17,8 +17,7 @@ public class MenuListAdapter extends ArrayAdapter<MenuItem>
 
     /*
      * (non-Javadoc)
-     * @see android.widget.ArrayAdapter#getView(int, android.view.View,
-     * android.view.ViewGroup)
+     * @see android.widget.ArrayAdapter#getView(int, android.view.View, android.view.ViewGroup)
      */
     @Override
     public View getView(final int position, final View convertView, final ViewGroup parent)
@@ -45,7 +44,7 @@ public class MenuListAdapter extends ArrayAdapter<MenuItem>
     public boolean isEnabled(final int position)
     {
         final MenuItem data = this.getItem(position);
-        if ((data == null) || (data.isCategoryMarker() && !data.isClickable()))
+        if (data == null || data.isCategoryMarker())
         {
             return false;
         }
