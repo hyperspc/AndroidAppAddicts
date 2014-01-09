@@ -51,8 +51,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
     @AfterViews
     void init()
     {
-
-        this.mDrawerToggle = new ActionBarDrawerToggle(this, this.mDrawerLayout, R.drawable.ic_drawer_light,
+        this.mDrawerToggle = new ActionBarDrawerToggle(this, this.mDrawerLayout, R.drawable.ic_drawer,
                         R.string.drawer_open, R.string.drawer_close)
         {
             /**

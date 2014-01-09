@@ -7,28 +7,39 @@ configurations
 dependencies
 {
     // Extra config required by Android Annotations
-    apt "com.googlecode.androidannotations:androidannotations:${androidAnnotationsVersion}"
-    compile "com.googlecode.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
+    apt "org.androidannotations:androidannotations:${androidAnnotationsVersion}"
+    compile "org.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
 }
 
-android.applicationVariants.all
-{
-    variant ->
-    aptOutput = file("${project.buildDir}/source/apt_generated/${variant.dirName}")
-    println "****************************"
-    println "variant: ${variant.name}"
-    println "manifest:  ${variant.processResources.manifestFile}"
-    println "aptOutput:  ${aptOutput}"
-    println "****************************"
+def getSourceSetName(variant) {
+    return new File(variant.dirName).getName();
+}
 
-    variant.javaCompile.doFirst
-    {
-        println "*** compile doFirst ${variant.name}"
-        aptOutput.mkdirs()
-        variant.javaCompile.options.compilerArgs += [
-                '-processorpath', configurations.apt.getAsPath(),
-                '-AandroidManifestFile=' + variant.processResources.manifestFile,
-                '-s', aptOutput
-        ]
-    }
+// AA processing
+android.applicationVariants.all {
+    variant ->
+        aptOutput = file("${project.buildDir}/source/apt_generated/${variant.dirName}")
+        println "****************************"
+        println "variant: ${variant.name}"
+        println "manifest:  ${variant.processResources.manifestFile}"
+        println "aptOutput:  ${aptOutput}"
+        println "****************************"
+
+        variant.javaCompile.doFirst {
+            println "*** compile doFirst ${variant.name}"
+            aptOutput.mkdirs()
+            variant.javaCompile.options.compilerArgs += [
+                    '-processorpath', configurations.apt.getAsPath(),
+                    '-AandroidManifestFile=' + variant.processResources.manifestFile,
+                    '-s', aptOutput
+            ]
+        }
+
+// setup AA generated files as source in Android Studio
+        android.sourceSets[getSourceSetName(variant)].java.srcDirs += aptOutput.getPath()
+
+// filter the source files so we don't include stuff twice
+        variant.javaCompile.source = variant.javaCompile.source.filter { p ->
+            return !p.getPath().startsWith(aptOutput.getPath())
+        }
 }
