@@ -40,3 +40,6 @@ hs_err_pid*.log
 gradle/
 gradlew
 gradlew.*
+
+# Random Operating System Stuff
+Thumbs.db
