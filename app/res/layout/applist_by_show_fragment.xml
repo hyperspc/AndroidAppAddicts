@@ -11,76 +11,76 @@
         android:layout_marginBottom="@dimen/std_padding"
         android:background="@drawable/card_shadow">
 
-        <!-- Episode Number -->
+        <!-- show Number -->
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/episode_number"
+            android:id="@+id/show_number"
             style="@style/AppTheme.AppList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/std_padding"
-            android:text="@string/applist_default_episode_number"
+            android:text="@string/applist_default_show_number"
             android:textColor="@color/green"
             android:textSize="50sp" />
 
-        <!-- Episode Title -->
+        <!-- show Title -->
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/episode_title"
+            android:id="@+id/show_title"
             style="@style/AppTheme.AppList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/episode_number"
+            android:layout_toRightOf="@+id/show_number"
             android:ellipsize="end"
             android:paddingTop="@dimen/twelve_padding"
             android:singleLine="true"
-            android:text="@string/applist_default_episode_title"
+            android:text="@string/applist_default_show_title"
             android:textSize="18sp" />
 
-        <!-- Episode Duration -->
+        <!-- show Duration -->
         <TextView
-            android:id="@+id/episode_duration"
+            android:id="@+id/show_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/episode_title"
-            android:layout_toRightOf="@+id/episode_number"
-            android:text="@string/applist_episode_duration"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_number"
+            android:text="@string/applist_show_duration"
             android:textColor="@color/general_text_light"
             android:textSize="14sp" />
 
-        <!-- Episode Length -->
+        <!-- show Length -->
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/episode_duration_length"
+            android:id="@+id/show_duration_length"
             style="@style/AppTheme.AppList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/episode_title"
-            android:layout_toRightOf="@+id/episode_duration"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_duration"
             android:paddingLeft="2dp"
-            android:text="@string/applist_default_episode_duration_length"
+            android:text="@string/applist_default_show_duration_length"
             android:textColor="@color/general_text_light"
             android:textSize="14sp" />
 
-        <!-- Episode Added -->
+        <!-- show Added -->
         <TextView
-            android:id="@+id/episode_add"
+            android:id="@+id/show_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/episode_title"
-            android:layout_toRightOf="@+id/episode_number"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_number"
             android:paddingLeft="110dp"
-            android:text="@string/applist_episode_add"
+            android:text="@string/applist_show_add"
             android:textColor="@color/general_text_light"
             android:textSize="14sp" />
 
-        <!-- Episode Date Added -->
+        <!-- show Date Added -->
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/episode_add_date"
+            android:id="@+id/show_add_date"
             style="@style/AppTheme.AppList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/episode_title"
-            android:layout_toRightOf="@+id/episode_add"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_add"
             android:paddingLeft="2dp"
-            android:text="@string/applist_default_episode_add_date"
+            android:text="@string/applist_default_show_add_date"
             android:textColor="@color/general_text_light"
             android:textSize="14sp" />
 

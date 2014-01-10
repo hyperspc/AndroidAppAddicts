@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.app.search;
+package com.sage42.androidappaddicts.app.suggestion;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
@@ -24,11 +24,11 @@ import android.app.Fragment;
 import com.sage42.androidappaddicts.R;
 
 /**
- * Fragment to display the search results
+ * Fragment to display the suggest an app form.
  */
-@OptionsMenu(R.menu.general)
-@EFragment(R.layout.search_result_fragment)
-public class SearchResultFragment extends Fragment
+@OptionsMenu(R.menu.suggestion)
+@EFragment(R.layout.suggestion_fragment)
+public class SuggestionFragment extends Fragment
 {
 
     /**
@@ -48,7 +48,7 @@ public class SearchResultFragment extends Fragment
     {
         super.onStart();
 
-        this.getActivity().getActionBar().setTitle(R.string.search_search_results_title);
+        this.getActivity().getActionBar().setTitle(R.string.suggest_suggest_title);
     }
 
 }

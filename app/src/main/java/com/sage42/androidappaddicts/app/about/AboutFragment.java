@@ -18,6 +18,7 @@ package com.sage42.androidappaddicts.app.about;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
 
 import android.app.Fragment;
@@ -31,23 +32,19 @@ import com.sage42.androidappaddicts.app.util.IntentUtils;
  * The "About" page for the app. With lots of clickable links to call, email,
  * etc.
  */
+@OptionsMenu(R.menu.general)
 @EFragment(resName = "about_fragment")
 public class AboutFragment extends Fragment
 {
-    private static final String TAG = AboutFragment.class.getSimpleName();
-
     @ViewById(R.id.about_version)
-    protected TextView          mVersion;
+    protected TextView mVersion;
 
     /**
-     * Set the page title and add version into the display.
+     * Add data into the display.
      */
     @AfterViews
     void init()
     {
-        // add page title
-        this.getActivity().getActionBar().setTitle(R.string.about_title);
-
         try
         {
             // pull version name from manifest and add to display
@@ -59,6 +56,17 @@ public class AboutFragment extends Fragment
             // this should not happen
 
         }
+    }
+
+    /**
+     * Set the screen title.
+     */
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+
+        this.getActivity().getActionBar().setTitle(R.string.about_about_title);
     }
 
     /**

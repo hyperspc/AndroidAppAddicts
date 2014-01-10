@@ -13,29 +13,41 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.app.applist;
+package com.sage42.androidappaddicts.app.main;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.OptionsMenu;
 
 import android.app.Fragment;
 
 import com.sage42.androidappaddicts.R;
 
 /**
- * Fragment to display the current events.
+ * Fragment to display the home screem.
  */
-@EFragment(R.layout.category_fragment)
-public class CategoryFragment extends Fragment
+@OptionsMenu(R.menu.general)
+@EFragment(R.layout.main_home_fragment)
+public class HomeFragment extends Fragment
 {
-
     /**
-     * Set page title and wire the data to the UI
+     * Wire the data to the UI
      */
     @AfterViews
     void init()
     {
-        this.getActivity().getActionBar().setTitle(R.string.fragment_category_title);
+        // nothing yet
+    }
+
+    /**
+     * Set the screen title.
+     */
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+
+        this.getActivity().getActionBar().setTitle(R.string.main_home_title);
     }
 
 }

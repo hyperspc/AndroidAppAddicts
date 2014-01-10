@@ -13,23 +13,29 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.app.search;
+package com.sage42.androidappaddicts.app.hosts;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.ViewById;
 
 import android.app.Fragment;
+import android.widget.GridView;
+import android.widget.Toast;
 
 import com.sage42.androidappaddicts.R;
 
 /**
- * Fragment to display the search results
+ * Hosts fragment.
  */
 @OptionsMenu(R.menu.general)
-@EFragment(R.layout.search_result_fragment)
-public class SearchResultFragment extends Fragment
+@EFragment(R.layout.host_fragment)
+public class HostsFragment extends Fragment
 {
+    @ViewById(R.id.host_grid)
+    protected GridView mGridView;
 
     /**
      * Wire the data to the UI
@@ -40,6 +46,12 @@ public class SearchResultFragment extends Fragment
         // nothing yet
     }
 
+    @ItemClick(R.id.host_grid)
+    void onClickShowGooglePlusPage()
+    {
+        Toast.makeText(this.getActivity(), "not yet implemented", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
+    }
+
     /**
      * Set the screen title.
      */
@@ -48,7 +60,7 @@ public class SearchResultFragment extends Fragment
     {
         super.onStart();
 
-        this.getActivity().getActionBar().setTitle(R.string.search_search_results_title);
+        this.getActivity().getActionBar().setTitle(R.string.hosts_hosts_title);
     }
 
 }
