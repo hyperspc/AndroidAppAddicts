@@ -2,6 +2,7 @@
 <resources>
 
     <color name="white">#FFFFFF</color>
+    <color name="background">#EEEEEE</color>
     <color name="menu_divider">#cccccc</color>
     <color name="general_text_primary">#565656</color>
     <color name="general_title_divider_color">#cccccc</color>
@@ -9,4 +10,10 @@
     <color name="general_title_color">#aaaaaa</color>
     <color name="shadow">#40787878</color>
     <color name="background_light_gray">#90eaeaea</color>
+    <color name="general_text_light">#999999</color>
+    <!-- Greens -->
+    <color name="green">#95c140</color>
+    <color name="green_background">#8bbd2a</color>
+    <color name="green_sub">#b8c35b</color>
+
 </resources>

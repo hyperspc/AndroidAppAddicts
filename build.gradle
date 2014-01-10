@@ -27,7 +27,7 @@ configure(allprojects) {
     ext.androidMinSdkVersion = 14
     ext.androidTargetSdkVersion = 19
 
-    ext.androidAnnotationsVersion = '2.7.1'
+    ext.androidAnnotationsVersion = '3.0'
     ext.robotiumVersion = '4.3'
     ext.dexmakerVersion = '1.0'
     ext.dexmakerMockitoVersion = '1.0'
