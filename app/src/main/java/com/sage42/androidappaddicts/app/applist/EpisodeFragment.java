@@ -10,7 +10,7 @@ import com.sage42.androidappaddicts.R;
 /**
  * Fragment to display the current events.
  */
-@EFragment(R.layout.episode_fragment)
+@EFragment(R.layout.app_by_episode)
 public class EpisodeFragment extends Fragment
 {
 
