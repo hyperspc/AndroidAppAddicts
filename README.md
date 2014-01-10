@@ -13,3 +13,6 @@ gradlew sonarRunner
 
 To run Android Tests (vanilla, Robotium, etc)
 gradlew connectedInstrumentTest
+
+To update the licenses:
+gradlew licenseFormatMain licenseFormatTest licenseFormatInstrumentTest
