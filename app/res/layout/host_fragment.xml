@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".app.main.MainActivity" >
+    tools:context=".app.main.MainActivity">
 
     <GridView
         android:id="@+id/host_grid"
@@ -15,7 +15,6 @@
         android:padding="8dp"
         android:scrollbarStyle="outsideOverlay"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="6dp" >
-    </GridView>
+        android:verticalSpacing="6dp"></GridView>
 
 </RelativeLayout>

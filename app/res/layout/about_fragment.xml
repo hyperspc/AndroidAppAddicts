@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/about_top_panel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-50dp"
-                android:background="#70ffffff" >
+                android:background="#70ffffff">
 
                 <TextView
                     style="@style/AppTheme.About.TopPanel"
@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/about_top_panel"
             android:layout_marginBottom="@dimen/std_padding"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <View
                 style="@style/AppTheme.About.Hr"

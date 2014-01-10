@@ -86,7 +86,7 @@ uploadArchives
 
 // Simple Local Sonar Config
 // To use: gradle sonarRunner
-apply plugin: 'sonar-runner'
+//apply plugin: 'sonar-runner'
 sonarRunner 
 {
     sonarProperties 
