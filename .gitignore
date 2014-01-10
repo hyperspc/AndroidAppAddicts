@@ -37,3 +37,6 @@ hs_err_pid*.log
 
 # Gradle files
 .gradle/
+gradle/
+gradlew
+gradlew.*
