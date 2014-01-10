@@ -115,6 +115,7 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         }
 
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
+        this.mDrawerToggle.syncState();
     }
 
     @Override
