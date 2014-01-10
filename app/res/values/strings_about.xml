@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="about_title">About</string>
+    <string name="about_app_version_default">1.0</string>
+    <string name="about_company_photo">Sage42 Logo</string>
+    <string name="about_desc">Sage 42</string>
+    <string name="about_call">Call the show</string>
+    <string name="about_call_number">0123456789</string>
+    <string name="about_email">Email Android Addicts</string>
+    <string name="about_email_address">noidea@idea.com</string>
+    <string name="about_follow_us">Follow Us in G+</string>
+    <string name="about_follow_us_address">follow us address</string>
+    <string name="about_participate">Participate in Our Forum</string>
+    <string name="about_participate_address">Participate in Our Forum</string>
+
+</resources>

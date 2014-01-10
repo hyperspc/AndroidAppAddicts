@@ -1,4 +1,4 @@
-package com.sage42.androidappaddicts.app.menu;
+package com.sage42.androidappaddicts.app.settings;
 
 import android.content.Context;
 import android.view.View;
@@ -8,29 +8,30 @@ import android.widget.ArrayAdapter;
 /**
  * Adapter to drive the side menu.
  */
-public class MenuListAdapter extends ArrayAdapter<MenuItem>
+public class SettingsMenuListAdapter extends ArrayAdapter<SettingsMenuItem>
 {
-    public MenuListAdapter(final Context context)
+    public SettingsMenuListAdapter(final Context context)
     {
-        super(context, android.R.layout.simple_list_item_1, MenuData.MENU_ITEMS);
+        super(context, android.R.layout.simple_list_item_1, SettingsMenuData.MENU_ITEMS);
     }
 
     /*
      * (non-Javadoc)
-     * @see android.widget.ArrayAdapter#getView(int, android.view.View, android.view.ViewGroup)
+     * @see android.widget.ArrayAdapter#getView(int, android.view.View,
+     * android.view.ViewGroup)
      */
     @Override
     public View getView(final int position, final View convertView, final ViewGroup parent)
     {
-        MenuItemLayout menuItemLayout;
+        SettingsMenuItemLayout menuItemLayout;
         // create or recycle adapter
         if (convertView == null)
         {
-            menuItemLayout = MenuItemLayout_.build(this.getContext());
+            menuItemLayout = SettingsMenuItemLayout_.build(this.getContext());
         }
         else
         {
-            menuItemLayout = (MenuItemLayout) convertView;
+            menuItemLayout = (SettingsMenuItemLayout) convertView;
         }
 
         menuItemLayout.renderItem(this.getItem(position));
@@ -43,8 +44,8 @@ public class MenuListAdapter extends ArrayAdapter<MenuItem>
     @Override
     public boolean isEnabled(final int position)
     {
-        final MenuItem data = this.getItem(position);
-        if (data == null || data.isCategoryMarker())
+        final SettingsMenuItem data = this.getItem(position);
+        if ((data == null) || data.isClickable())
         {
             return false;
         }

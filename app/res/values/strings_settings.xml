@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_1">settings 1</string>
+    <string name="settings_2">settings 2</string>
+    <string name="settings_3">settings 3</string>
+    <string name="settings_4">settings 4</string>
+    <string name="settings_5">settings 5</string>
+    <string name="settings_6">settings 6</string>
+    <string name="settings_7">settings 7</string>
+    <string name="settings_8">settings 8</string>
+
+</resources>

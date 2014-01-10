@@ -23,6 +23,7 @@ public class MenuItem
         this.mIconResId = iconResId;
         this.mTitleResId = titleResId;
         this.mCategoryMarker = categoryMarker;
+
     }
 
     /**

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".app.main.MainActivity" >
+
+    <EditText
+        android:id="@+id/suggestor_name"
+        style="@style/AppTheme.Suggestion.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/suggestor_name_hints"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/suggestor_email"
+        style="@style/AppTheme.Suggestion.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/suggestor_email_hints"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/suggestor_phone"
+        style="@style/AppTheme.Suggestion.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/suggestor_phone_hints"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/suggestor_comment"
+        style="@style/AppTheme.Suggestion.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="52dp"
+        android:hint="@string/suggestor_comments_hints"
+        android:inputType="textMultiLine" />
+
+</LinearLayout>

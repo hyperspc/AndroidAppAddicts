@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="suggestor_name_hints">Your Name</string>
+    <string name="suggestor_email_hints">Your Email</string>
+    <string name="suggestor_phone_hints">Your Phone</string>
+    <string name="suggestor_comments_hints">Your Comments</string>
+
+</resources>
