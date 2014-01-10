@@ -3,7 +3,7 @@ and update your code as the module code changes.
 
 AndroidViewUtils
 ----------------
-* Add the module as a remote `git remote add -f AndroidViewUtils git@github.com:Sage42/AndroidViewUtils.git`
+* Add the module as a remote `git remote add AndroidViewUtils git@github.com:Sage42/AndroidViewUtils.git`
 * Fetch the latest copy `git fetch AndroidViewUtils master`
 * Merge any changes `git subtree pull --prefix modules/AndroidViewUtils AndroidViewUtils master --squash`
 
