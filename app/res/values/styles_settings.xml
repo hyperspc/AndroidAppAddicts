@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme.Settings"></style>
+
+    <style name="AppTheme.Settings.MenuItem">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/std_padding</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:textColor">@color/general_text_primary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.Settings.MenuItemCheck">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+</resources>

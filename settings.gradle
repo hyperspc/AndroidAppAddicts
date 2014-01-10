@@ -3,3 +3,6 @@ include ':app'
 
 // java library project
 include ':lib'
+
+// external dependancies
+include ':modules:AndroidViewUtils:library'

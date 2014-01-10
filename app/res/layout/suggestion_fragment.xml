@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".app.main.MainActivity" >
+    tools:context=".app.main.MainActivity">
 
     <EditText
         android:id="@+id/suggestor_name"
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/suggestor_name_hints"
-        android:inputType="textPersonName" >
+        android:inputType="textPersonName">
 
         <requestFocus />
     </EditText>

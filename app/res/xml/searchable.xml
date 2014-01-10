@@ -3,5 +3,4 @@
     android:hint="@string/search_hint"
     android:icon="@drawable/ic_launcher"
     android:label="@string/search_hint"
-    android:searchSuggestIntentAction="android.intent.action.VIEW" >
-</searchable>
+    android:searchSuggestIntentAction="android.intent.action.VIEW"></searchable>

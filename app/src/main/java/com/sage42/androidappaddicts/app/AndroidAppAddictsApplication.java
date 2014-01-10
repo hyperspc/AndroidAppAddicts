@@ -1,4 +1,5 @@
-/*  Copyright (C) 2013-2014 Sage 42 Apps Sdn Bhd
+/**
+ *  Copyright (C) 2013-2014 Sage 42 Apps Sdn Bhd
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
