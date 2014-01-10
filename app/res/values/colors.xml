@@ -2,6 +2,7 @@
 <resources>
 
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="background">#EEEEEE</color>
     <color name="menu_divider">#cccccc</color>
     <color name="general_text_primary">#565656</color>
