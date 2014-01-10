@@ -30,8 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/episode_number"
             android:ellipsize="end"
-            android:paddingBottom="@dimen/std_hlf_padding"
-            android:paddingTop="@dimen/std_padding"
+            android:paddingTop="@dimen/twelve_padding"
             android:singleLine="true"
             android:text="@string/applist_default_episode_title"
             android:textSize="18sp" />
@@ -55,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/episode_title"
             android:layout_toRightOf="@+id/episode_duration"
-            android:paddingLeft="@dimen/std_hlf_padding"
+            android:paddingLeft="2dp"
             android:text="@string/applist_default_episode_duration_length"
             android:textColor="@color/general_text_light"
             android:textSize="14sp" />
@@ -67,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/episode_title"
             android:layout_toRightOf="@+id/episode_number"
-            android:paddingLeft="122dp"
+            android:paddingLeft="110dp"
             android:text="@string/applist_episode_add"
             android:textColor="@color/general_text_light"
             android:textSize="14sp" />
@@ -80,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/episode_title"
             android:layout_toRightOf="@+id/episode_add"
-            android:paddingLeft="@dimen/std_hlf_padding"
+            android:paddingLeft="2dp"
             android:text="@string/applist_default_episode_add_date"
             android:textColor="@color/general_text_light"
             android:textSize="14sp" />

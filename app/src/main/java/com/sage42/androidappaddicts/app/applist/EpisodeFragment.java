@@ -25,7 +25,7 @@ import com.sage42.androidappaddicts.R;
 /**
  * Fragment to display the current events.
  */
-@EFragment(R.layout.app_by_episode)
+@EFragment(R.layout.applist_by_episode)
 public class EpisodeFragment extends Fragment
 {
 

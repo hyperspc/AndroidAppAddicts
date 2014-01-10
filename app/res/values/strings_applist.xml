@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Labels and Stuff -->
-    <string name="applist_episode_duration">Duration:</string>
+    <string name="applist_episode_duration">Length:</string>
     <string name="applist_episode_add">Added:</string>
 
     <!-- Defaults -->
-    <string name="applist_default_episode_number">002</string>
+    <string name="applist_default_episode_number">257</string>
     <string name="applist_default_episode_title">Stupid Pointless Things</string>
     <string name="applist_default_episode_duration_length">1:32:18</string>
-    <string name="applist_default_episode_add_date">09 Dec 2013</string>
+    <string name="applist_default_episode_add_date">09 Dec 13</string>
     <string name="applist_default_loading">Loading</string>
 </resources>
