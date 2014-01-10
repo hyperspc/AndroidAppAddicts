@@ -14,10 +14,10 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="fragment_title">App List</string>
-    <string name="fragment_category_title">by Category</string>
-    <string name="fragment_episode_title">by Episode</string>
+    <string name="fragment_category_title">App by Category</string>
+    <string name="fragment_episode_title">App by Episode</string>
     <string name="fragment_suggest_title">Suggest an App</string>
-    <string name="fragment_host_title">Host of Android App Addicts</string>
+    <string name="fragment_host_title">The Host </string>
     <string name="fragment_search_title">Search</string>
 
 </resources>
