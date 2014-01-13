@@ -37,3 +37,9 @@ hs_err_pid*.log
 
 # Gradle files
 .gradle/
+gradle/
+gradlew
+gradlew.*
+
+# Random Operating System Stuff
+Thumbs.db

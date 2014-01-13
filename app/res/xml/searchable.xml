@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <searchable xmlns:android="http://schemas.android.com/apk/res/android"
-    android:hint="@string/search_hint"
+    android:hint="@string/menu_search_hint"
     android:icon="@drawable/ic_launcher"
-    android:label="@string/search_hint"
-    android:searchSuggestIntentAction="android.intent.action.VIEW" >
-</searchable>
+    android:label="@string/menu_search_hint"
+    android:searchSuggestIntentAction="android.intent.action.VIEW"></searchable>

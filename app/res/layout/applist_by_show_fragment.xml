@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:padding="@dimen/std_padding">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/std_padding"
+        android:background="@drawable/card_shadow">
+
+        <!-- show Number -->
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_number"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/std_padding"
+            android:text="@string/applist_default_show_number"
+            android:textColor="@color/green"
+            android:textSize="50sp" />
+
+        <!-- show Title -->
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_title"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/show_number"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/twelve_padding"
+            android:singleLine="true"
+            android:text="@string/applist_default_show_title"
+            android:textSize="18sp" />
+
+        <!-- show Duration -->
+        <TextView
+            android:id="@+id/show_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_number"
+            android:text="@string/applist_show_duration"
+            android:textColor="@color/general_text_light"
+            android:textSize="14sp" />
+
+        <!-- show Length -->
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_duration_length"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_duration"
+            android:paddingLeft="2dp"
+            android:text="@string/applist_default_show_duration_length"
+            android:textColor="@color/general_text_light"
+            android:textSize="14sp" />
+
+        <!-- show Added -->
+        <TextView
+            android:id="@+id/show_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_number"
+            android:paddingLeft="110dp"
+            android:text="@string/applist_show_add"
+            android:textColor="@color/general_text_light"
+            android:textSize="14sp" />
+
+        <!-- show Date Added -->
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_add_date"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_add"
+            android:paddingLeft="2dp"
+            android:text="@string/applist_default_show_add_date"
+            android:textColor="@color/general_text_light"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

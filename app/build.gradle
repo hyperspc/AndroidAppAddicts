@@ -10,6 +10,7 @@ apply from: '../gradleScripts/androidAnnotations.gradle'
 dependencies {
     // include the lib project
     compile project(':lib')
+    compile project(':modules:AndroidViewUtils:library')
     compile "com.android.support:support-v4:$androidSupportVersion"
 
     // dependancies for testing (Robotium, Mockito, etc)
