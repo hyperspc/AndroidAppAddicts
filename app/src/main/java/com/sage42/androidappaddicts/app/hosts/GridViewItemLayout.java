@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.app.host;
+package com.sage42.androidappaddicts.app.hosts;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EViewGroup;
@@ -29,6 +29,7 @@ import com.sage42.androidappaddicts.R;
 /**
  * a custom layout class that hold the gridview UI structure and used it as
  * ContentViewHolder for adapters.
+ * TODO: what is this for?
  */
 @EViewGroup(R.layout.grid_content)
 public class GridViewItemLayout extends RelativeLayout

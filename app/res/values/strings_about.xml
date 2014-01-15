@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <string name="about_title">About</string>
+    <string name="about_about_title">About</string>
+    
     <string name="about_app_version_default">1.0</string>
     <string name="about_company_photo">Sage42 Logo</string>
     <string name="about_desc">Sage 42</string>

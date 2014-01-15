@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppTheme.AppList">
-        <item name="fontFamily">Roboto-Light</item>
-    </style>
-
+    <string name="hosts_hosts_title">The Hosts</string>
+    
+    <string name="gridview_popup_hints">popup</string>
 
 </resources>

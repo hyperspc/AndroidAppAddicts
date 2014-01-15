@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.app.search;
+package com.sage42.androidappaddicts.app.applist;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
@@ -24,13 +24,12 @@ import android.app.Fragment;
 import com.sage42.androidappaddicts.R;
 
 /**
- * Fragment to display the search results
+ * Display list of apps by the selected show.
  */
 @OptionsMenu(R.menu.general)
-@EFragment(R.layout.search_result_fragment)
-public class SearchResultFragment extends Fragment
+@EFragment(R.layout.applist_by_show_selected_fragment)
+public class ByShowSelectedFragment extends Fragment
 {
-
     /**
      * Wire the data to the UI
      */
@@ -48,7 +47,7 @@ public class SearchResultFragment extends Fragment
     {
         super.onStart();
 
-        this.getActivity().getActionBar().setTitle(R.string.search_search_results_title);
+        this.getActivity().getActionBar().setTitle(R.string.applist_by_show_selected_title);
     }
 
 }

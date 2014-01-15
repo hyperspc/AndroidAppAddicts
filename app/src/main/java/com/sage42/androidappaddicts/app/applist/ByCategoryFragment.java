@@ -17,25 +17,37 @@ package com.sage42.androidappaddicts.app.applist;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.OptionsMenu;
 
 import android.app.Fragment;
 
 import com.sage42.androidappaddicts.R;
 
 /**
- * Fragment to display the current events.
+ * Fragment to display the list of app categories.
  */
-@EFragment(R.layout.category_fragment)
-public class CategoryFragment extends Fragment
+@OptionsMenu(R.menu.general)
+@EFragment(R.layout.applist_by_category_fragment)
+public class ByCategoryFragment extends Fragment
 {
-
     /**
-     * Set page title and wire the data to the UI
+     * Wire the data to the UI
      */
     @AfterViews
     void init()
     {
-        this.getActivity().getActionBar().setTitle(R.string.fragment_category_title);
+        // nothing yet
+    }
+
+    /**
+     * Set the screen title.
+     */
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+
+        this.getActivity().getActionBar().setTitle(R.string.applist_by_category_title);
     }
 
 }

@@ -59,7 +59,7 @@ public class MenuListAdapter extends ArrayAdapter<MenuItem>
     public boolean isEnabled(final int position)
     {
         final MenuItem data = this.getItem(position);
-        if (data == null || data.isCategoryMarker())
+        if ((data == null) || data.isCategoryMarker())
         {
             return false;
         }
