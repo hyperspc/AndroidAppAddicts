@@ -65,7 +65,7 @@
                 style="@style/AppTheme.About.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/light_ic_phone"
+                android:drawableRight="@drawable/ic_phone"
                 android:text="@string/about_call" />
 
             <View
@@ -77,7 +77,7 @@
                 style="@style/AppTheme.About.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/light_ic_mail"
+                android:drawableRight="@drawable/ic_email"
                 android:text="@string/about_email" />
 
             <View
