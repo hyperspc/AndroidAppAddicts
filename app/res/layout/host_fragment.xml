@@ -1,19 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent" >
+    
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
     <GridView
         android:id="@+id/host_grid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:columnWidth="140dp"
         android:horizontalSpacing="6dp"
         android:numColumns="auto_fit"
         android:padding="8dp"
         android:scrollbarStyle="outsideOverlay"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="6dp"></GridView>
+        android:verticalSpacing="6dp" >
+    </GridView>
 
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grid_title"
+        android:layout_centerHorizontal="true"
+        android:columnCount="2"
+        android:rowCount="8" >
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+
+        <include
+            android:layout_gravity="fill_vertical"
+            android:layout_margin="6dp"
+            layout="@layout/large_display_grid" />
+    </GridLayout>
 </RelativeLayout>
+</ScrollView>

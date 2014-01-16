@@ -163,6 +163,7 @@
                    <include
                     android:layout_gravity="fill_vertical"
                     android:layout_margin="6dp"
+        
                     layout="@layout/display_grid" />
 
                 <include
