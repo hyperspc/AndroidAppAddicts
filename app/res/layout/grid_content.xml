@@ -3,7 +3,8 @@
     android:id="@+id/customGridContentView1"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/listview_border" >
+    android:background="@drawable/card_shadow">
+
 
     <com.sage42.androidappaddicts.app.hosts.CustomGridImageView
         android:id="@+id/promo_item_image"
