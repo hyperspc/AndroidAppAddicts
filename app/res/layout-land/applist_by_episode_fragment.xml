@@ -10,35 +10,10 @@
         android:layout_height="wrap_content" >
 
         <RelativeLayout
-            android:id="@+id/top_layout"
-            android:layout_width="match_parent"
-            android:layout_height="48dp" >
-
-            <TextView
-                android:id="@+id/text1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:padding="@dimen/std_padding"
-                android:text="@string/applist_latest_show_text"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/button1"
-                style="@style/AppTheme.AppList.TinyButton"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/tiny_button_height"
-                android:layout_alignParentRight="true"
-                android:text="@string/applist_latest_show_tiny_button" />
-        </RelativeLayout>
-
-        <RelativeLayout
             android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/top_layout"
             android:layout_marginBottom="@dimen/std_padding"
-            android:background="@android:color/holo_green_light"
             android:padding="@dimen/std_padding" >
 
             <!-- show Number -->
@@ -50,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/std_padding"
                 android:text="@string/applist_default_show_number"
-                android:textColor="@color/white"
+                android:textColor="@android:color/holo_green_light"
                 android:textSize="50sp" />
 
             <!-- show Title -->
@@ -62,11 +37,10 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/show_number"
                 android:ellipsize="end"
-                android:paddingTop="@dimen/std_padding"
                 android:paddingBottom="@dimen/std_padding"
+                android:paddingTop="@dimen/std_padding"
                 android:singleLine="true"
                 android:text="@string/applist_default_show_title"
-                android:textColor="@color/white"
                 android:textSize="22sp" />
 
             <!-- show Duration -->
@@ -78,8 +52,8 @@
                 android:layout_below="@+id/show_title"
                 android:layout_toRightOf="@+id/show_number"
                 android:text="@string/applist_show_duration"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!-- show Length -->
 
@@ -88,11 +62,10 @@
                 style="@style/AppTheme.AppList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/author"
                 android:layout_below="@+id/show_title"
                 android:layout_toRightOf="@+id/show_duration"
+                android:paddingLeft="@dimen/std_padding"
                 android:text="@string/applist_default_show_duration_length"
-                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <!-- show Added -->
@@ -101,11 +74,12 @@
                 android:id="@+id/show_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/show_duration_length"
-                android:layout_toRightOf="@+id/show_number"
+                android:layout_below="@+id/show_title"
+                android:layout_toRightOf="@+id/show_duration_length"
+                android:paddingLeft="@dimen/std_padding"
                 android:text="@string/applist_show_add"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!-- show Date Added -->
 
@@ -114,10 +88,10 @@
                 style="@style/AppTheme.AppList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/author"
-                android:layout_below="@+id/show_duration_length"
+                android:layout_below="@+id/show_title"
+                android:layout_toRightOf="@+id/show_add"
+                android:paddingLeft="@dimen/std_padding"
                 android:text="@string/applist_default_show_add_date"
-                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
@@ -127,17 +101,16 @@
                 android:layout_below="@+id/show_add_date"
                 android:layout_toRightOf="@+id/show_number"
                 android:text="Hosted by: "
-                android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/show_add_date"
-                android:layout_toRightOf="@+id/author_title"
+                android:layout_alignLeft="@+id/author_title"
+                android:layout_below="@+id/author_title"
                 android:text="Author 1"
-                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
@@ -146,79 +119,93 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/author"
                 android:layout_below="@+id/author"
-                android:text="Author 2"
                 android:paddingBottom="@dimen/std_padding"
-                android:textColor="@color/white"
+                android:text="Author 2"
                 android:textSize="14sp" />
         </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/relativeLayout1"
+            android:background="@color/gray" />
+
+        <TextView
+            android:id="@+id/grid_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout1"
+            android:padding="@dimen/std_padding"
+            android:paddingBottom="@dimen/std_padding"
+            android:text="Mentioned Apps"
+            android:textSize="14sp" />
 
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/relativeLayout1"
+            android:layout_below="@+id/grid_title"
             android:layout_centerHorizontal="true"
             android:columnCount="3"
-            android:rowCount="4" >
+            android:rowCount="4" ><include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                   <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
-                
-                             <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
+
         </GridLayout>
     </RelativeLayout>
 

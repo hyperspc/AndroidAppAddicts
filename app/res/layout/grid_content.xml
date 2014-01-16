@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sage42.androidappaddicts.app.hosts.CustomGridContentView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/customGridContentView1"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/listview_border">
+    android:background="@drawable/listview_border" >
 
-    <com.sage42.androidappaddicts.app.hosts.CustomPromotionImageView
+    <com.sage42.androidappaddicts.app.hosts.CustomGridImageView
         android:id="@+id/promo_item_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop" />
 
@@ -34,12 +36,12 @@
         android:id="@+id/promo_item_menu"
         android:layout_width="36dp"
         android:layout_height="72dp"
+        android:layout_alignBottom="@+id/promo_item_desc"
         android:layout_alignParentRight="true"
+        android:contentDescription="@string/gridview_popup_hints"
         android:paddingBottom="6dp"
         android:paddingLeft="12dp"
         android:scaleType="fitEnd"
-        android:contentDescription="@string/gridview_popup_hints"
-        android:layout_alignBottom="@+id/promo_item_desc"
         android:src="@drawable/ic_action_overflow" />
 
-</RelativeLayout>
+</com.sage42.androidappaddicts.app.hosts.CustomGridContentView>

@@ -19,13 +19,13 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-public class CustomPromotionImageView extends ImageView
+public class CustomGridImageView extends ImageView
 {
 
     /**
      * @param context
      */
-    public CustomPromotionImageView(final Context context)
+    public CustomGridImageView(final Context context)
     {
         super(context);
     }
@@ -34,7 +34,7 @@ public class CustomPromotionImageView extends ImageView
      * @param context
      * @param attrs
      */
-    public CustomPromotionImageView(final Context context, final AttributeSet attrs)
+    public CustomGridImageView(final Context context, final AttributeSet attrs)
     {
         super(context, attrs);
     }
@@ -44,7 +44,7 @@ public class CustomPromotionImageView extends ImageView
      * @param attrs
      * @param defStyle
      */
-    public CustomPromotionImageView(final Context context, final AttributeSet attrs, final int defStyle)
+    public CustomGridImageView(final Context context, final AttributeSet attrs, final int defStyle)
     {
         super(context, attrs, defStyle);
     }

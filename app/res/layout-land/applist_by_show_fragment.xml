@@ -62,8 +62,8 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/show_number"
                 android:ellipsize="end"
-                android:paddingTop="@dimen/std_padding"
                 android:paddingBottom="@dimen/std_padding"
+                android:paddingTop="@dimen/std_padding"
                 android:singleLine="true"
                 android:text="@string/applist_default_show_title"
                 android:textColor="@color/white"
@@ -146,8 +146,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/author"
                 android:layout_below="@+id/author"
-                android:text="Author 2"
                 android:paddingBottom="@dimen/std_padding"
+                android:text="Author 2"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
         </RelativeLayout>
@@ -157,68 +157,83 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/relativeLayout1"
             android:layout_centerHorizontal="true"
-            android:columnCount="3"
+            android:columnCount="5"
             android:rowCount="4" >
 
-                   <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
 
-                <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
-                
-                             <include
-                    android:layout_gravity="fill_vertical"
-                    android:layout_margin="6dp"
-                    layout="@layout/display_grid" />
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
+
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
+            
+                  <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
+
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
+
+            <include
+                android:layout_gravity="fill_vertical"
+                android:layout_margin="6dp"
+                layout="@layout/display_grid" />
         </GridLayout>
     </RelativeLayout>
 

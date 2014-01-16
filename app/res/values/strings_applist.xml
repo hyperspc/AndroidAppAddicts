@@ -5,7 +5,8 @@
     <string name="applist_by_category_title">Apps by Category</string>
     <string name="applist_by_show_title">Apps by Show</string>
     <string name="applist_by_show_selected_title">Show Details</string>
-    
+    <string name="applist_latest_show_text">Latest Show</string>
+    <string name="applist_latest_show_tiny_button">View all Shows</string>
     <string name="applist_show_duration">Length:</string>
     <string name="applist_show_add">Added:</string>
 
@@ -15,4 +16,5 @@
     <string name="applist_default_show_duration_length">1:32:18</string>
     <string name="applist_default_show_add_date">09 Dec 13</string>
     <string name="applist_default_loading">Loading</string>
+
 </resources>
