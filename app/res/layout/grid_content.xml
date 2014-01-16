@@ -18,27 +18,14 @@
         style="@style/AppTheme.Host.Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_padding"
         android:layout_below="@+id/grid_item_image"
         android:ellipsize="end"
-        android:paddingTop="@dimen/std_padding"
-        android:singleLine="true"
-        android:text="haha" />
-
-    <TextView
-        android:id="@+id/grid_item_desc"
-        style="@style/AppTheme.Host.Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/grid_item_title"
-        android:ellipsize="end"
-        android:textColor="@color/abs__bright_foreground_disabled_holo_light"
-        android:paddingBottom="@dimen/std_padding"
         android:singleLine="true"
         android:text="haha" />
     <!-- this three dots view had to be hardcode to fix the image not too big but the clickable field had to -->
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/grid_item_menu"
         android:layout_width="36dp"
         android:layout_height="72dp"
@@ -48,6 +35,20 @@
         android:paddingBottom="6dp"
         android:paddingLeft="12dp"
         android:scaleType="fitEnd"
-        android:src="@drawable/ic_action_overflow_light" />
+        android:src="@drawable/ic_action_overflow_light"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/grid_item_desc"
+        style="@style/AppTheme.Host.Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/grid_item_title"
+        android:paddingBottom="@dimen/std_hlf_padding"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="haha"
+        android:textColor="@color/abs__bright_foreground_disabled_holo_light" />
 
 </com.sage42.androidappaddicts.app.hosts.CustomGridContentView>
