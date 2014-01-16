@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <dimen name="shadow_padding">1dp</dimen>
     <dimen name="std_hlf_padding">4dp</dimen>

@@ -140,5 +140,4 @@
         <item name="android:background">@drawable/btn_toggle_holo_light</item>
     </style>
 
-
 </resources>

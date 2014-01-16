@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/card_shadow">
 
-    <com.sage42.androidappaddicts.app.host.CustomPromotionImageView
+    <com.sage42.androidappaddicts.app.hosts.CustomPromotionImageView
         android:id="@+id/promo_item_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

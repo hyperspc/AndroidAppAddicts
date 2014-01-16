@@ -28,9 +28,9 @@ import android.net.Uri;
 public class SearchableContentProvider extends ContentProvider
 {
 
-    private static final String mTableName     = "table";                                                                         //$NON-NLS-1$
+    private static final String mTableName     = "table";                                                                                                   //$NON-NLS-1$
     public static final String  AUTHORITY      = SearchableContentProvider.class.getCanonicalName();
-    public static final Uri     CONTENT_URI    = Uri.parse("content://" + SearchableContentProvider.AUTHORITY + "/" + mTableName); //$NON-NLS-1$//$NON-NLS-2$
+    public static final Uri     CONTENT_URI    = Uri.parse("content://" + SearchableContentProvider.AUTHORITY + "/" + SearchableContentProvider.mTableName); //$NON-NLS-1$//$NON-NLS-2$
 
     // For matching different URI
     private static final int    SEARCH_TESTS   = 0;
@@ -42,25 +42,32 @@ public class SearchableContentProvider extends ContentProvider
     public static UriMatcher    mUriMatcher;
     static
     {
-        mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+        SearchableContentProvider.mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
-        mUriMatcher.addURI(SearchableContentProvider.AUTHORITY, mTableName, SEARCH_TESTS);
-        mUriMatcher.addURI(SearchableContentProvider.AUTHORITY, mTableName + "/#", GET_TEST); //$NON-NLS-1$          
-        mUriMatcher.addURI(SearchableContentProvider.AUTHORITY,
-                        mTableName + "/" + SearchManager.SUGGEST_URI_PATH_QUERY, SEARCH_SUGGEST); //$NON-NLS-1$
-        mUriMatcher.addURI(SearchableContentProvider.AUTHORITY, mTableName
-                        + "/" + SearchManager.SUGGEST_URI_PATH_QUERY + "/*", SEARCH_SUGGEST); //$NON-NLS-1$ //$NON-NLS-2$
+        SearchableContentProvider.mUriMatcher.addURI(SearchableContentProvider.AUTHORITY,
+                        SearchableContentProvider.mTableName, SearchableContentProvider.SEARCH_TESTS);
+        SearchableContentProvider.mUriMatcher.addURI(SearchableContentProvider.AUTHORITY,
+                        SearchableContentProvider.mTableName + "/#", SearchableContentProvider.GET_TEST); //$NON-NLS-1$          
+        SearchableContentProvider.mUriMatcher
+                        .addURI(SearchableContentProvider.AUTHORITY,
+                                        SearchableContentProvider.mTableName
+                                                        + "/" + SearchManager.SUGGEST_URI_PATH_QUERY, SearchableContentProvider.SEARCH_SUGGEST); //$NON-NLS-1$
+        SearchableContentProvider.mUriMatcher
+                        .addURI(SearchableContentProvider.AUTHORITY,
+                                        SearchableContentProvider.mTableName
+                                                        + "/" + SearchManager.SUGGEST_URI_PATH_QUERY + "/*", SearchableContentProvider.SEARCH_SUGGEST); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     @Override
     public boolean onCreate()
     {
-        this.dbHelper = new SearchDBHelper(getContext());
+        this.dbHelper = new SearchDBHelper(this.getContext());
         return this.dbHelper != null;
     }
 
     @Override
-    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
+    public Cursor query(final Uri uri, final String[] projection, final String selection, final String[] selectionArgs,
+                    final String sortOrder)
     {
 
         this.dbHelper.getReadableDatabase();
@@ -68,42 +75,43 @@ public class SearchableContentProvider extends ContentProvider
 
     }
 
-    private Cursor getSuggestions(String query)
-    {
-        // query = query.toLowerCase();
-        // String[] columns = new String[]
-        // { BaseColumns._ID, DatabaseHelper.KEY_DATA,
-        // SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID };
-        // return this.dbHelper.getRecordMatches(query, columns);
-        return null;
-    }
+    //    /**
+    //     * @param query
+    //     * @return
+    //     */
+    //    private Cursor getSuggestions(final String query)
+    //    {
+    //        // query = query.toLowerCase();
+    //        // String[] columns = new String[]
+    //        // { BaseColumns._ID, DatabaseHelper.KEY_DATA,
+    //        // SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID };
+    //        // return this.dbHelper.getRecordMatches(query, columns);
+    //        return null;
+    //    }
 
     @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs)
+    public int delete(final Uri uri, final String selection, final String[] selectionArgs)
     {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     // Required method (inherited from class ContentProvider)
     @Override
-    public String getType(Uri uri)
+    public String getType(final Uri uri)
     {
         return null;
 
     }
 
     @Override
-    public Uri insert(Uri uri, ContentValues values)
+    public Uri insert(final Uri uri, final ContentValues values)
     {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs)
+    public int update(final Uri uri, final ContentValues values, final String selection, final String[] selectionArgs)
     {
-        // TODO Auto-generated method stub
         return 0;
     }
 
