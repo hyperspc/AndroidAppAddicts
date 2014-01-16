@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppTheme.About"></style>
+    <style name="AppTheme.Category"></style>
 
-    <style name="AppTheme.About.Button">
+    <style name="AppTheme.Category.Name">
         <item name="android:textSize">18sp</item>
-        <item name="android:paddingLeft">@dimen/std_padding</item>
-        <item name="android:paddingRight">@dimen/std_padding</item>
+        <item name="android:paddingLeft">@dimen/content_padding</item>
+        <item name="android:paddingRight">@dimen/content_padding</item>
         <item name="android:background">@drawable/btn_click_background</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:minHeight">64dp</item>
     </style>
 
-    <style name="AppTheme.About.TopPanel">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/general_text_light</item>
-    </style>
-
-    <style name="AppTheme.About.Hr">
+    <style name="AppTheme.Category.Hr">
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/general_divider_color</item>
     </style>

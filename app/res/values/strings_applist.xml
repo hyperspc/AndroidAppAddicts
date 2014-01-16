@@ -2,6 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Labels and Stuff -->
+    <string name="applist_latest">Latest Show</string>
     <string name="applist_by_category_title">Apps by Category</string>
     <string name="applist_by_show_title">Apps by Show</string>
     <string name="applist_by_show_selected_title">Show Details</string>

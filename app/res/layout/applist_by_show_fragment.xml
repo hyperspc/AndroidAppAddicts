@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/show_number"
             android:ellipsize="end"
-            android:paddingTop="@dimen/twelve_padding"
+            android:paddingTop="@dimen/padding12"
             android:singleLine="true"
             android:text="@string/applist_default_show_title"
             android:textSize="18sp" />
