@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/content_padding"
+    tools:context=".app.main.MainActivity">
 
     <EditText
         android:id="@+id/suggestor_name"
@@ -37,7 +39,8 @@
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="52dp"
+        android:minHeight="128dp"
+        android:gravity="top"
         android:hint="@string/suggestor_comments_hints"
         android:inputType="textMultiLine" />
 
