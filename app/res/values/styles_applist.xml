@@ -7,9 +7,9 @@
 
     <style name="AppTheme.AppList.TinyButton">
         <item name="android:textSize">12sp</item>
-        <item name="android:layout_marginRight">@dimen/std_padding</item>
-        <item name="android:paddingLeft">@dimen/std_padding</item>
-        <item name="android:paddingRight">@dimen/std_padding</item>
+        <item name="android:padding">@dimen/std_hlf_padding</item>
+        <item name="android:background">@android:color/holo_green_light</item>
+    
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textColor">@color/white</item>
     </style>

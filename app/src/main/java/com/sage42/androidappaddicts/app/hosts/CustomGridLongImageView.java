@@ -12,15 +12,15 @@ import com.sage42.androidappaddicts.app.util.SizeUtils;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 
-public class CustomGridContentView extends RelativeLayout
+public class CustomGridLongImageView extends ImageView
 {
 
     /**
      * @param context
      */
-    public CustomGridContentView(final Context context)
+    public CustomGridLongImageView(final Context context)
     {
         super(context);
     }
@@ -29,7 +29,7 @@ public class CustomGridContentView extends RelativeLayout
      * @param context
      * @param attrs
      */
-    public CustomGridContentView(final Context context, final AttributeSet attrs)
+    public CustomGridLongImageView(final Context context, final AttributeSet attrs)
     {
         super(context, attrs);
     }
@@ -39,7 +39,7 @@ public class CustomGridContentView extends RelativeLayout
      * @param attrs
      * @param defStyle
      */
-    public CustomGridContentView(final Context context, final AttributeSet attrs, final int defStyle)
+    public CustomGridLongImageView(final Context context, final AttributeSet attrs, final int defStyle)
     {
         super(context, attrs, defStyle);
     }
@@ -51,8 +51,7 @@ public class CustomGridContentView extends RelativeLayout
     @Override
     public void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec)
     {
-        final int fixHeight = widthMeasureSpec + SizeUtils.getDpi(this.getResources(), 100);
-        super.onMeasure(widthMeasureSpec, fixHeight);
+        super.onMeasure(widthMeasureSpec, widthMeasureSpec + SizeUtils.getDpi(this.getResources(), 36));
     }
 
     /*
@@ -66,8 +65,7 @@ public class CustomGridContentView extends RelativeLayout
 
         if (this.getLayoutParams() != null && width != height)
         {
-            this.getLayoutParams().height = width + SizeUtils.getDpi(this.getResources(), 100);
-            ;
+            this.getLayoutParams().height = width + SizeUtils.getDpi(this.getResources(), 36);
             this.setLayoutParams(this.getLayoutParams());
         }
     }

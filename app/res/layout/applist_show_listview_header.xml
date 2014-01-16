@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_centerHorizontal="true" >
-
-    <RelativeLayout
-        android:id="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
 
         <RelativeLayout
             android:id="@+id/top_layout"
             android:layout_width="match_parent"
-            android:layout_height="48dp" >
+            android:layout_height="48dp"
+            android:padding="@dimen/std_padding" >
 
             <TextView
                 android:id="@+id/text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:padding="@dimen/std_padding"
+                android:paddingLeft="@dimen/std_padding"
                 android:text="@string/applist_latest_show_text"
                 android:textSize="18sp" />
 
-            <Button
+            <TextView
                 android:id="@+id/button1"
                 style="@style/AppTheme.AppList.TinyButton"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/tiny_button_height"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
                 android:text="@string/applist_latest_show_tiny_button" />
         </RelativeLayout>
 
@@ -38,8 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/top_layout"
             android:layout_marginBottom="@dimen/std_padding"
-            android:background="@android:color/holo_green_light"
-            android:padding="@dimen/std_padding" >
+            android:background="@android:color/holo_green_light" >
 
             <!-- show Number -->
 
@@ -47,7 +43,8 @@
                 android:id="@+id/show_number"
                 style="@style/AppTheme.AppList"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/std_padding"
                 android:layout_marginRight="@dimen/std_padding"
                 android:text="@string/applist_default_show_number"
                 android:textColor="@color/white"
@@ -60,10 +57,10 @@
                 style="@style/AppTheme.AppList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/show_number"
                 android:layout_toRightOf="@+id/show_number"
                 android:ellipsize="end"
-                android:paddingBottom="@dimen/std_padding"
-                android:paddingTop="@dimen/std_padding"
+                android:paddingTop="@dimen/std_hlf_padding"
                 android:singleLine="true"
                 android:text="@string/applist_default_show_title"
                 android:textColor="@color/white"
@@ -146,95 +143,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/author"
                 android:layout_below="@+id/author"
-                android:paddingBottom="@dimen/std_padding"
+                android:layout_marginBottom="@dimen/std_padding"
+                 android:paddingBottom="@dimen/std_hlf_padding"
                 android:text="Author 2"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
         </RelativeLayout>
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/relativeLayout1"
-            android:layout_centerHorizontal="true"
-            android:columnCount="5"
-            android:rowCount="4" >
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-            
-                  <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-
-            <include
-                android:layout_gravity="fill_vertical"
-                android:layout_margin="6dp"
-                layout="@layout/display_grid" />
-        </GridLayout>
     </RelativeLayout>
-
-</ScrollView>

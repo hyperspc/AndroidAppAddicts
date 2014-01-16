@@ -13,6 +13,7 @@
     <!-- Defaults -->
     <string name="applist_default_show_number">257</string>
     <string name="applist_default_show_title">Stupid Pointless Things</string>
+        <string name="applist_default_episode_title">Spencer sturgeon</string>
     <string name="applist_default_show_duration_length">1:32:18</string>
     <string name="applist_default_show_add_date">09 Dec 13</string>
     <string name="applist_default_loading">Loading</string>
