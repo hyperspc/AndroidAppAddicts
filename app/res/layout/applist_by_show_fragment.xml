@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/show_number"
             android:ellipsize="end"
-            android:paddingTop="@dimen/padding12"
+            android:paddingTop="@dimen/applist_show_title_top_padding"
             android:singleLine="true"
             android:text="@string/applist_default_show_title" />
 
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/show_title"
             android:layout_toRightOf="@+id/show_duration"
-            android:paddingLeft="2dp"
+            android:paddingLeft="@dimen/applist_space_between_label_value"
             android:text="@string/applist_default_show_duration_length" />
 
         <!-- show Added -->
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/show_title"
             android:layout_toRightOf="@+id/show_number"
-            android:paddingLeft="110dp"
+            android:paddingLeft="@dimen/applist_show_added_left_padding"
             android:text="@string/applist_show_add" />
 
         <!-- show Date Added -->
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/show_title"
             android:layout_toRightOf="@+id/show_add"
-            android:paddingLeft="2dp"
+            android:paddingLeft="@dimen/applist_space_between_label_value"
             android:text="@string/applist_default_show_add_date" />
     </RelativeLayout>
 
