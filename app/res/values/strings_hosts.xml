@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <string name="hosts_hosts_title">The Hosts</string>
-    
     <string name="gridview_popup_hints">popup</string>
 
 </resources>
