@@ -12,6 +12,8 @@ targetCompatibility = 1.6
 
 dependencies
 {
+    compile fileTree(dir: './libs/', include: '*.jar')
+    
     // dependancies for testing (junit, hamcrest, etc)
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }

@@ -23,6 +23,7 @@ import org.androidannotations.annotations.ViewById;
 
 import android.app.Fragment;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.sage42.androidappaddicts.R;
@@ -35,8 +36,10 @@ import com.sage42.androidappaddicts.app.util.IntentUtils;
 @EFragment(resName = "about_fragment")
 public class AboutFragment extends Fragment
 {
+    private static final String TAG = AboutFragment.class.getSimpleName();
+
     @ViewById(R.id.about_version)
-    protected TextView mVersion;
+    protected TextView          mVersion;
 
     /**
      * Add data into the display.
@@ -53,7 +56,7 @@ public class AboutFragment extends Fragment
         catch (final NameNotFoundException e)
         {
             // this should not happen
-
+            Log.w(TAG, e.getMessage(), e);
         }
     }
 
