@@ -6,19 +6,4 @@
     android:paddingLeft="@dimen/std_padding"
     android:paddingRight="@dimen/std_padding" >
 
-    <TextView
-        android:id="@+id/setting_menu_item_header"
-        style="@style/AppTheme.Settings.MenuItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/setting_menu_check_box"
-        android:text="Testing" />
-
-    <CheckBox
-        android:id="@+id/setting_menu_check_box"
-        style="@style/AppTheme.Settings.MenuItemCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
-
 </RelativeLayout>

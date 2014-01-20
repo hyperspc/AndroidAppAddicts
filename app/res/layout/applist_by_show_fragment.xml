@@ -35,7 +35,6 @@
             android:paddingTop="@dimen/applist_show_title_top_padding"
             android:singleLine="true"
             android:text="@string/applist_default_show_title" />
-
         <!-- show Duration -->
 
         <TextView

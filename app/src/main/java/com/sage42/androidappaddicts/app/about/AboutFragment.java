@@ -99,10 +99,9 @@ public class AboutFragment extends Fragment
     /**
      * Click handler for the facebook button.
      */
-    @Click(R.id.about_facebook)
+    @Click(R.id.about_gplus)
     void onClickFacebook()
     {
-        // TODO:change to google+
         IntentUtils.doShowFacebook(this.getActivity(), this.getString(R.string.about_participate_address),
                         "http://" + this.getString(R.string.about_participate_address)); //$NON-NLS-1$
     }

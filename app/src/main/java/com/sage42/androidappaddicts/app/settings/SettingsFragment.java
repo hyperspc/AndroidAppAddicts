@@ -25,10 +25,6 @@ import android.widget.ListView;
 
 import com.sage42.androidappaddicts.R;
 
-/**
- * The "About" page for the app. With lots of clickable links to call, email,
- * etc.
- */
 @OptionsMenu(R.menu.general)
 @EFragment(resName = "settings_fragment")
 public class SettingsFragment extends Fragment
@@ -42,9 +38,7 @@ public class SettingsFragment extends Fragment
     @AfterViews
     void init()
     {
-        this.mList.setAdapter(new SettingsMenuListAdapter(this.getActivity()));
-        this.mList.setOnItemClickListener(new SettingsMenuDrawClickListener());
-
+        // nothing yet
     }
 
     /**

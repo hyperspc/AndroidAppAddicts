@@ -15,15 +15,17 @@ public class MenuData
 {
     public static final ArrayList<MenuItem> MENU_ITEMS;
 
-    public static final int                 FRAGMENT_SHOW           = 0;
-    public static final int                 FRAGMENT_CATEGORY       = 1;
-    public static final int                 FRAGMENT_APP_SUGGESTION = 2;
-    public static final int                 FRAGMENT_HOSTS          = 3;
+    public static final int                 FRAGMENT_HOME           = 0;
+    public static final int                 FRAGMENT_SHOW           = 1;
+    public static final int                 FRAGMENT_CATEGORY       = 2;
+    public static final int                 FRAGMENT_APP_SUGGESTION = 3;
+    public static final int                 FRAGMENT_HOSTS          = 4;
 
     static
     {
         MENU_ITEMS = new ArrayList<MenuItem>();
 
+        MenuData.MENU_ITEMS.add(new MenuItem(R.drawable.ic_latest, R.string.applist_latest, false));
         MenuData.MENU_ITEMS.add(new MenuItem(R.drawable.ic_storage, R.string.applist_by_show_title, false));
         MenuData.MENU_ITEMS.add(new MenuItem(R.drawable.ic_grid, R.string.applist_by_category_title, false));
         MenuData.MENU_ITEMS.add(new MenuItem(R.drawable.ic_rating_good, R.string.suggest_suggest_title, false));
