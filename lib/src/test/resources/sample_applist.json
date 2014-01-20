@@ -1,0 +1,548 @@
+{
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "feed": {
+    "xmlns": "http://www.w3.org/2005/Atom",
+    "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/",
+    "xmlns$gs": "http://schemas.google.com/spreadsheets/2006",
+    "xmlns$batch": "http://schemas.google.com/gdata/batch",
+    "id": {
+      "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values"
+    },
+    "updated": {
+      "$t": "2014-01-16T03:34:29.481Z"
+    },
+    "category": [
+      {
+        "scheme": "http://schemas.google.com/spreadsheets/2006",
+        "term": "http://schemas.google.com/spreadsheets/2006#cell"
+      }
+    ],
+    "title": {
+      "type": "text",
+      "$t": "Android App Addicts Show Picks"
+    },
+    "link": [
+      {
+        "rel": "alternate",
+        "type": "text/html",
+        "href": "https://spreadsheets.google.com/pub?key\u003d0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE"
+      },
+      {
+        "rel": "http://schemas.google.com/g/2005#feed",
+        "type": "application/atom+xml",
+        "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values"
+      },
+      {
+        "rel": "http://schemas.google.com/g/2005#batch",
+        "type": "application/atom+xml",
+        "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/batch"
+      },
+      {
+        "rel": "self",
+        "type": "application/atom+xml",
+        "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values?alt\u003djson"
+      }
+    ],
+    "author": [
+      {
+        "name": {
+          "$t": "doortodoorgeek"
+        },
+        "email": {
+          "$t": "doortodoorgeek@gmail.com"
+        }
+      }
+    ],
+    "openSearch$totalResults": {
+      "$t": "14714"
+    },
+    "openSearch$startIndex": {
+      "$t": "1"
+    },
+    "gs$rowCount": {
+      "$t": "2123"
+    },
+    "gs$colCount": {
+      "$t": "22"
+    },
+    "entry": [
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C1"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "A1"
+        },
+        "content": {
+          "type": "text",
+          "$t": "'163"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C1"
+          }
+        ],
+        "gs$cell": {
+          "row": "1",
+          "col": "1",
+          "$t": "'163"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C2"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "B1"
+        },
+        "content": {
+          "type": "text",
+          "$t": "Caustic 3"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C2"
+          }
+        ],
+        "gs$cell": {
+          "row": "1",
+          "col": "2",
+          "$t": "Caustic 3"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C3"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "C1"
+        },
+        "content": {
+          "type": "text",
+          "$t": "https://play.google.com/store/apps/details?id\u003dcom.singlecellsoftware.caustic"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C3"
+          }
+        ],
+        "gs$cell": {
+          "row": "1",
+          "col": "3",
+          "$t": "https://play.google.com/store/apps/details?id\u003dcom.singlecellsoftware.caustic"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C4"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "D1"
+        },
+        "content": {
+          "type": "text",
+          "$t": "Email/Josh"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C4"
+          }
+        ],
+        "gs$cell": {
+          "row": "1",
+          "col": "4",
+          "$t": "Email/Josh"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C5"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "E1"
+        },
+        "content": {
+          "type": "text",
+          "$t": "Free"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C5"
+          }
+        ],
+        "gs$cell": {
+          "row": "1",
+          "col": "5",
+          "$t": "Free"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C6"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "F1"
+        },
+        "content": {
+          "type": "text",
+          "$t": "https://lh4.ggpht.com/HXTquR1zI3hs6O6oX2TZx3rv0NRkaESKSa4Px7d2GqAxKmI18XOdgxoj-RPhfnUx7w\u003dw300-rw"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C6"
+          }
+        ],
+        "gs$cell": {
+          "row": "1",
+          "col": "6",
+          "$t": "https://lh4.ggpht.com/HXTquR1zI3hs6O6oX2TZx3rv0NRkaESKSa4Px7d2GqAxKmI18XOdgxoj-RPhfnUx7w\u003dw300-rw"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C7"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "G1"
+        },
+        "content": {
+          "type": "text",
+          "$t": "up"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R1C7"
+          }
+        ],
+        "gs$cell": {
+          "row": "1",
+          "col": "7",
+          "$t": "up"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C1"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "A2"
+        },
+        "content": {
+          "type": "text",
+          "$t": "'163"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C1"
+          }
+        ],
+        "gs$cell": {
+          "row": "2",
+          "col": "1",
+          "$t": "'163"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C2"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "B2"
+        },
+        "content": {
+          "type": "text",
+          "$t": "Gun Club 3: Virtual Weapon Sim"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C2"
+          }
+        ],
+        "gs$cell": {
+          "row": "2",
+          "col": "2",
+          "$t": "Gun Club 3: Virtual Weapon Sim"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C3"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "C2"
+        },
+        "content": {
+          "type": "text",
+          "$t": "https://play.google.com/store/apps/details?id\u003dcom.nextgenreality.gunclub3"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C3"
+          }
+        ],
+        "gs$cell": {
+          "row": "2",
+          "col": "3",
+          "$t": "https://play.google.com/store/apps/details?id\u003dcom.nextgenreality.gunclub3"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C4"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "D2"
+        },
+        "content": {
+          "type": "text",
+          "$t": "Email/Jesse"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C4"
+          }
+        ],
+        "gs$cell": {
+          "row": "2",
+          "col": "4",
+          "$t": "Email/Jesse"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C5"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "E2"
+        },
+        "content": {
+          "type": "text",
+          "$t": "Free"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C5"
+          }
+        ],
+        "gs$cell": {
+          "row": "2",
+          "col": "5",
+          "$t": "Free"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C6"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "F2"
+        },
+        "content": {
+          "type": "text",
+          "$t": "https://lh6.ggpht.com/HFMvx6io0hu4ctDJBzhOw8aMOkv7hTR_fs6_kh7usJiH6a1q73LZj7ej7HOT0B5Akr0\u003dw300-rw"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C6"
+          }
+        ],
+        "gs$cell": {
+          "row": "2",
+          "col": "6",
+          "$t": "https://lh6.ggpht.com/HFMvx6io0hu4ctDJBzhOw8aMOkv7hTR_fs6_kh7usJiH6a1q73LZj7ej7HOT0B5Akr0\u003dw300-rw"
+        }
+      },
+      {
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C7"
+        },
+        "updated": {
+          "$t": "2014-01-16T03:34:29.481Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#cell"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "G2"
+        },
+        "content": {
+          "type": "text",
+          "$t": "up"
+        },
+        "link": [
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/cells/0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE/od6/public/values/R2C7"
+          }
+        ],
+        "gs$cell": {
+          "row": "2",
+          "col": "7",
+          "$t": "up"
+        }
+      }
+    ]
+  }
+}
