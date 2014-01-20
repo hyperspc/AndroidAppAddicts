@@ -3,24 +3,23 @@
     xmlns:sage42="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/content_padding">
+    android:padding="@dimen/content_padding" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/card_shadow">
+        android:background="@drawable/card_shadow" >
 
         <com.sage42.android.view.fonts.MyTextView
-            sage42:fontFamily="Roboto-Light"
             android:id="@+id/app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_launcher"
             android:drawablePadding="@dimen/std_padding"
+            android:gravity="center_vertical"
             android:text="What if the name of the app is very long"
             android:textSize="18sp"
-            android:gravity="center_vertical" />
-
+            sage42:fontFamily="Roboto-Light" />
     </RelativeLayout>
 
 </RelativeLayout>

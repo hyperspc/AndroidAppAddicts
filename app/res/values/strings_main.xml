@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <string name="main_home_title">Android App Addicts</string>    
+
+    <string name="main_home_title">Android App Addicts</string>
+
 </resources>

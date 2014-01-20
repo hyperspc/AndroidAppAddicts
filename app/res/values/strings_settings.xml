@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <string name="settings_settings_title">Settings</string>
-    
     <string name="settings_1">settings 1</string>
     <string name="settings_2">settings 2</string>
     <string name="settings_3">settings 3</string>
