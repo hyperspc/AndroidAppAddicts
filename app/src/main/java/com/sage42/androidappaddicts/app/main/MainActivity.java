@@ -31,11 +31,11 @@ import android.widget.Toast;
 
 import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.about.*;
-import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
+import com.sage42.androidappaddicts.app.applist.*;
 import com.sage42.androidappaddicts.app.search.*;
 import com.sage42.androidappaddicts.app.settings.*;
-import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
-import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
+import com.sage42.androidappaddicts.app.suggestion.*;
+import com.sage42.androidappaddicts.app.hosts.*;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
 
@@ -89,8 +89,12 @@ public class MainActivity extends Activity
     {
         switch (position)
         {
-            case MenuData.FRAGMENT_SHOW:
+            case MenuData.FRAGMENT_HOME:
                 this.showFragment(new HomeFragment_(), false);
+                break;
+
+            case MenuData.FRAGMENT_SHOW:
+                this.showFragment(new ByShowFragment_(), false);
                 break;
 
             case MenuData.FRAGMENT_CATEGORY:
