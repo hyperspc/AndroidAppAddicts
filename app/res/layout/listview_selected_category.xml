@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="@drawable/card_shadow" >
+
+    <ImageView
+        android:id="@+id/category_list_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/abs__ab_bottom_solid_inverse_holo" />
+
+    <TextView
+        android:id="@+id/category_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/category_list_image"
+        android:layout_marginLeft="@dimen/std_padding"
+        android:layout_toRightOf="@+id/category_list_image"
+        android:text="Title" />
+
+    <TextView
+        android:id="@+id/category_list_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/category_list_title"
+        android:textColor="@color/abs__bright_foreground_disabled_holo_light"
+        android:layout_below="@+id/category_list_title"
+        android:text="Description" />
+
+    <RatingBar
+        android:id="@+id/category_rating_star"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/category_list_desc"
+        android:layout_below="@+id/category_list_desc"
+        android:isIndicator="false"
+        android:numStars="5" />
+
+    <TextView
+        android:id="@+id/category_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/category_rating_star"
+        android:text="FREE"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="12sp" />
+
+</RelativeLayout>

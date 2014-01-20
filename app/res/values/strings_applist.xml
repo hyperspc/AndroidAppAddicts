@@ -19,4 +19,20 @@
     <string name="applist_default_show_add_date">09 Dec 13</string>
     <string name="applist_default_loading">Loading</string>
 
+    
+     <!-- List of Category -->
+    <string-array name="applist_by_category_array">
+        <item>Games</item>
+        <item>Books</item>
+        <item>Business</item>
+        <item>Comics</item>
+        <item>Communication</item>
+        <item>Education</item>
+        <item>Entertainment</item>
+        <item>Finance</item>
+        <item>Health &#038; Fitness</item>
+        <item>NO title</item>
+        <item>NO title</item>
+   
+    </string-array>
 </resources>

@@ -52,7 +52,7 @@ public class ByShowSelectedFragment extends Fragment
         final View header = this.getActivity().getLayoutInflater()
                         .inflate(R.layout.applist_by_show_selected_list_header, null);
 
-        this.mListView.addHeaderView(header);
+        this.mListView.addHeaderView(header, null, false);
         final List<HashMap<String, String>> data = this.getData();
         final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data, R.layout.listview_grid_item,
                         listviewItemCollectionDesc, listviewItemCollection);

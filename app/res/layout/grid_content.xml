@@ -18,8 +18,8 @@
         style="@style/AppTheme.Host.Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/std_padding"
         android:layout_below="@+id/grid_item_image"
+        android:layout_marginTop="@dimen/std_padding"
         android:ellipsize="end"
         android:singleLine="true"
         android:text="haha" />
@@ -29,9 +29,7 @@
         android:id="@+id/grid_item_menu"
         android:layout_width="36dp"
         android:layout_height="72dp"
-
         android:layout_alignBottom="@+id/promo_item_desc"
-
         android:layout_alignParentRight="true"
         android:contentDescription="@string/gridview_popup_hints"
         android:paddingBottom="6dp"
@@ -47,12 +45,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/grid_item_title"
-        android:paddingBottom="@dimen/std_hlf_padding"
         android:ellipsize="end"
+        android:paddingBottom="@dimen/std_hlf_padding"
         android:singleLine="true"
         android:text="haha"
         android:textColor="@color/abs__bright_foreground_disabled_holo_light" />
-
-
 
 </com.sage42.androidappaddicts.app.hosts.CustomGridContentView>

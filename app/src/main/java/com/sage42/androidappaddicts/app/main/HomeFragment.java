@@ -24,7 +24,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
+import com.sage42.androidappaddicts.app.applist.*;
 import com.sage42.androidappaddicts.app.main.MainActivity;
 
 /**
@@ -67,7 +67,7 @@ public class HomeFragment extends Fragment
             }
 
         });
-        this.mListView.addHeaderView(header);
+        this.mListView.addHeaderView(header, null, false);
         final List<HashMap<String, String>> data = this.getData();
         final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data, R.layout.listview_grid_item,
                         listviewItemCollectionDesc, listviewItemCollection);
