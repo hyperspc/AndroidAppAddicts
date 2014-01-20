@@ -17,6 +17,7 @@
 
         <include layout="@layout/applist_by_show_listview_item" />
 
+
         <include layout="@layout/applist_by_show_listview_item" />
 
         <include layout="@layout/applist_by_show_listview_item" />

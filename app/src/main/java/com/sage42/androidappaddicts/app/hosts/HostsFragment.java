@@ -29,10 +29,10 @@ import com.sage42.androidappaddicts.R;
  * Hosts fragment.
  */
 @OptionsMenu(R.menu.general)
-@EFragment(R.layout.host_fragment)
+@EFragment(R.layout.hosts_fragment)
 public class HostsFragment extends Fragment
 {
-    @ViewById(R.id.host_grid)
+    @ViewById(R.id.hosts_grid)
     protected GridView mGridView;
 
     /**
@@ -55,7 +55,7 @@ public class HostsFragment extends Fragment
         this.mGridView.setAdapter(adapter);
     }
 
-    @ItemClick(R.id.host_grid)
+    @ItemClick(R.id.hosts_grid)
     void onClickShowGooglePlusPage()
     {
         Toast.makeText(this.getActivity(), "not yet implemented", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
