@@ -11,6 +11,7 @@ package com.sage42.androidappaddicts.app.main;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.InstanceState;
+import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.ViewById;
 
 import android.app.Activity;
@@ -30,16 +31,18 @@ import android.widget.Toast;
 
 import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.about.*;
+import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
 import com.sage42.androidappaddicts.app.search.*;
 import com.sage42.androidappaddicts.app.settings.*;
-import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener;
-import com.sage42.androidappaddicts.app.menu.MenuDrawClickListener.IMenuDrawCallbacks;
+import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
+import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
+import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
 
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 @EActivity(R.layout.main_activity)
-public class MainActivity extends Activity implements IMenuDrawCallbacks
+public class MainActivity extends Activity
 {
     @ViewById(R.id.main_drawer_layout)
     protected DrawerLayout        mDrawerLayout;
@@ -69,7 +72,6 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
 
         // setup the menu list
         this.mMenuDrawerList.setAdapter(new MenuListAdapter(this));
-        this.mMenuDrawerList.setOnItemClickListener(new MenuDrawClickListener(this));
 
         // show default content (events)
         if (!this.mNotFirstRun)
@@ -80,6 +82,33 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
 
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
         this.mDrawerToggle.syncState();
+    }
+
+    @ItemClick(R.id.main_menu_layout)
+    public void onDrawerItemClick(final int position)
+    {
+        switch (position)
+        {
+            case MenuData.FRAGMENT_SHOW:
+                this.showFragment(new HomeFragment_(), false);
+                break;
+
+            case MenuData.FRAGMENT_CATEGORY:
+                this.showFragment(new ByCategoryFragment_(), false);
+                break;
+
+            case MenuData.FRAGMENT_APP_SUGGESTION:
+                this.showFragment(new SuggestionFragment_(), false);
+                break;
+
+            case MenuData.FRAGMENT_HOSTS:
+                this.showFragment(new HostsFragment_(), false);
+                break;
+
+            default:
+                // do nothing
+                break;
+        }
     }
 
     @Override
@@ -157,7 +186,6 @@ public class MainActivity extends Activity implements IMenuDrawCallbacks
         return false;
     }
 
-    @Override
     public void showFragment(final Fragment fragment, final boolean addToBackstack)
     {
         final FragmentManager fragmentManager = this.getFragmentManager();

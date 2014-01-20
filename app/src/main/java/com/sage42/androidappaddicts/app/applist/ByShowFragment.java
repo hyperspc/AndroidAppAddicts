@@ -9,12 +9,12 @@
 package com.sage42.androidappaddicts.app.applist;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsMenu;
-
 import android.app.Fragment;
-
 import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.main.MainActivity;
 
 /**
  * Fragment to display the list of shows.
@@ -24,24 +24,22 @@ import com.sage42.androidappaddicts.R;
 @EFragment(R.layout.applist_by_show_fragment)
 public class ByShowFragment extends Fragment
 {
+
+    @Click(R.id.by_show_item)
+    public void byShowClick()
+    {
+        final ByShowSelectedFragment_ detailsPage = new ByShowSelectedFragment_();
+        ((MainActivity) this.getActivity()).showFragment(detailsPage, true);
+    }
+
     /**
      * Wire the data to the UI
      */
     @AfterViews
     void init()
     {
-        // nothing yet
-    }
-
-    /**
-     * Set the screen title.
-     */
-    @Override
-    public void onStart()
-    {
-        super.onStart();
-
         this.getActivity().getActionBar().setTitle(R.string.applist_by_show_title);
+
     }
 
 }

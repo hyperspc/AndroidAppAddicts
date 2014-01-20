@@ -14,8 +14,14 @@
     </style>
 
     <style name="AppTheme.Settings.MenuItemCheck">
-        <item name="android:minHeight">48dp</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppTheme.Settings.ItemLayout">
+        <item name="android:paddingBottom">@dimen/std_padding</item>
+        <item name="android:paddingTop">@dimen/std_padding</item>
+        <item name="android:paddingRight">@dimen/std_hlf_padding</item>
+        <item name="android:paddingLeft">@dimen/std_hlf_padding</item>
     </style>
 
 </resources>
