@@ -4,5 +4,5 @@
     android:layout_height="64dp"
     android:gravity="center_vertical"
     android:paddingLeft="@dimen/content_padding"
-    android:text="Title"
+    android:text="@string/applist_default_by_category_list_item"
     android:textSize="@dimen/listview_text_size" />

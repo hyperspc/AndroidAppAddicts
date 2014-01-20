@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Defaults -->
+    <string name="hosts_default_host_name">Steve Cherubino</string>
+    <string name="hosts_default_host_sub_title">VoiceoversAndMore.com</string>
+    
+    <!-- Normal Stuff -->
     <string name="hosts_hosts_title">The Hosts</string>
     <string name="gridview_popup_hints">popup</string>
 
