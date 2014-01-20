@@ -4,149 +4,150 @@
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true" >
 
-        <RelativeLayout
-            android:id="@+id/top_show_layout"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:padding="@dimen/std_padding" >
+    <RelativeLayout
+        android:id="@+id/top_show_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="@dimen/std_padding" >
 
-            <TextView
-                android:id="@+id/fragment_show_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/std_padding"
-                android:text="@string/applist_latest_show_text"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/shows_all"
-                style="@style/AppTheme.AppList.TinyButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:gravity="center_vertical"
-                android:text="@string/applist_latest_show_tiny_button" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/header_box_layout"
+        <TextView
+            android:id="@+id/fragment_show_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/top_show_layout"
-            android:layout_marginBottom="@dimen/std_padding"
-            android:background="@android:color/holo_green_light" >
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/std_padding"
+            android:text="@string/applist_latest_show_text"
+            android:textSize="18sp" />
 
-            <!-- show Number -->
-
-            <com.sage42.android.view.fonts.MyTextView
-                android:id="@+id/show_number"
-                style="@style/AppTheme.AppList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/std_padding"
-                android:layout_marginRight="@dimen/std_padding"
-                android:text="@string/applist_default_show_number"
-                android:textColor="@color/white"
-                android:textSize="50sp" />
-
-            <!-- show Title -->
-
-            <com.sage42.android.view.fonts.MyTextView
-                android:id="@+id/show_title"
-                style="@style/AppTheme.AppList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/show_number"
-                android:layout_toRightOf="@+id/show_number"
-                android:ellipsize="end"
-                android:paddingTop="@dimen/std_hlf_padding"
-                android:singleLine="true"
-                android:text="@string/applist_default_show_title"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
-
-            <!-- show Duration -->
-
-            <TextView
-                android:id="@+id/show_duration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/show_title"
-                android:layout_toRightOf="@+id/show_number"
-                android:text="@string/applist_show_duration"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <!-- show Length -->
-
-            <com.sage42.android.view.fonts.MyTextView
-                android:id="@+id/show_duration_length"
-                style="@style/AppTheme.AppList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/author"
-                android:layout_below="@+id/show_title"
-                android:layout_toRightOf="@+id/show_duration"
-                android:text="@string/applist_default_show_duration_length"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <!-- show Added -->
-
-            <TextView
-                android:id="@+id/show_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/show_duration_length"
-                android:layout_toRightOf="@+id/show_number"
-                android:text="@string/applist_show_add"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <!-- show Date Added -->
-
-            <com.sage42.android.view.fonts.MyTextView
-                android:id="@+id/show_add_date"
-                style="@style/AppTheme.AppList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/author"
-                android:layout_below="@+id/show_duration_length"
-                android:text="@string/applist_default_show_add_date"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/author_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/show_add_date"
-                android:layout_toRightOf="@+id/show_number"
-                android:text="Hosted by: "
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/show_add_date"
-                android:layout_toRightOf="@+id/author_title"
-                android:text="Author 1"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/author2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/author"
-                android:layout_below="@+id/author"
-                android:layout_marginBottom="@dimen/std_padding"
-                 android:paddingBottom="@dimen/std_hlf_padding"
-                android:text="Author 2"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/shows_all"
+            style="@style/AppTheme.AppList.TinyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="@string/applist_latest_show_tiny_button" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/header_box_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_show_layout"
+        android:layout_marginBottom="@dimen/std_padding"
+        android:background="@android:color/holo_green_light" >
+
+        <!-- show Number -->
+
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_number"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/std_padding"
+            android:layout_marginRight="@dimen/std_padding"
+            android:text="@string/applist_default_show_number"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <!-- show Title -->
+
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_title"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/show_number"
+            android:layout_toRightOf="@+id/show_number"
+            android:ellipsize="end"
+            android:paddingTop="@dimen/std_hlf_padding"
+            android:singleLine="true"
+            android:text="@string/applist_default_show_title"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <!-- show Duration -->
+
+        <TextView
+            android:id="@+id/show_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_number"
+            android:text="@string/applist_show_duration"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- show Length -->
+
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_duration_length"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/author"
+            android:layout_below="@+id/show_title"
+            android:layout_toRightOf="@+id/show_duration"
+            android:text="@string/applist_default_show_duration_length"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- show Added -->
+
+        <TextView
+            android:id="@+id/show_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_duration_length"
+            android:layout_toRightOf="@+id/show_number"
+            android:text="@string/applist_show_add"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- show Date Added -->
+
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/show_add_date"
+            style="@style/AppTheme.AppList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/author"
+            android:layout_below="@+id/show_duration_length"
+            android:text="@string/applist_default_show_add_date"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/author_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_add_date"
+            android:layout_toRightOf="@+id/show_number"
+            android:text="Hosted by: "
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_add_date"
+            android:layout_toRightOf="@+id/author_title"
+            android:text="Author 1"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/author2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/author"
+            android:layout_below="@+id/author"
+            android:layout_marginBottom="@dimen/std_padding"
+            android:paddingBottom="@dimen/std_hlf_padding"
+            android:text="Author 2"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

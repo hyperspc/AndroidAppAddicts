@@ -9,10 +9,10 @@
         <item name="android:textSize">12sp</item>
         <item name="android:padding">@dimen/std_hlf_padding</item>
         <item name="android:background">@android:color/holo_green_light</item>
-    
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textColor">@color/white</item>
-   </style>
+    </style>
+
     <style name="AppTheme.AppList.ShowNumber">
         <item name="android:textColor">@color/green</item>
         <item name="android:textSize">50sp</item>
@@ -31,7 +31,6 @@
     <style name="AppTheme.AppList.DetailsValue">
         <item name="android:textColor">@color/general_text_light</item>
         <item name="android:textSize">14sp</item>
-
     </style>
 
 </resources>

@@ -138,7 +138,6 @@
             android:paddingBottom="@dimen/std_padding"
             android:text="Mentioned Apps"
             android:textSize="14sp" />
-
     </RelativeLayout>
 
 </ScrollView>
