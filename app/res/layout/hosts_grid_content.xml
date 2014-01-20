@@ -22,7 +22,7 @@
         android:layout_marginTop="@dimen/std_padding"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="haha" />
+        android:text="@string/hosts_default_host_name" />
 
     <!-- this three dots view had to be hardcode to fix the image not too big but the clickable field had to -->
 
@@ -49,7 +49,7 @@
         android:ellipsize="end"
         android:paddingBottom="@dimen/std_hlf_padding"
         android:singleLine="true"
-        android:text="haha"
+        android:text="@string/hosts_default_host_sub_title"
         android:textColor="@color/bright_foreground_disabled_holo_light" />
 
 </com.sage42.androidappaddicts.app.hosts.CustomGridContentView>

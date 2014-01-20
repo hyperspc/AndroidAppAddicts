@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/show_add_date"
             android:layout_toRightOf="@+id/show_number"
-            android:text="Hosted by: "
+            android:text="@string/applist_hosted_by"
             android:textColor="@color/white"
             android:textSize="14sp" />
 
@@ -133,21 +133,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/show_add_date"
             android:layout_toRightOf="@+id/author_title"
-            android:text="Author 1"
+            android:text="@string/applist_default_host"
             android:textColor="@color/white"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/author2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/author"
-            android:layout_below="@+id/author"
-            android:layout_marginBottom="@dimen/std_padding"
-            android:paddingBottom="@dimen/std_hlf_padding"
-            android:text="Author 2"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
     </RelativeLayout>
 
 </RelativeLayout>

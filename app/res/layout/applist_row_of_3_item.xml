@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/grid_item_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_weight="1"
+    android:background="@drawable/card_shadow" >
+
+    <com.sage42.androidappaddicts.app.hosts.CustomGridImageView
+        android:id="@+id/image_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/list_activated_holo" />
+
+    <TextView
+        android:id="@+id/title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_1"
+        android:ellipsize="end"
+        android:paddingTop="@dimen/std_padding"
+        android:singleLine="true"
+        android:text="@string/applist_default_app_name"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/desc_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_1"
+        android:ellipsize="end"
+        android:paddingBottom="@dimen/std_padding"
+        android:singleLine="true"
+        android:text="@string/applist_default_app_author"
+        android:textSize="12sp" />
+
+    <RatingBar
+        android:id="@+id/rating_star_1"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc_1"
+        android:layout_toLeftOf="@+id/type_1"
+        android:isIndicator="false"
+        android:numStars="5" />
+
+    <TextView
+        android:id="@+id/type_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/image_1"
+        android:layout_below="@+id/desc_1"
+        android:text="@string/applist_default_app_price"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="12sp" />
+
+</RelativeLayout>

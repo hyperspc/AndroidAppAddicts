@@ -55,12 +55,10 @@ public class HomeFragment extends Fragment
 
         this.getActivity().getActionBar().setTitle(R.string.main_home_title);
         final String[] listviewItemCollectionDesc = new String[]
-        { "image_1", "title_1", "desc_1", "type_1", "image_2", "title_2", "desc_2", "type_2", "image_3", "title_3", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$
-                        "desc_3", "type_3" }; //$NON-NLS-1$ //$NON-NLS-2$
+        { "image_1", "title_1", "desc_1", "type_1" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
         final int[] listviewItemCollection = new int[]
-        { R.id.image_1, R.id.title_1, R.id.desc_1, R.id.type_1, R.id.image_2, R.id.title_2, R.id.desc_2, R.id.type_2,
-                        R.id.image_3, R.id.title_3, R.id.desc_3, R.id.type_3 };
+        { R.id.image_1, R.id.title_1, R.id.desc_1, R.id.type_1 };
 
         final View header = this.getActivity().getLayoutInflater().inflate(R.layout.applist_show_listview_header, null);
         final TextView showAll = (TextView) header.findViewById(R.id.shows_all);
