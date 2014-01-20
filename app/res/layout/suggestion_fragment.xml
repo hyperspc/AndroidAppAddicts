@@ -8,15 +8,23 @@
     tools:context=".app.main.MainActivity" >
 
     <EditText
+        android:id="@+id/suggestor_app_name"
+        style="@style/AppTheme.Suggestion.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/suggestor_app_name_hints"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
         android:id="@+id/suggestor_name"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/suggestor_name_hints"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
+        android:inputType="phone" />
 
     <EditText
         android:id="@+id/suggestor_email"
@@ -27,14 +35,6 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/suggestor_phone"
-        style="@style/AppTheme.Suggestion.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/suggestor_phone_hints"
-        android:inputType="phone" />
-
-    <EditText
         android:id="@+id/suggestor_comment"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
@@ -42,6 +42,6 @@
         android:gravity="top"
         android:hint="@string/suggestor_comments_hints"
         android:inputType="textMultiLine"
-        android:minHeight="128dp" />
+        android:minHeight="96dp" />
 
 </LinearLayout>
