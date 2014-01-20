@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
 
-        <provider
+<!--       <provider
             android:name="com.sage42.androidappaddicts.app.search.SearchableContentProvider_"
             android:authorities="com.sage42.androidappaddicts.app.search.SearchableContentProvider_"
-            android:exported="false" />
+            android:exported="false" />-->
     </application>
 
 </manifest>
