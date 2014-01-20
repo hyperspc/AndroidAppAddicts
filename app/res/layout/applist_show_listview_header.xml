@@ -5,13 +5,13 @@
     android:layout_centerHorizontal="true" >
 
         <RelativeLayout
-            android:id="@+id/top_layout"
+            android:id="@+id/top_show_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:padding="@dimen/std_padding" >
 
             <TextView
-                android:id="@+id/text1"
+                android:id="@+id/fragment_show_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -20,7 +20,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/button1"
+                android:id="@+id/shows_all"
                 style="@style/AppTheme.AppList.TinyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,10 +30,10 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relativeLayout1"
+            android:id="@+id/header_box_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/top_layout"
+            android:layout_below="@+id/top_show_layout"
             android:layout_marginBottom="@dimen/std_padding"
             android:background="@android:color/holo_green_light" >
 

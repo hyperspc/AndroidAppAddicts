@@ -10,7 +10,7 @@
         android:layout_height="wrap_content" >
 
         <RelativeLayout
-            android:id="@+id/relativeLayout1"
+            android:id="@+id/header_box_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/std_padding" >
@@ -126,14 +126,14 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_below="@+id/relativeLayout1"
+            android:layout_below="@+id/header_box_layout"
             android:background="@color/gray" />
 
         <TextView
             android:id="@+id/grid_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/relativeLayout1"
+            android:layout_below="@+id/header_box_layout"
             android:padding="@dimen/std_padding"
             android:paddingBottom="@dimen/std_padding"
             android:text="Mentioned Apps"

@@ -1,87 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:padding="@dimen/std_padding" >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/std_padding"
-        android:background="@drawable/card_shadow"
-        tools:ignore="UselessParent" >
+        android:orientation="vertical" >
 
-        <!-- show Number -->
+        <include
+            android:id="@+id/by_show_item"
+            layout="@layout/applist_by_show_listview_item" />
 
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_number"
-            style="@style/AppTheme.AppList.ShowNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/std_padding"
-            android:text="@string/applist_default_show_number" />
+        <include layout="@layout/applist_by_show_listview_item" />
 
-        <!-- show Title -->
+        <include layout="@layout/applist_by_show_listview_item" />
 
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_title"
-            style="@style/AppTheme.AppList.ShowTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/show_number"
-            android:ellipsize="end"
-            android:paddingTop="@dimen/applist_show_title_top_padding"
-            android:singleLine="true"
-            android:text="@string/applist_default_show_title" />
+        <include layout="@layout/applist_by_show_listview_item" />
 
-        <!-- show Duration -->
+        <include layout="@layout/applist_by_show_listview_item" />
 
-        <TextView
-            android:id="@+id/show_duration"
-            style="@style/AppTheme.AppList.DetailsLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_number"
-            android:text="@string/applist_show_duration" />
+    </LinearLayout>
 
-        <!-- show Length -->
-
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_duration_length"
-            style="@style/AppTheme.AppList.DetailsValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_duration"
-            android:paddingLeft="@dimen/applist_space_between_label_value"
-            android:text="@string/applist_default_show_duration_length" />
-
-        <!-- show Added -->
-
-        <TextView
-            android:id="@+id/show_add"
-            style="@style/AppTheme.AppList.DetailsLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_number"
-            android:paddingLeft="@dimen/applist_show_added_left_padding"
-            android:text="@string/applist_show_add" />
-
-        <!-- show Date Added -->
-
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_add_date"
-            style="@style/AppTheme.AppList.DetailsValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_add"
-            android:paddingLeft="@dimen/applist_space_between_label_value"
-            android:text="@string/applist_default_show_add_date" />
-    </RelativeLayout>
-
-</RelativeLayout>
+</ScrollView>
