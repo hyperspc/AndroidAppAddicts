@@ -7,7 +7,5 @@
     <dimen name="std_padding">8dp</dimen>
     <dimen name="tiny_button_height">32dp</dimen>
     <dimen name="content_padding">16dp</dimen>
-    <!-- irregular use -->
-    <dimen name="padding12">12dp</dimen>
 
 </resources>

@@ -29,13 +29,15 @@
         android:id="@+id/grid_item_menu"
         android:layout_width="36dp"
         android:layout_height="72dp"
-        android:layout_alignParentBottom="true"
+
+        android:layout_alignBottom="@+id/promo_item_desc"
+
         android:layout_alignParentRight="true"
         android:contentDescription="@string/gridview_popup_hints"
         android:paddingBottom="6dp"
         android:paddingLeft="12dp"
         android:scaleType="fitEnd"
-        android:src="@drawable/ic_action_overflow_light"
+        android:src="@drawable/ic_action_overflow"
         android:visibility="gone" />
 
     <TextView
@@ -50,5 +52,7 @@
         android:singleLine="true"
         android:text="haha"
         android:textColor="@color/abs__bright_foreground_disabled_holo_light" />
+
+
 
 </com.sage42.androidappaddicts.app.hosts.CustomGridContentView>

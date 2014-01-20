@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <string name="suggest_suggest_title">Suggest an App</string>
-    
     <string name="suggestor_name_hints">Your Name</string>
     <string name="suggestor_email_hints">Your Email</string>
     <string name="suggestor_phone_hints">Your Phone</string>

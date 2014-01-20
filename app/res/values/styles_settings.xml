@@ -16,6 +16,6 @@
     <style name="AppTheme.Settings.MenuItemCheck">
         <item name="android:minHeight">48dp</item>
         <item name="android:gravity">center</item>
-
     </style>
+
 </resources>
