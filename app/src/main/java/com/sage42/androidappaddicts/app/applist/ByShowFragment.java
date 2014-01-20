@@ -28,7 +28,7 @@ import com.sage42.androidappaddicts.R;
  */
 
 @OptionsMenu(R.menu.general)
-@EFragment(R.layout.applist_by_show_fragment)
+@EFragment(R.layout.home_fragment)
 public class ByShowFragment extends Fragment
 {
 
