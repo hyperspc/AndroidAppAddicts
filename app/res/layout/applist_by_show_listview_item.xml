@@ -15,7 +15,7 @@
         <!-- show Number -->
 
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_number"
+            android:id="@+id/applist_by_show_number"
             style="@style/AppTheme.AppList.ShowNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,11 +25,11 @@
         <!-- show Title -->
 
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_title"
+            android:id="@+id/applist_by_show_title"
             style="@style/AppTheme.AppList.ShowTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/show_number"
+            android:layout_toRightOf="@+id/applist_by_show_number"
             android:ellipsize="end"
             android:paddingTop="@dimen/applist_show_title_top_padding"
             android:singleLine="true"
@@ -38,47 +38,47 @@
         <!-- show Duration -->
 
         <TextView
-            android:id="@+id/show_duration"
+            android:id="@+id/applist_by_show_duration"
             style="@style/AppTheme.AppList.DetailsLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_number"
+            android:layout_below="@+id/applist_by_show_title"
+            android:layout_toRightOf="@+id/applist_by_show_number"
             android:text="@string/applist_show_duration" />
 
         <!-- show Length -->
 
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_duration_length"
+            android:id="@+id/applist_by_show_duration_length"
             style="@style/AppTheme.AppList.DetailsValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_duration"
+            android:layout_below="@+id/applist_by_show_title"
+            android:layout_toRightOf="@+id/applist_by_show_duration"
             android:paddingLeft="@dimen/applist_space_between_label_value"
             android:text="@string/applist_default_show_duration_length" />
 
         <!-- show Added -->
 
         <TextView
-            android:id="@+id/show_add"
+            android:id="@+id/applist_by_show_add"
             style="@style/AppTheme.AppList.DetailsLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_number"
+            android:layout_below="@+id/applist_by_show_title"
+            android:layout_toRightOf="@+id/applist_by_show_number"
             android:paddingLeft="@dimen/applist_show_added_left_padding"
             android:text="@string/applist_show_add" />
 
         <!-- show Date Added -->
 
         <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/show_add_date"
+            android:id="@+id/applist_by_show_add_date"
             style="@style/AppTheme.AppList.DetailsValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/show_title"
-            android:layout_toRightOf="@+id/show_add"
+            android:layout_below="@+id/applist_by_show_title"
+            android:layout_toRightOf="@+id/applist_by_show_add"
             android:paddingLeft="@dimen/applist_space_between_label_value"
             android:text="@string/applist_default_show_add_date" />
     </RelativeLayout>

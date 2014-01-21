@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sage42.androidappaddicts.app.hosts.CustomGridContentView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/customGridContentView1"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_weight="1"
     android:background="@drawable/card_shadow" >
 
     <com.sage42.androidappaddicts.app.hosts.CustomGridLongImageView
@@ -18,11 +20,22 @@
         style="@style/AppTheme.Host.Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="@dimen/std_hlf_padding"
         android:layout_below="@+id/grid_item_image"
-        android:layout_marginTop="@dimen/std_padding"
         android:ellipsize="end"
         android:singleLine="true"
         android:text="@string/hosts_default_host_name" />
+
+    <TextView
+        android:id="@+id/grid_item_desc"
+        style="@style/AppTheme.Host.Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grid_item_title"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/hosts_default_host_sub_title"
+        android:textColor="@color/bright_foreground_disabled_holo_light" />
 
     <!-- this three dots view had to be hardcode to fix the image not too big but the clickable field had to -->
 
@@ -39,17 +52,4 @@
         android:src="@drawable/ic_action_overflow"
         android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/grid_item_desc"
-        style="@style/AppTheme.Host.Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/grid_item_title"
-        android:ellipsize="end"
-        android:paddingBottom="@dimen/std_hlf_padding"
-        android:singleLine="true"
-        android:text="@string/hosts_default_host_sub_title"
-        android:textColor="@color/bright_foreground_disabled_holo_light" />
-
-</com.sage42.androidappaddicts.app.hosts.CustomGridContentView>
+</RelativeLayout>

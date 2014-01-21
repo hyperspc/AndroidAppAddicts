@@ -6,10 +6,10 @@
     android:baselineAligned="false"
     android:padding="4dp" >
 
-    <include layout="@layout/applist_row_of_3_item" />
+    <include layout="@layout/applist_row_of_item" />
 
-    <include layout="@layout/applist_row_of_3_item" />
+    <include layout="@layout/applist_row_of_item" />
 
-    <include layout="@layout/applist_row_of_3_item" />
+    <include layout="@layout/applist_row_of_item" />
 
 </LinearLayout>

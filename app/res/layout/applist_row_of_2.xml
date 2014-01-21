@@ -6,8 +6,8 @@
     android:baselineAligned="false"
     android:padding="4dp" >
 
-    <include layout="@layout/applist_row_of_2_item" />
+    <include layout="@layout/applist_row_of_item" />
 
-    <include layout="@layout/applist_row_of_2_item" />
+    <include layout="@layout/applist_row_of_item" />
 
 </LinearLayout>

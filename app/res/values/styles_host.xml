@@ -9,4 +9,10 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="AppTheme.Host.Item">
+        <item name="android:paddingTop">@dimen/std_padding</item>
+        <item name="android:paddingLeft">@dimen/std_hlf_padding</item>
+        <item name="android:paddingRight">@dimen/std_hlf_padding</item>
+    </style>
+
 </resources>
