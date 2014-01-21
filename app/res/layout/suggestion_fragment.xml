@@ -7,16 +7,14 @@
     android:padding="@dimen/content_padding"
     tools:context=".app.main.MainActivity" >
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/suggestor_app_name"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
+        android:completionThreshold="2"
         android:layout_height="wrap_content"
         android:hint="@string/suggestor_app_name_hints"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/suggestor_name"

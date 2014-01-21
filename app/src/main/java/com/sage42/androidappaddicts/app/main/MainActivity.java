@@ -1,17 +1,10 @@
 /**
- *  Copyright (C) 2013-2014 Sage 42 Apps Sdn Bhd
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *  http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Copyright (C) 2013-2014 Sage 42 Apps Sdn Bhd Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions and limitations under the
+ * License.
  */
 package com.sage42.androidappaddicts.app.main;
 
@@ -19,6 +12,8 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.ItemClick;
+import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.OptionsMenuItem;
 import org.androidannotations.annotations.ViewById;
 
 import android.app.Activity;
@@ -27,6 +22,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
+import android.database.MatrixCursor;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -34,12 +30,12 @@ import android.view.MenuItem;
 import android.view.MenuItem.OnActionExpandListener;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.about.*;
 import com.sage42.androidappaddicts.app.applist.*;
-import com.sage42.androidappaddicts.app.search.*;
 import com.sage42.androidappaddicts.app.settings.*;
 import com.sage42.androidappaddicts.app.suggestion.*;
 import com.sage42.androidappaddicts.app.hosts.*;
@@ -65,6 +61,8 @@ public class MainActivity extends Activity
     @InstanceState
     protected boolean             mNotFirstRun;
 
+    SimpleCursorAdapter           adapter;
+
     /**
      * Initialize the title, drawer, menu drawer and ActionBar.
      */
@@ -89,6 +87,8 @@ public class MainActivity extends Activity
 
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
         this.mDrawerToggle.syncState();
+
+        this.adapter = this.getData();
     }
 
     @ItemClick(R.id.main_menu_layout)
@@ -125,7 +125,10 @@ public class MainActivity extends Activity
     @Override
     public boolean onCreateOptionsMenu(final Menu menu)
     {
-        this.initSearchView(menu);
+
+        // final MenuInflater inflater = this.getMenuInflater();
+        // inflater.inflate(R.menu.general, menu);
+
         return true;
     }
 
@@ -148,10 +151,6 @@ public class MainActivity extends Activity
                     }
                 }
                 return true;
-
-            case R.id.action_search:
-                this.showFragment(new SearchResultFragment_(), true);
-                break;
 
             case R.id.action_about:
                 this.showFragment(new AboutFragment_(), true);
@@ -236,35 +235,68 @@ public class MainActivity extends Activity
 
     }
 
-    private void initSearchView(final Menu menu)
+    @OptionsMenuItem(R.id.action_search)
+    MenuItem menuSearch;
+
+    @OptionsItem(R.id.action_search)
+    public void initSearchView(final MenuItem item)
     {
+
         final Context context = this;
         final SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
-        this.mSearchViewMenuItem = menu.findItem(R.id.action_search);
-        if (this.mSearchViewMenuItem != null)
+
+        this.mSearchViewMenuItem = item;
+        this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
+        this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+        this.mSearchView.setIconifiedByDefault(true);
+
+        this.mSearchView.setSuggestionsAdapter(this.adapter);
+        this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
         {
-            this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
-            this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
-            this.mSearchView.setIconifiedByDefault(true);
-            this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
+
+            @Override
+            public boolean onMenuItemActionCollapse(final MenuItem item)
             {
+                // Toast.makeText(context, "CLOSING", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
+                MainActivity.this.getAvailableBackStack();
+                return true;
+            }
 
-                @Override
-                public boolean onMenuItemActionCollapse(final MenuItem item)
-                {
-                    Toast.makeText(context, "CLOSING", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
-                    MainActivity.this.getAvailableBackStack();
-                    return true;
-                }
+            @Override
+            public boolean onMenuItemActionExpand(final MenuItem item)
+            {
+                Toast.makeText(context, "SEARCHVIEW START", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
+                return true;
+            }
 
-                @Override
-                public boolean onMenuItemActionExpand(final MenuItem item)
-                {
-                    //  Toast.makeText(context, "SEARCHVIEW START", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
-                    return true;
-                }
+        });
 
-            });
+    }
+
+    @SuppressWarnings("resource")
+    public SimpleCursorAdapter getData()
+    {
+
+        final String[] columnNames =
+        { "_id", "suggestion_applist_title" }; //$NON-NLS-1$//$NON-NLS-2$
+        final MatrixCursor cursor = new MatrixCursor(columnNames);
+
+        final String[] array = this.getResources().getStringArray(R.array.applist_by_category_array); // if strings
+                                                                                                      // are in
+                                                                                                      // resources
+        final String[] temp = new String[2];
+        int id = 0;
+        for (final String item : array)
+        {
+            temp[0] = Integer.toString(id++);
+            temp[1] = item;
+            cursor.addRow(temp);
         }
+        final String[] from =
+        { "suggestion_applist_title" }; //$NON-NLS-1$
+        final int[] to =
+        { R.id.suggestion_applist_title };
+        return new SimpleCursorAdapter(this, R.layout.suggestion_applist_item, cursor, from, to, 1);
+
     }
 }
