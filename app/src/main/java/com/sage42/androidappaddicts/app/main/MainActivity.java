@@ -19,7 +19,6 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.ItemClick;
-import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.ViewById;
 
 import android.app.Activity;
@@ -28,58 +27,44 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
-import android.database.MatrixCursor;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.MenuItem.OnActionExpandListener;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.SimpleCursorAdapter;
-import com.sage42.androidappaddicts.R;
 
-import com.sage42.androidappaddicts.app.about.AboutFragment_;
-import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
-import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
-import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
+import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
-
-import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
-import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 @EActivity(R.layout.main_activity)
 public class MainActivity extends Activity
 {
     @ViewById(R.id.main_drawer_layout)
-    protected DrawerLayout mDrawerLayout;
+    protected DrawerLayout        mDrawerLayout;
 
     @ViewById(R.id.main_menu_layout)
-    protected ListView mMenuDrawerList;
+    protected ListView            mMenuDrawerList;
 
     private ActionBarDrawerToggle mDrawerToggle;
 
-    @ViewById(R.id.main_search_result_list)
-    protected ListView mSearchResult;
-    private SearchView mSearchView;
-    private MenuItem mSearchViewMenuItem;
+    private SearchView            mSearchView;
+    private MenuItem              mSearchViewMenuItem;
 
     @InstanceState
-    protected boolean mNotFirstRun;
-
-    SimpleCursorAdapter adapter;
+    protected boolean             mNotFirstRun;
 
     /**
      * Initialize the title, drawer, menu drawer and ActionBar.
      */
     @AfterViews
-    void init()
+    protected void init()
     {
-        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout,
-                R.drawable.ic_drawer,
-                R.string.drawer_open, R.string.drawer_close);
+        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout, R.drawable.ic_drawer,
+                        R.string.drawer_open, R.string.drawer_close);
 
         // Set the drawer toggle as the DrawerListener
         this.mDrawerLayout.setDrawerListener(this.mDrawerToggle);
@@ -96,14 +81,11 @@ public class MainActivity extends Activity
 
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
         this.mDrawerToggle.syncState();
-
-        this.adapter = this.getData();
     }
 
     @ItemClick(R.id.main_menu_layout)
-    public void onDrawerItemClick(final int position)
+    protected void onDrawerItemClick(final int position)
     {
-
         switch (position)
         {
             case MenuData.FRAGMENT_HOME:
@@ -133,6 +115,13 @@ public class MainActivity extends Activity
     }
 
     @Override
+    public boolean onCreateOptionsMenu(final Menu menu)
+    {
+        this.initSearchView(menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(final MenuItem item)
     {
         switch (item.getItemId())
@@ -152,13 +141,17 @@ public class MainActivity extends Activity
                 }
                 return true;
 
+            case R.id.action_search:
+                this.showFragment(new SearchResultFragment_(), true);
+                break;
+
             case R.id.action_about:
                 this.showFragment(new AboutFragment_(), true);
                 break;
 
             case R.id.action_share:
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
-                        + this.getResources().getString(R.string.app_market_address));
+                                + this.getResources().getString(R.string.app_market_address));
                 break;
             case R.id.action_settings:
                 this.showFragment(new SettingsFragment_(), true);
@@ -176,7 +169,7 @@ public class MainActivity extends Activity
      * 
      * @return
      */
-    public boolean getAvailableBackStack()
+    protected boolean getAvailableBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
@@ -221,7 +214,7 @@ public class MainActivity extends Activity
     /**
      * Remove all back stack to avoid missing flow on back pressed.
      */
-    public void clearAllBackStack()
+    private void clearAllBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
@@ -235,80 +228,32 @@ public class MainActivity extends Activity
 
     }
 
-    @OptionsItem(R.id.action_search)
-    public void initSearchView(final MenuItem item)
+    private void initSearchView(final Menu menu)
     {
-
-        final SearchManager searchManager = (SearchManager) this
-                .getSystemService(Context.SEARCH_SERVICE);
-
-        this.mSearchViewMenuItem = item;
-        this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
-        this.mSearchView
-                .setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
-        this.mSearchView.setIconifiedByDefault(true);
-
-        this.mSearchView.setSuggestionsAdapter(this.adapter);
-        this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
+        final SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
+        this.mSearchViewMenuItem = menu.findItem(R.id.action_search);
+        if (this.mSearchViewMenuItem != null)
         {
-
-            @Override
-            public boolean onMenuItemActionCollapse(final MenuItem menuItem)
+            this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
+            this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+            this.mSearchView.setIconifiedByDefault(true);
+            this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
             {
-                MainActivity.this.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-                MainActivity.this.mSearchResult.setVisibility(View.GONE);
-                return true;
-            }
 
-            @Override
-            public boolean onMenuItemActionExpand(final MenuItem menuItem)
-            {
-                MainActivity.this.mDrawerLayout
-                        .setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-                MainActivity.this.mSearchResult.setVisibility(View.VISIBLE);
+                @Override
+                public boolean onMenuItemActionCollapse(final MenuItem item)
+                {
+                    MainActivity.this.getAvailableBackStack();
+                    return true;
+                }
 
-                return true;
-            }
+                @Override
+                public boolean onMenuItemActionExpand(final MenuItem item)
+                {
+                    return true;
+                }
 
-        });
-
-    }
-
-    /**
-     * Dummy code for searchview suggestion list.
-     * 
-     * @return
-     */
-    @SuppressWarnings("resource")
-    public SimpleCursorAdapter getData()
-    {
-
-        final String[] columnNames =
-        {
-                "_id", "suggestion_applist_title"}; //$NON-NLS-1$//$NON-NLS-2$
-        final MatrixCursor cursor = new MatrixCursor(columnNames);
-
-        final String[] array = this.getResources()
-                .getStringArray(R.array.applist_by_category_array); // if
-                                                                    // strings
-                                                                    // are in
-                                                                    // resources
-        final String[] temp = new String[2];
-        int id = 0;
-        for (final String item : array)
-        {
-            temp[0] = Integer.toString(id++);
-            temp[1] = item;
-            cursor.addRow(temp);
+            });
         }
-        final String[] from =
-        {
-                "suggestion_applist_title"}; //$NON-NLS-1$
-        final int[] to =
-        {
-                R.id.suggestion_applist_title
-        };
-        return new SimpleCursorAdapter(this, R.layout.suggestion_applist_item, cursor, from, to, 1);
-
     }
 }
