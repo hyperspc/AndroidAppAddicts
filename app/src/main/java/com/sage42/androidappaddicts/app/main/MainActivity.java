@@ -36,8 +36,15 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.about.AboutFragment_;
+import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
+import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
+import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
+import com.sage42.androidappaddicts.app.search.SearchResultFragment_;
+import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
+import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 @EActivity(R.layout.main_activity)
@@ -153,9 +160,11 @@ public class MainActivity extends Activity
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
                                 + this.getResources().getString(R.string.app_market_address));
                 break;
+
             case R.id.action_settings:
                 this.showFragment(new SettingsFragment_(), true);
                 break;
+
             default:
                 break;
         }
