@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package com.sage42.androidappaddicts.app.main;
 
 import org.androidannotations.annotations.AfterViews;
@@ -270,7 +271,6 @@ public class MainActivity extends Activity
                 MainActivity.this.mDrawerLayout
                         .setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 MainActivity.this.mSearchResult.setVisibility(View.VISIBLE);
-
                 return true;
             }
 
