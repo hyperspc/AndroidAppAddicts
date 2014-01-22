@@ -35,7 +35,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.MenuItem.OnActionExpandListener;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import com.sage42.androidappaddicts.R;
@@ -63,14 +65,14 @@ public class MainActivity extends Activity
     private ActionBarDrawerToggle mDrawerToggle;
 
     @ViewById(R.id.main_search_result_list)
-    protected ListView mSearchResult;
+    protected RelativeLayout mSearchResult;
     private SearchView mSearchView;
     private MenuItem mSearchViewMenuItem;
 
     @InstanceState
     protected boolean mNotFirstRun;
 
-    SimpleCursorAdapter adapter;
+    private SimpleCursorAdapter mAdapter;
 
     /**
      * Initialize the title, drawer, menu drawer and ActionBar.
@@ -98,7 +100,7 @@ public class MainActivity extends Activity
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
         this.mDrawerToggle.syncState();
 
-        this.adapter = this.getData();
+        this.mAdapter = this.getData();
     }
 
     @ItemClick(R.id.main_menu_layout)
@@ -249,7 +251,9 @@ public class MainActivity extends Activity
                 .setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
         this.mSearchView.setIconifiedByDefault(true);
 
-        this.mSearchView.setSuggestionsAdapter(this.adapter);
+        this.setSearchTextColour(this.mSearchView);
+        this.mSearchView.setQueryHint("Search Apps"); //$NON-NLS-1$
+        this.mSearchView.setSuggestionsAdapter(this.mAdapter);
         this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
         {
 
@@ -273,6 +277,13 @@ public class MainActivity extends Activity
 
         });
 
+    }
+
+    private void setSearchTextColour(final SearchView searchView) {
+        final int searchPlateId = searchView.getContext().getResources()
+                .getIdentifier("android:id/search_src_text", null, null); //$NON-NLS-1$
+        final EditText searchPlate = (EditText) searchView.findViewById(searchPlateId);
+        searchPlate.setHintTextColor(this.getResources().getColor(R.color.white));
     }
 
     /**
