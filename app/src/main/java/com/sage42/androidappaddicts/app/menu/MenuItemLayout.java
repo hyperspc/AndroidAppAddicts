@@ -28,9 +28,6 @@ import com.sage42.androidappaddicts.R;
 @EViewGroup(R.layout.main_menu_item)
 public class MenuItemLayout extends RelativeLayout
 {
-    @ViewById(R.id.menu_item_header)
-    protected TextView mHeader;
-
     @ViewById(R.id.menu_item_content)
     protected TextView mContent;
 
@@ -54,14 +51,11 @@ public class MenuItemLayout extends RelativeLayout
         // toggle between header and item display
         if (data.isCategoryMarker())
         {
-            this.mHeader.setText(data.getTitleResId());
-            this.mHeader.setVisibility(View.VISIBLE);
             this.mContent.setVisibility(View.GONE);
         }
         else
         {
             this.mContent.setText(data.getTitleResId());
-            this.mHeader.setVisibility(View.GONE);
             this.mContent.setVisibility(View.VISIBLE);
         }
 
