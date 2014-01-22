@@ -12,8 +12,7 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- **/
-
+ */
 package com.sage42.androidappaddicts.app.suggestion;
 
 import java.util.ArrayList;
@@ -37,30 +36,25 @@ import com.sage42.androidappaddicts.R;
 @EFragment(R.layout.suggestion_fragment)
 public class SuggestionFragment extends Fragment
 {
-
-    @ViewById(R.id.suggestor_app_name)
-    AutoCompleteTextView mAppText;
+    @ViewById(R.id.suggestion_app_name)
+    protected AutoCompleteTextView mAppText;
 
     /**
      * Wire the data to the UI
      */
     @AfterViews
-    void init()
+    protected void init()
     {
         // Dummy code for autocompleteText.
         final String[] listviewItemCollectionDesc = new String[]
-        {
-                "suggestion_applist_title"}; //$NON-NLS-1$ 
+        { "suggestion_applist_title" }; //$NON-NLS-1$ 
 
         final int[] listviewItemCollection = new int[]
-        {
-                R.id.suggestion_applist_title
-        };
+        { R.id.suggestion_applist_title };
 
         final List<HashMap<String, String>> data = this.getData();
-        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data,
-                R.layout.suggestion_applist_item,
-                listviewItemCollectionDesc, listviewItemCollection);
+        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data, R.layout.suggestion_applist_item,
+                        listviewItemCollectionDesc, listviewItemCollection);
 
         this.mAppText.setAdapter(adapter);
     }
@@ -77,7 +71,7 @@ public class SuggestionFragment extends Fragment
     }
 
     /**
-     * Dummy code just for display the autocompleteText result.
+     * Dummy code just for display the autocompleteText result. TODO: remove this method
      * 
      * @return
      */

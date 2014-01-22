@@ -15,21 +15,21 @@
         android:scaleType="centerCrop"
         android:src="@drawable/list_activated_holo" />
 
-    <TextView
-        android:id="@+id/grid_item_title"
-        style="@style/AppTheme.Host.Text"
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/hosts_item_name"
+        style="@style/AppTheme.Host.Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/grid_item_image"
-        android:paddingTop="@dimen/std_hlf_padding"
+        android:paddingTop="@dimen/std_half_padding"
         android:text="@string/hosts_default_host_name" />
 
-    <TextView
-        android:id="@+id/grid_item_desc"
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/hosts_item_desc"
         style="@style/AppTheme.Host.Desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/grid_item_title"
+        android:layout_below="@+id/hosts_item_name"
         android:text="@string/hosts_default_host_sub_title"
         android:textColor="@color/bright_foreground_disabled_holo_light" />
 
@@ -39,7 +39,7 @@
         android:id="@+id/grid_item_menu"
         android:layout_width="36dp"
         android:layout_height="72dp"
-        android:layout_alignBottom="@+id/grid_item_desc"
+        android:layout_alignBottom="@+id/hosts_item_desc"
         android:layout_alignParentRight="true"
         android:contentDescription="@string/gridview_popup_hints"
         android:paddingBottom="6dp"

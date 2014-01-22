@@ -12,8 +12,7 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- **/
-
+ */
 package com.sage42.androidappaddicts.app.hosts;
 
 import java.util.ArrayList;
@@ -47,34 +46,31 @@ public class HostsFragment extends Fragment
      * Wire the data to the UI
      */
     @AfterViews
-    void init()
+    protected void init()
     {
-
+        // TODO: remove this code.
         final String[] listviewItemCollectionDesc = new String[]
-        {
-                "grid_item_image"}; //$NON-NLS-1$ 
+        { "grid_item_image" }; //$NON-NLS-1$ 
 
         final int[] listviewItemCollection = new int[]
-        {
-                R.id.grid_item_image
-        };
+        { R.id.grid_item_image };
 
         final List<HashMap<String, String>> data = this.getData();
-        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data,
-                R.layout.hosts_grid_item,
-                listviewItemCollectionDesc, listviewItemCollection);
+        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data, R.layout.hosts_grid_item,
+                        listviewItemCollectionDesc, listviewItemCollection);
 
         this.mGridView.setAdapter(adapter);
     }
 
     @ItemClick(R.id.hosts_grid)
-    void onClickShowGooglePlusPage()
+    protected void onClickShowGooglePlusPage()
     {
+        // TODO: implement
         Toast.makeText(this.getActivity(), "not yet implemented", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
     }
 
     /**
-     * Set the screen title.J
+     * Set the screen title.
      */
     @Override
     public void onStart()
@@ -85,7 +81,7 @@ public class HostsFragment extends Fragment
     }
 
     /**
-     * Dummy code just for display purpose.
+     * Dummy code just for display purpose. TODO: remove this code.
      * 
      * @return
      */

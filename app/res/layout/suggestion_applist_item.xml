@@ -6,11 +6,13 @@
     android:paddingLeft="@dimen/std_padding"
     android:paddingRight="@dimen/std_padding" >
 
-    <TextView
+    <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/suggestion_applist_title"
         style="@style/AppTheme.Suggestion.MenuItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ab_bottom_solid" />
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/ic_launcher"
+        android:text="@string/suggest_default_app_name" />
 
 </RelativeLayout>

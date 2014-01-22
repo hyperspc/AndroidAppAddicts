@@ -4,41 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/content_padding"
-    tools:context=".app.main.MainActivity" >
+    android:padding="@dimen/content_padding">
 
     <AutoCompleteTextView
-        android:id="@+id/suggestor_app_name"
+        android:id="@+id/suggestion_app_name"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
-        android:completionThreshold="2"
         android:layout_height="wrap_content"
-        android:hint="@string/suggestor_app_name_hints"
+        android:completionThreshold="2"
+        android:hint="@string/suggestion_app_name_hints"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/suggestor_name"
+        android:id="@+id/suggestion_name"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/suggestor_name_hints"
+        android:hint="@string/suggestion_name_hints"
         android:inputType="phone" />
 
     <EditText
-        android:id="@+id/suggestor_email"
+        android:id="@+id/suggestion_email"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/suggestor_email_hints"
+        android:hint="@string/suggestion_email_hints"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/suggestor_comment"
+        android:id="@+id/suggestion_comment"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="top"
-        android:hint="@string/suggestor_comments_hints"
+        android:hint="@string/suggestion_comments_hints"
         android:inputType="textMultiLine"
         android:minHeight="96dp" />
 

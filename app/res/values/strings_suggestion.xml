@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Defaults -->
+    <string name="suggest_default_app_name">App with a Long Name</string>
+    
+    <!-- General -->
     <string name="suggest_suggest_title">Suggest an App</string>
-    <string name="suggestor_app_name_hints">App Name</string>
-    <string name="suggestor_email_hints">Your Email</string>
-    <string name="suggestor_name_hints">Your Name</string>
-    <string name="suggestor_comments_hints">Comments</string>
+    <string name="suggestion_app_name_hints">App Name</string>
+    <string name="suggestion_email_hints">Your Email</string>
+    <string name="suggestion_name_hints">Your Name</string>
+    <string name="suggestion_comments_hints">Comments</string>
 
 </resources>

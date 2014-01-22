@@ -23,7 +23,7 @@
         android:layout_below="@+id/about_logo"
         android:gravity="right"
         android:paddingBottom="22dp"
-        android:paddingRight="@dimen/std_hlf_padding"
+        android:paddingRight="@dimen/std_half_padding"
         android:text="@string/about_app_version_default" />
 
     <LinearLayout
@@ -74,7 +74,7 @@
             android:layout_width="match_parent" />
 
         <TextView
-            android:id="@+id/about_web"
+            android:id="@+id/about_participate"
             style="@style/AppTheme.About.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -4,12 +4,10 @@
     android:id="@+id/hosts_grid"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnWidth="140dp"
-    android:horizontalSpacing="6dp"
+    android:columnWidth="@dimen/hosts_column_width"
+    android:horizontalSpacing="@dimen/hosts_horizontal_spacing"
     android:numColumns="auto_fit"
-    android:padding="8dp"
+    android:padding="@dimen/hosts_grid_padding"
     android:scrollbarStyle="outsideOverlay"
     android:stretchMode="columnWidth"
-    android:verticalSpacing="6dp" >
-
-</GridView>
+    android:verticalSpacing="@dimen/hosts_vertical_spacing" />

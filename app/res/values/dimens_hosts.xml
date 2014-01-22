@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hosts_column_width">140dp</dimen>
+    <dimen name="hosts_horizontal_spacing">6dp</dimen>
+    <dimen name="hosts_vertical_spacing">6dp</dimen>
+    <dimen name="hosts_grid_padding">8dp</dimen>    
+</resources>

@@ -14,7 +14,7 @@
             android:id="@+id/text_sub_title_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/std_hlf_padding"
+            android:padding="@dimen/std_half_padding"
             android:text="NO IDEA SETTING " />
 
         <View
@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:padding="@dimen/std_hlf_padding"
+            android:padding="@dimen/std_half_padding"
             android:text="ANOTHER SETTING AGAIN" />
 
         <View
