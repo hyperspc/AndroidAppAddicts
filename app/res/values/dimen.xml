@@ -2,7 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <dimen name="shadow_padding">1dp</dimen>
-    <dimen name="std_hlf_padding">4dp</dimen>
+    <dimen name="std_half_padding">4dp</dimen>
     <dimen name="inline_padding">6dp</dimen>
     <dimen name="std_padding">8dp</dimen>
     <dimen name="tiny_button_height">32dp</dimen>
