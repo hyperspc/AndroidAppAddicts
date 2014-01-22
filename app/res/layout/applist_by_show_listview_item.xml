@@ -37,7 +37,7 @@
 
         <!-- show Duration -->
 
-        <TextView
+        <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_duration"
             style="@style/AppTheme.AppList.DetailsLabel"
             android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
 
         <!-- show Added -->
 
-        <TextView
+        <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_add"
             style="@style/AppTheme.AppList.DetailsLabel"
             android:layout_width="wrap_content"
