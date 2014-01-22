@@ -10,8 +10,8 @@
     <string name="about_email">Email Android App Addicts</string>
     <string name="about_email_address">noidea@idea.com</string>
     <string name="about_follow_us">Follow Us on G+</string>
-    <string name="about_follow_us_address">follow us address</string>
-    <string name="about_participate">Participate in Our Forum</string>
-    <string name="about_participate_address">Participate in Our Forum</string>
+    <string name="about_follow_us_url">https://plus.google.com/communities/110349877541991509796</string>
+    <string name="about_participate">Participate in Our Forums</string>
+    <string name="about_participate_url">http://www.podnutz.com/forums/</string>
 
 </resources>

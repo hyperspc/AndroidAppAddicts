@@ -30,8 +30,7 @@ import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
- * The "About" page for the app. With lots of clickable links to call, email,
- * etc.
+ * The "About" page for the app. With lots of clickable links to call, email, etc.
  */
 @OptionsMenu(R.menu.general)
 @EFragment(resName = "about_fragment")
@@ -40,20 +39,21 @@ public class AboutFragment extends Fragment
     private static final String TAG = AboutFragment.class.getSimpleName();
 
     @ViewById(R.id.about_version)
-    protected TextView mVersion;
+    protected TextView          mVersion;
 
     /**
      * Add data into the display.
      */
     @AfterViews
-    void init()
+    protected void init()
     {
         try
         {
             // pull version name from manifest and add to display
             this.mVersion.setText(this.getActivity().getPackageManager()
-                    .getPackageInfo(this.getActivity().getPackageName(), 0).versionName);
-        } catch (final NameNotFoundException e)
+                            .getPackageInfo(this.getActivity().getPackageName(), 0).versionName);
+        }
+        catch (final NameNotFoundException e)
         {
             // this should not happen
             Log.w(TAG, e.getMessage(), e);
@@ -75,7 +75,7 @@ public class AboutFragment extends Fragment
      * Click handler for the call button.
      */
     @Click(R.id.about_hotline)
-    void onClickCall()
+    protected void onClickCall()
     {
         IntentUtils.doCall(this.getActivity(), this.getString(R.string.about_call_number));
     }
@@ -84,30 +84,27 @@ public class AboutFragment extends Fragment
      * Click handler for the email button.
      */
     @Click(R.id.about_email)
-    void onClickEmail()
+    protected void onClickEmail()
     {
         IntentUtils.doEmail(this.getActivity(), this.getString(R.string.about_email_address));
     }
 
     /**
-     * Click handler for the website button.
+     * Click handler for the G+ button.
      */
-    @Click(R.id.about_web)
-    void onClickWeb()
+    @Click(R.id.about_gplus)
+    protected void onClickGPlus()
     {
-        IntentUtils.doShowUri(this.getActivity(),
-                "http://" + this.getString(R.string.about_follow_us_address)); //$NON-NLS-1$
+        IntentUtils.doShowUri(this.getActivity(), this.getString(R.string.about_follow_us_url));
     }
 
     /**
-     * Click handler for the facebook button.
+     * Click handler for the participate button.
      */
-    @Click(R.id.about_gplus)
-    void onClickFacebook()
+    @Click(R.id.about_participate)
+    protected void onClickParticipate()
     {
-        IntentUtils.doShowFacebook(this.getActivity(),
-                this.getString(R.string.about_participate_address),
-                "http://" + this.getString(R.string.about_participate_address)); //$NON-NLS-1$
+        IntentUtils.doShowUri(this.getActivity(), this.getString(R.string.about_participate_url));
     }
 
 }

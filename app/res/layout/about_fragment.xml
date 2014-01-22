@@ -74,7 +74,7 @@
             android:layout_width="match_parent" />
 
         <TextView
-            android:id="@+id/about_web"
+            android:id="@+id/about_participate"
             style="@style/AppTheme.About.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
