@@ -12,7 +12,8 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- */
+ **/
+
 package com.sage42.androidappaddicts.app.about;
 
 import org.androidannotations.annotations.AfterViews;
@@ -30,7 +31,8 @@ import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
- * The "About" page for the app. With lots of clickable links to call, email, etc.
+ * The "About" page for the app. With lots of clickable links to call, email,
+ * etc.
  */
 @OptionsMenu(R.menu.general)
 @EFragment(resName = "about_fragment")
@@ -39,7 +41,7 @@ public class AboutFragment extends Fragment
     private static final String TAG = AboutFragment.class.getSimpleName();
 
     @ViewById(R.id.about_version)
-    protected TextView          mVersion;
+    protected TextView mVersion;
 
     /**
      * Add data into the display.
@@ -51,9 +53,8 @@ public class AboutFragment extends Fragment
         {
             // pull version name from manifest and add to display
             this.mVersion.setText(this.getActivity().getPackageManager()
-                            .getPackageInfo(this.getActivity().getPackageName(), 0).versionName);
-        }
-        catch (final NameNotFoundException e)
+                    .getPackageInfo(this.getActivity().getPackageName(), 0).versionName);
+        } catch (final NameNotFoundException e)
         {
             // this should not happen
             Log.w(TAG, e.getMessage(), e);
@@ -95,7 +96,8 @@ public class AboutFragment extends Fragment
     @Click(R.id.about_web)
     void onClickWeb()
     {
-        IntentUtils.doShowUri(this.getActivity(), "http://" + this.getString(R.string.about_follow_us_address)); //$NON-NLS-1$
+        IntentUtils.doShowUri(this.getActivity(),
+                "http://" + this.getString(R.string.about_follow_us_address)); //$NON-NLS-1$
     }
 
     /**
@@ -104,8 +106,9 @@ public class AboutFragment extends Fragment
     @Click(R.id.about_gplus)
     void onClickFacebook()
     {
-        IntentUtils.doShowFacebook(this.getActivity(), this.getString(R.string.about_participate_address),
-                        "http://" + this.getString(R.string.about_participate_address)); //$NON-NLS-1$
+        IntentUtils.doShowFacebook(this.getActivity(),
+                this.getString(R.string.about_participate_address),
+                "http://" + this.getString(R.string.about_participate_address)); //$NON-NLS-1$
     }
 
 }

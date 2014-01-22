@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hosts_grid"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:columnWidth="140dp"
+    android:horizontalSpacing="6dp"
+    android:numColumns="auto_fit"
+    android:padding="8dp"
+    android:scrollbarStyle="outsideOverlay"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="6dp" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <LinearLayout
-             style="@style/AppTheme.Host.Item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <include layout="@layout/hosts_grid_item" />
-
-            <include layout="@layout/hosts_grid_item" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/AppTheme.Host.Item"
-            android:paddingBottom="@dimen/std_padding"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <include layout="@layout/hosts_grid_item" />
-
-            <include layout="@layout/hosts_grid_item" />
-        </LinearLayout>
-    </LinearLayout>
-
-</ScrollView>
+</GridView>

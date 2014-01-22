@@ -12,7 +12,8 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- */
+ **/
+
 package com.sage42.androidappaddicts.app.hosts;
 
 import com.sage42.androidappaddicts.app.util.SizeUtils;
@@ -46,7 +47,8 @@ public class CustomGridLongImageView extends ImageView
      * @param attrs
      * @param defStyle
      */
-    public CustomGridLongImageView(final Context context, final AttributeSet attrs, final int defStyle)
+    public CustomGridLongImageView(final Context context, final AttributeSet attrs,
+            final int defStyle)
     {
         super(context, attrs, defStyle);
     }
@@ -58,7 +60,8 @@ public class CustomGridLongImageView extends ImageView
     @Override
     public void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec)
     {
-        super.onMeasure(widthMeasureSpec, widthMeasureSpec + SizeUtils.getDpi(this.getResources(), 36));
+        super.onMeasure(widthMeasureSpec,
+                widthMeasureSpec + SizeUtils.getDpi(this.getResources(), 36));
     }
 
     /*
@@ -66,11 +69,12 @@ public class CustomGridLongImageView extends ImageView
      * @see android.view.View#onSizeChanged(int, int, int, int)
      */
     @Override
-    protected void onSizeChanged(final int width, final int height, final int oldWidth, final int oldHeight)
+    protected void onSizeChanged(final int width, final int height, final int oldWidth,
+            final int oldHeight)
     {
         super.onSizeChanged(width, height, oldWidth, oldHeight);
 
-        if ((this.getLayoutParams() != null) && (width != height))
+        if (this.getLayoutParams() != null && width != height)
         {
             this.getLayoutParams().height = width + SizeUtils.getDpi(this.getResources(), 36);
             this.setLayoutParams(this.getLayoutParams());

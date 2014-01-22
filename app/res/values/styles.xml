@@ -63,6 +63,9 @@
     </style>
 
     <style name="DropDownListView.Apptheme" parent="@android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:background">@color/white</item>
+        <item name="android:divider">@color/general_divider_color</item>
+        <item name="android:dividerHeight">1dp</item>
         <item name="android:listSelector">@drawable/selectable_background</item>
     </style>
 

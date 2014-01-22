@@ -20,20 +20,16 @@
         style="@style/AppTheme.Host.Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/std_hlf_padding"
         android:layout_below="@+id/grid_item_image"
-        android:ellipsize="end"
-        android:singleLine="true"
+        android:paddingTop="@dimen/std_hlf_padding"
         android:text="@string/hosts_default_host_name" />
 
     <TextView
         android:id="@+id/grid_item_desc"
-        style="@style/AppTheme.Host.Text"
+        style="@style/AppTheme.Host.Desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/grid_item_title"
-        android:ellipsize="end"
-        android:singleLine="true"
         android:text="@string/hosts_default_host_sub_title"
         android:textColor="@color/bright_foreground_disabled_holo_light" />
 
@@ -43,13 +39,13 @@
         android:id="@+id/grid_item_menu"
         android:layout_width="36dp"
         android:layout_height="72dp"
-        android:layout_alignBottom="@+id/promo_item_desc"
+        android:layout_alignBottom="@+id/grid_item_desc"
         android:layout_alignParentRight="true"
         android:contentDescription="@string/gridview_popup_hints"
         android:paddingBottom="6dp"
         android:paddingLeft="12dp"
         android:scaleType="fitEnd"
-        android:src="@drawable/ic_action_overflow"
+        android:src="@drawable/ic_action_overflow_light"
         android:visibility="gone" />
 
 </RelativeLayout>
