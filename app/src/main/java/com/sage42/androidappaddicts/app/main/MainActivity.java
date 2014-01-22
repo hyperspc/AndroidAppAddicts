@@ -35,16 +35,18 @@ import android.view.MenuItem;
 import android.view.MenuItem.OnActionExpandListener;
 import android.widget.ListView;
 import android.widget.SearchView;
+
 import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.about.*;
-import com.sage42.androidappaddicts.app.applist.*;
-import com.sage42.androidappaddicts.app.search.*;
-import com.sage42.androidappaddicts.app.settings.*;
-import com.sage42.androidappaddicts.app.suggestion.*;
-import com.sage42.androidappaddicts.app.hosts.*;
+import com.sage42.androidappaddicts.app.about.AboutFragment_;
+import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
+import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
+
+import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
-
+import com.sage42.androidappaddicts.app.search.SearchResultFragment_;
+import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
+import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 @EActivity(R.layout.main_activity)
@@ -68,7 +70,7 @@ public class MainActivity extends Activity
      * Initialize the title, drawer, menu drawer and ActionBar.
      */
     @AfterViews
-    void init()
+    protected void init()
     {
         this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout,
                 R.drawable.ic_drawer,
@@ -92,7 +94,7 @@ public class MainActivity extends Activity
     }
 
     @ItemClick(R.id.main_menu_layout)
-    public void onDrawerItemClick(final int position)
+    protected void onDrawerItemClick(final int position)
     {
         switch (position)
         {
@@ -161,9 +163,11 @@ public class MainActivity extends Activity
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
                         + this.getResources().getString(R.string.app_market_address));
                 break;
+
             case R.id.action_settings:
                 this.showFragment(new SettingsFragment_(), true);
                 break;
+
             default:
                 break;
         }
@@ -177,7 +181,7 @@ public class MainActivity extends Activity
      * 
      * @return
      */
-    public boolean getAvailableBackStack()
+    protected boolean getAvailableBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
@@ -222,7 +226,7 @@ public class MainActivity extends Activity
     /**
      * Remove all back stack to avoid missing flow on back pressed.
      */
-    public void clearAllBackStack()
+    private void clearAllBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
@@ -238,7 +242,6 @@ public class MainActivity extends Activity
 
     private void initSearchView(final Menu menu)
     {
-
         final SearchManager searchManager = (SearchManager) this
                 .getSystemService(Context.SEARCH_SERVICE);
         this.mSearchViewMenuItem = menu.findItem(R.id.action_search);
@@ -254,7 +257,7 @@ public class MainActivity extends Activity
                 @Override
                 public boolean onMenuItemActionCollapse(final MenuItem item)
                 {
-
+                    MainActivity.this.getAvailableBackStack();
                     return true;
                 }
 
