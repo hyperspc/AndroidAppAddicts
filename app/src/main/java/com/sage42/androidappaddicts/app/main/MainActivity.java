@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package com.sage42.androidappaddicts.app.main;
 
 import org.androidannotations.annotations.AfterViews;
@@ -34,8 +35,6 @@ import android.view.MenuItem;
 import android.view.MenuItem.OnActionExpandListener;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Toast;
-
 import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.about.*;
 import com.sage42.androidappaddicts.app.applist.*;
@@ -52,18 +51,18 @@ import com.sage42.androidappaddicts.app.util.IntentUtils;
 public class MainActivity extends Activity
 {
     @ViewById(R.id.main_drawer_layout)
-    protected DrawerLayout        mDrawerLayout;
+    protected DrawerLayout mDrawerLayout;
 
     @ViewById(R.id.main_menu_layout)
-    protected ListView            mMenuDrawerList;
+    protected ListView mMenuDrawerList;
 
     private ActionBarDrawerToggle mDrawerToggle;
 
-    private SearchView            mSearchView;
-    private MenuItem              mSearchViewMenuItem;
+    private SearchView mSearchView;
+    private MenuItem mSearchViewMenuItem;
 
     @InstanceState
-    protected boolean             mNotFirstRun;
+    protected boolean mNotFirstRun;
 
     /**
      * Initialize the title, drawer, menu drawer and ActionBar.
@@ -71,8 +70,9 @@ public class MainActivity extends Activity
     @AfterViews
     void init()
     {
-        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout, R.drawable.ic_drawer,
-                        R.string.drawer_open, R.string.drawer_close);
+        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout,
+                R.drawable.ic_drawer,
+                R.string.drawer_open, R.string.drawer_close);
 
         // Set the drawer toggle as the DrawerListener
         this.mDrawerLayout.setDrawerListener(this.mDrawerToggle);
@@ -159,7 +159,7 @@ public class MainActivity extends Activity
 
             case R.id.action_share:
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
-                                + this.getResources().getString(R.string.app_market_address));
+                        + this.getResources().getString(R.string.app_market_address));
                 break;
             case R.id.action_settings:
                 this.showFragment(new SettingsFragment_(), true);
@@ -238,13 +238,15 @@ public class MainActivity extends Activity
 
     private void initSearchView(final Menu menu)
     {
-        final Context context = this;
-        final SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
+
+        final SearchManager searchManager = (SearchManager) this
+                .getSystemService(Context.SEARCH_SERVICE);
         this.mSearchViewMenuItem = menu.findItem(R.id.action_search);
         if (this.mSearchViewMenuItem != null)
         {
             this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
-            this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+            this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this
+                    .getComponentName()));
             this.mSearchView.setIconifiedByDefault(true);
             this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
             {
@@ -252,15 +254,13 @@ public class MainActivity extends Activity
                 @Override
                 public boolean onMenuItemActionCollapse(final MenuItem item)
                 {
-                    Toast.makeText(context, "CLOSING", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
-                    MainActivity.this.getAvailableBackStack();
+
                     return true;
                 }
 
                 @Override
                 public boolean onMenuItemActionExpand(final MenuItem item)
                 {
-                    //  Toast.makeText(context, "SEARCHVIEW START", Toast.LENGTH_LONG).show(); //$NON-NLS-1$
                     return true;
                 }
 
