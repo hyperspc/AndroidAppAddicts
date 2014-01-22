@@ -49,7 +49,6 @@ import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
 import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
-import com.sage42.androidappaddicts.app.search.SearchResultFragment_;
 import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
 import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
@@ -160,11 +159,6 @@ public class MainActivity extends Activity
                     }
                 }
                 return true;
-
-            case R.id.action_search:
-                this.showFragment(new SearchResultFragment_(), true);
-                break;
-
             case R.id.action_about:
                 this.showFragment(new AboutFragment_(), true);
                 break;
