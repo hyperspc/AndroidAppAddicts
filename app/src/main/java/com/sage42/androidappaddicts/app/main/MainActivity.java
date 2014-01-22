@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package com.sage42.androidappaddicts.app.main;
 
 import org.androidannotations.annotations.AfterViews;
@@ -34,37 +35,44 @@ import android.view.MenuItem;
 import android.view.MenuItem.OnActionExpandListener;
 import android.widget.ListView;
 import android.widget.SearchView;
-
 import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.about.*;
+import com.sage42.androidappaddicts.app.applist.*;
+import com.sage42.androidappaddicts.app.search.*;
+import com.sage42.androidappaddicts.app.settings.*;
+import com.sage42.androidappaddicts.app.suggestion.*;
+import com.sage42.androidappaddicts.app.hosts.*;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
+
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 @EActivity(R.layout.main_activity)
 public class MainActivity extends Activity
 {
     @ViewById(R.id.main_drawer_layout)
-    protected DrawerLayout        mDrawerLayout;
+    protected DrawerLayout mDrawerLayout;
 
     @ViewById(R.id.main_menu_layout)
-    protected ListView            mMenuDrawerList;
+    protected ListView mMenuDrawerList;
 
     private ActionBarDrawerToggle mDrawerToggle;
 
-    private SearchView            mSearchView;
-    private MenuItem              mSearchViewMenuItem;
+    private SearchView mSearchView;
+    private MenuItem mSearchViewMenuItem;
 
     @InstanceState
-    protected boolean             mNotFirstRun;
+    protected boolean mNotFirstRun;
 
     /**
      * Initialize the title, drawer, menu drawer and ActionBar.
      */
     @AfterViews
-    protected void init()
+    void init()
     {
-        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout, R.drawable.ic_drawer,
-                        R.string.drawer_open, R.string.drawer_close);
+        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout,
+                R.drawable.ic_drawer,
+                R.string.drawer_open, R.string.drawer_close);
 
         // Set the drawer toggle as the DrawerListener
         this.mDrawerLayout.setDrawerListener(this.mDrawerToggle);
@@ -84,7 +92,7 @@ public class MainActivity extends Activity
     }
 
     @ItemClick(R.id.main_menu_layout)
-    protected void onDrawerItemClick(final int position)
+    public void onDrawerItemClick(final int position)
     {
         switch (position)
         {
@@ -151,7 +159,7 @@ public class MainActivity extends Activity
 
             case R.id.action_share:
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
-                                + this.getResources().getString(R.string.app_market_address));
+                        + this.getResources().getString(R.string.app_market_address));
                 break;
             case R.id.action_settings:
                 this.showFragment(new SettingsFragment_(), true);
@@ -169,7 +177,7 @@ public class MainActivity extends Activity
      * 
      * @return
      */
-    protected boolean getAvailableBackStack()
+    public boolean getAvailableBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
@@ -214,7 +222,7 @@ public class MainActivity extends Activity
     /**
      * Remove all back stack to avoid missing flow on back pressed.
      */
-    private void clearAllBackStack()
+    public void clearAllBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
@@ -230,12 +238,15 @@ public class MainActivity extends Activity
 
     private void initSearchView(final Menu menu)
     {
-        final SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
+
+        final SearchManager searchManager = (SearchManager) this
+                .getSystemService(Context.SEARCH_SERVICE);
         this.mSearchViewMenuItem = menu.findItem(R.id.action_search);
         if (this.mSearchViewMenuItem != null)
         {
             this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
-            this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+            this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this
+                    .getComponentName()));
             this.mSearchView.setIconifiedByDefault(true);
             this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
             {
@@ -243,7 +254,7 @@ public class MainActivity extends Activity
                 @Override
                 public boolean onMenuItemActionCollapse(final MenuItem item)
                 {
-                    MainActivity.this.getAvailableBackStack();
+
                     return true;
                 }
 
