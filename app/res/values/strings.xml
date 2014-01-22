@@ -11,6 +11,8 @@
     <string name="menu_action_share">Share this App</string>
     <string name="menu_action_about">About</string>
     <string name="menu_search_hint">Search Apps</string>
+    <string name="main_menu_default_header">Menu Item Header</string>
+    <string name="main_menu_default_content">Sample Menu Item</string>
 
     <!-- Menu Drawer -->
     <string name="drawer_open">Open navigation drawer</string>

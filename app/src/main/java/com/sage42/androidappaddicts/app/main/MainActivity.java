@@ -32,23 +32,24 @@ import android.content.Context;
 import android.database.MatrixCursor;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.MenuItem.OnActionExpandListener;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
-import com.sage42.androidappaddicts.R;
 
+import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.about.AboutFragment_;
 import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
 import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
 import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
-
+import com.sage42.androidappaddicts.app.search.SearchResultFragment_;
 import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
 import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
@@ -78,7 +79,7 @@ public class MainActivity extends Activity
      * Initialize the title, drawer, menu drawer and ActionBar.
      */
     @AfterViews
-    void init()
+    protected void init()
     {
         this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout,
                 R.drawable.ic_drawer,
@@ -99,14 +100,13 @@ public class MainActivity extends Activity
 
         this.getActionBar().setDisplayHomeAsUpEnabled(true);
         this.mDrawerToggle.syncState();
-
         this.mAdapter = this.getData();
+
     }
 
     @ItemClick(R.id.main_menu_layout)
-    public void onDrawerItemClick(final int position)
+    protected void onDrawerItemClick(final int position)
     {
-
         switch (position)
         {
             case MenuData.FRAGMENT_HOME:
@@ -136,6 +136,12 @@ public class MainActivity extends Activity
     }
 
     @Override
+    public boolean onCreateOptionsMenu(final Menu menu)
+    {
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(final MenuItem item)
     {
         switch (item.getItemId())
@@ -155,6 +161,10 @@ public class MainActivity extends Activity
                 }
                 return true;
 
+            case R.id.action_search:
+                this.showFragment(new SearchResultFragment_(), true);
+                break;
+
             case R.id.action_about:
                 this.showFragment(new AboutFragment_(), true);
                 break;
@@ -163,9 +173,11 @@ public class MainActivity extends Activity
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
                         + this.getResources().getString(R.string.app_market_address));
                 break;
+
             case R.id.action_settings:
                 this.showFragment(new SettingsFragment_(), true);
                 break;
+
             default:
                 break;
         }
@@ -179,7 +191,7 @@ public class MainActivity extends Activity
      * 
      * @return
      */
-    public boolean getAvailableBackStack()
+    protected boolean getAvailableBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
@@ -224,7 +236,7 @@ public class MainActivity extends Activity
     /**
      * Remove all back stack to avoid missing flow on back pressed.
      */
-    public void clearAllBackStack()
+    private void clearAllBackStack()
     {
         final FragmentManager fragmentManager = this.getFragmentManager();
 
