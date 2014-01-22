@@ -1,5 +1,4 @@
 /**
- /**
  *  Copyright (C) 2013-2014 Sage 42 Apps Sdn Bhd
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +12,7 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- **/
-
+ */
 package com.sage42.androidappaddicts.app.applist;
 
 import org.androidannotations.annotations.AfterViews;
@@ -57,7 +55,7 @@ public class ByCategoryFragment extends Fragment
 
         // Dummy Code for displaying list of category
         final ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(this.getActivity(),
-                R.array.applist_by_category_array, R.layout.applist_by_category_list_item);
+                        R.array.applist_by_category_array, R.layout.applist_by_category_list_item);
         this.mListView.setAdapter(adapter);
     }
 
