@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package com.sage42.androidappaddicts.app.applist;
 
 import java.util.ArrayList;
@@ -51,11 +52,16 @@ public class ByShowSelectedFragment extends Fragment
         // Dummy code.
         final String[] listviewItemCollectionDesc = new String[]
         {
-                "applist_row_item_image", "applist_row_item_title", "applist_row_item_desc", "applist_row_item_price"}; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                "applist_row_item_image1", //$NON-NLS-1$
+                "applist_row_item_title1", //$NON-NLS-1$
+                "applist_row_item_desc1", //$NON-NLS-1$
+                "applist_row_item_price1" //$NON-NLS-1$
 
+        };
         final int[] listviewItemCollection = new int[]
         {
-                R.id.applist_row_item_image, R.id.applist_row_item_title,
+                R.id.applist_row_item_image,
+                R.id.applist_row_item_title,
                 R.id.applist_row_item_desc,
                 R.id.applist_row_item_price
         };
@@ -97,20 +103,11 @@ public class ByShowSelectedFragment extends Fragment
         {
             final HashMap<String, String> map = new HashMap<String, String>();
             count += 1;
-            map.put("applist_row_item_image", Integer.toString(R.drawable.list_activated_holo)); //$NON-NLS-1$
-            map.put("applist_row_item_title", "Title No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_desc", "Item description No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_price", "FREE"); //$NON-NLS-1$//$NON-NLS-2$
-            count += 1;
-            map.put("applist_row_item_image", Integer.toString(R.drawable.list_activated_holo)); //$NON-NLS-1$
-            map.put("applist_row_item_title", "Title No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_desc", "Item description No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_price", "FREE"); //$NON-NLS-1$//$NON-NLS-2$
-            count += 1;
-            map.put("applist_row_item_image", Integer.toString(R.drawable.list_activated_holo)); //$NON-NLS-1$
-            map.put("applist_row_item_title", "Title No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_desc", "Item description No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_price", "FREE"); //$NON-NLS-1$//$NON-NLS-2$
+            map.put("applist_row_item_image1", Integer.toString(R.drawable.santa)); //$NON-NLS-1$
+            map.put("applist_row_item_title1", "Santa No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
+            map.put("applist_row_item_desc1", "App Maker No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
+            map.put("applist_row_item_price1", "FREE"); //$NON-NLS-1$//$NON-NLS-2$
+
             fillMaps.add(map);
 
         }

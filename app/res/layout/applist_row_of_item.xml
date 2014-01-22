@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/list_activated_holo" />
+        android:src="@drawable/santa2" />
 
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_title"
