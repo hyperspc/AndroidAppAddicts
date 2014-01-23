@@ -68,7 +68,6 @@ public class MainActivity extends Activity
 
     @ViewById(R.id.main_search_result_list)
     protected RelativeLayout mSearchResult;
-
     private SearchView mSearchView;
     private MenuItem mSearchViewMenuItem;
 

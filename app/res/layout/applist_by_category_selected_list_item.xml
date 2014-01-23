@@ -40,6 +40,7 @@
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_half_padding"
         android:layout_alignLeft="@+id/applist_by_category_list_desc"
         android:layout_below="@+id/applist_by_category_list_desc"
         android:isIndicator="false"
@@ -53,6 +54,7 @@
         android:layout_alignBottom="@+id/applist_by_category_list_image"
         android:layout_alignParentRight="true"
         android:paddingBottom="0dp"
+        android:textSize="12sp"
         android:text="@string/applist_default_app_price"
         android:textColor="@android:color/holo_green_light" />
 

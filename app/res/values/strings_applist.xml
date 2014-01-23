@@ -13,7 +13,7 @@
     <string name="applist_default_app_name">Santa Claus Vector</string>
     <string name="applist_default_app_author">App Maker</string>
     <string name="applist_default_app_price">FREE</string>
-    <string name="applist_default_host">Mr. Host Name</string>
+    <string name="applist_default_host">Steve Cherubino \nSteve McLaughlin \nEric Arduini \nSean "Dirty Thumbs" Johnson</string>
 
     <!-- Labels and Stuff -->
     <string name="applist_latest">Latest Show</string>
@@ -23,12 +23,12 @@
     <string name="applist_latest_show_text">Latest Show</string>
     <string name="applist_latest_show_tiny_button">View all Shows</string>
     <string name="applist_show_duration">Length:</string>
-     <string name="applist_by_show_duration">Duration:</string>
+    <string name="applist_by_show_duration">Duration:</string>
     <string name="applist_show_add">Added:</string>
     <string name="applist_by_category_selected_application_icon">Application Icon</string>
     <string name="applist_hosted_by">Hosted by:</string>
     <string name="applist_mentioned_apps">Mentioned Apps</string>
-    
+
     <!-- List of Category -->
     <string-array name="applist_by_category_array">
         <item>Games</item>

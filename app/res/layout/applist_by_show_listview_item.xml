@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
             android:layout_toRightOf="@+id/applist_by_show_number"
-            android:text="@string/applist_show_duration" />
+            android:text="@string/applist_by_show_duration" />
 
         <!-- show Length -->
 

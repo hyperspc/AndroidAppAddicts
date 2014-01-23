@@ -21,7 +21,7 @@
             android:layout_marginRight="@dimen/std_padding"
             android:paddingTop="@dimen/std_half_padding"
             android:text="@string/applist_default_show_number"
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="@color/green_background"
             android:textSize="50sp" />
 
         <!-- show Title -->
@@ -36,8 +36,7 @@
             android:paddingBottom="@dimen/std_half_padding"
             android:paddingTop="@dimen/std_padding"
             android:singleLine="true"
-            android:text="@string/applist_default_episode_title"
-            android:textSize="22sp" />
+            android:text="@string/applist_default_episode_title" />
 
         <!-- show Duration -->
 
@@ -48,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
             android:layout_toRightOf="@+id/applist_by_show_number"
+            android:paddingBottom="@dimen/std_padding"
             android:text="@string/applist_by_show_duration"
             android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
             style="@style/AppTheme.Show.Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/applist_by_show_add_date"
+            android:layout_below="@+id/applist_by_show_duration"
             android:layout_toRightOf="@+id/applist_by_show_number"
             android:text="@string/applist_hosted_by"
             android:textColor="@color/general_text_light"
@@ -124,6 +124,6 @@
         android:layout_below="@+id/applist_by_show_header_box_layout"
         android:padding="@dimen/content_padding"
         android:text="@string/applist_mentioned_apps"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
 </RelativeLayout>

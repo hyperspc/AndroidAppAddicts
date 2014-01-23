@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/applist_row_item_title"
-        android:paddingBottom="@dimen/std_padding"
+        android:paddingBottom="@dimen/content_padding"
         android:text="@string/applist_default_app_author" />
 
     <RatingBar
@@ -41,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/applist_row_item_desc"
         android:layout_below="@+id/applist_row_item_desc"
-        android:layout_toLeftOf="@+id/applist_row_item_price"
         android:isIndicator="false"
         android:numStars="5" />
 
