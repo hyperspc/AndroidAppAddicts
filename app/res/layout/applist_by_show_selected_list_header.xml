@@ -112,7 +112,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="1dp"
         android:layout_below="@+id/applist_by_show_header_box_layout"
         android:background="@color/gray" />
 
