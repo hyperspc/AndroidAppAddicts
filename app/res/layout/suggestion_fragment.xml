@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="@dimen/content_padding">
 
-    <AutoCompleteTextView
+    <com.sage42.android.view.fonts.MyAutoCompleteTextView
         android:id="@+id/suggestion_app_name"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:hint="@string/suggestion_app_name_hints"
         android:inputType="textPersonName" />
 
-    <EditText
+    <com.sage42.android.view.fonts.MyEditText
         android:id="@+id/suggestion_name"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         android:hint="@string/suggestion_name_hints"
         android:inputType="phone" />
 
-    <EditText
+    <com.sage42.android.view.fonts.MyEditText
         android:id="@+id/suggestion_email"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         android:hint="@string/suggestion_email_hints"
         android:inputType="textEmailAddress" />
 
-    <EditText
+    <com.sage42.android.view.fonts.MyEditText
         android:id="@+id/suggestion_comment"
         style="@style/AppTheme.Suggestion.EditText"
         android:layout_width="match_parent"

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"  
     android:paddingLeft="@dimen/std_padding"
+    android:background="@drawable/listview_background"
     android:paddingRight="@dimen/std_padding" >
 
     <com.sage42.android.view.fonts.MyTextView
