@@ -3,6 +3,7 @@
 
     <style name="AppTheme" parent="@style/_AppTheme">
         <item name="android:windowBackground">@color/background</item>
+        <item name="fontFamily">Roboto-Light</item>
         <item name="android:textColor">@color/general_text_primary</item>
     </style>
 
