@@ -14,49 +14,45 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/list_activated_holo" />
+        android:src="@drawable/santa2" />
 
-    <TextView
+    <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_title"
+        style="@style/AppTheme.AppList.RowTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/applist_row_item_image"
-        android:ellipsize="end"
         android:paddingTop="@dimen/std_padding"
-        android:singleLine="true"
-        android:text="@string/applist_default_app_name"
-        android:textSize="14sp" />
+        android:text="@string/applist_default_app_name" />
 
-    <TextView
+    <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_desc"
+        style="@style/AppTheme.AppList.RowDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/applist_row_item_title"
-        android:ellipsize="end"
         android:paddingBottom="@dimen/std_padding"
-        android:singleLine="true"
-        android:text="@string/applist_default_app_author"
-        android:textSize="12sp" />
+        android:text="@string/applist_default_app_author" />
 
     <RatingBar
         android:id="@+id/applist_row_item_rating_star"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/applist_row_item_desc"
         android:layout_alignLeft="@+id/applist_row_item_desc"
+        android:layout_below="@+id/applist_row_item_desc"
         android:layout_toLeftOf="@+id/applist_row_item_price"
         android:isIndicator="false"
         android:numStars="5" />
 
-    <TextView
+    <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_price"
+        style="@style/AppTheme.AppList.RowDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/applist_row_item_image"
         android:layout_below="@+id/applist_row_item_desc"
         android:text="@string/applist_default_app_price"
-        android:textColor="@android:color/holo_green_light"
-        android:textSize="12sp" />
+        android:textColor="@android:color/holo_green_light" />
 
 </RelativeLayout>

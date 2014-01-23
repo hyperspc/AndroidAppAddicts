@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package com.sage42.androidappaddicts.app.main;
 
 import java.util.ArrayList;
@@ -128,9 +129,9 @@ public class HomeFragment extends Fragment
             map.put("applist_row_item_desc", "Item description No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
             map.put("applist_row_item_price", "FREE"); //$NON-NLS-1$//$NON-NLS-2$
             count += 1;
-            map.put("applist_row_item_image", Integer.toString(R.drawable.list_activated_holo)); //$NON-NLS-1$
-            map.put("applist_row_item_title", "Title No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_desc", "Item description No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
+            map.put("applist_row_item_image", Integer.toString(R.drawable.santa)); //$NON-NLS-1$
+            map.put("applist_row_item_title", "Santa No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
+            map.put("applist_row_item_desc", "App Maker :" + count); //$NON-NLS-1$ //$NON-NLS-2$
             map.put("applist_row_item_price", "FREE"); //$NON-NLS-1$//$NON-NLS-2$
             fillMaps.add(map);
 
