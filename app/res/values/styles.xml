@@ -4,10 +4,11 @@
     <style name="AppTheme" parent="@style/_AppTheme">
         <item name="android:windowBackground">@color/background</item>
         <item name="android:textColor">@color/general_text_primary</item>
+        <item name="fontFamily">Roboto-Light</item>
     </style>
 
     <style name="_AppTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
- 
+
         <!-- Actionbar styles -->
         <item name="android:actionBarStyle">@style/ActionBar.Solid.Apptheme</item>
         <item name="android:actionBarItemBackground">@drawable/selectable_background</item>

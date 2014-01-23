@@ -4,7 +4,6 @@
     <style name="AppTheme.Suggestion"></style>
 
     <style name="AppTheme.Suggestion.EditText">
-        <item name="fontFamily">Roboto-Light</item>
         <item name="android:layout_marginBottom">24dp</item>
         <item name="android:textColorHint">@color/general_text_light</item>
         <item name="android:textSize">18sp</item>
@@ -16,7 +15,6 @@
     </style>
 
     <style name="AppTheme.Suggestion.MenuItem">
-        <item name="fontFamily">Roboto-Light</item>
         <item name="android:minHeight">56dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">@dimen/std_padding</item>
