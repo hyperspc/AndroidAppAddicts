@@ -68,7 +68,6 @@ public class MainActivity extends Activity
 
     @ViewById(R.id.main_search_result_list)
     protected RelativeLayout mSearchResult;
-
     private SearchView mSearchView;
     private MenuItem mSearchViewMenuItem;
 
@@ -162,6 +161,7 @@ public class MainActivity extends Activity
                     }
                 }
                 return true;
+
             case R.id.action_about:
                 this.showFragment(new AboutFragment_(), true);
                 break;
@@ -288,7 +288,8 @@ public class MainActivity extends Activity
 
     }
 
-    private void setSearchTextColour(final SearchView searchView) {
+    private void setSearchTextColour(final SearchView searchView)
+    {
         final int searchPlateId = searchView.getContext().getResources()
                 .getIdentifier("android:id/search_src_text", null, null); //$NON-NLS-1$
         final EditText searchPlate = (EditText) searchView.findViewById(searchPlateId);
