@@ -2,7 +2,7 @@
 <com.sage42.android.view.fonts.MyTextView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/AppTheme.Category.Item"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
+    android:layout_height="@dimen/applist_by_category_list_item_height"
     android:gravity="center_vertical"
     android:paddingLeft="@dimen/content_padding"
     android:text="@string/applist_default_by_category_list_item"
