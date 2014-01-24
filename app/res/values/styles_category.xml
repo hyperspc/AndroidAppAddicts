@@ -21,8 +21,13 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="AppTheme.Category.Desc">
+    <style name="AppTheme.Category.Publisher">
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.Category.Price">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/holo_green_light</item>
     </style>
 
     <style name="AppTheme.Category.Item">

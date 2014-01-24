@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/grid_item_1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="172dp"
     android:layout_marginLeft="4dp"
     android:layout_marginRight="4dp"
     android:layout_weight="1"
@@ -31,7 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/applist_row_item_title"
-        android:layout_marginBottom="16dp"
         android:text="@string/applist_default_app_author" />
 
     <RatingBar
@@ -40,10 +39,9 @@
         android:layout_width="wrap_content"
         android:layout_height="10dp"
         android:layout_alignLeft="@+id/applist_row_item_image"
-        android:layout_below="@+id/applist_row_item_desc"
+        android:layout_alignParentBottom="true"
         android:isIndicator="false"
-        android:numStars="5"
-        android:paddingBottom="2dp" />
+        android:numStars="5" />
 
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_price"
