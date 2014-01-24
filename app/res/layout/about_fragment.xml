@@ -14,27 +14,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/about_company_photo"
-            android:paddingTop="28dp"
+            android:paddingBottom="@dimen/about_logo_padding_bottom"
+            android:paddingTop="@dimen/about_logo_padding_top"
             android:src="@drawable/about_logo" />
-
-        <!-- version number -->
-
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/about_version"
-            style="@style/AppTheme.About.TopPanel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/about_logo"
-            android:gravity="right"
-            android:paddingBottom="22dp"
-            android:paddingRight="@dimen/std_half_padding"
-            android:text="@string/about_app_version_default" />
 
         <LinearLayout
             android:id="@+id/about_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/about_version"
+            android:layout_below="@+id/about_logo"
             android:orientation="vertical" >
 
             <View

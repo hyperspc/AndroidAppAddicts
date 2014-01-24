@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
     android:background="@drawable/card_shadow"
     android:paddingTop="0dp" >
 
@@ -21,41 +22,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/std_padding"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/std_padding"
         android:layout_toRightOf="@+id/applist_by_category_list_image"
+        android:includeFontPadding="false"
+        android:padding="0dp"
         android:text="@string/applist_default_app_name" />
 
     <com.sage42.android.view.fonts.MyTextView
-        android:id="@+id/applist_by_category_list_desc"
-        style="@style/AppTheme.Category.Desc"
+        android:id="@+id/applist_by_category_list_publisher"
+        style="@style/AppTheme.Category.Publisher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/applist_by_category_list_title"
         android:layout_below="@+id/applist_by_category_list_title"
+        android:includeFontPadding="false"
+        android:padding="0dp"
         android:text="@string/applist_default_app_author"
         android:textColor="@color/bright_foreground_disabled_holo_light" />
 
     <RatingBar
         android:id="@+id/applist_by_category_rating_star"
-        style="?android:attr/ratingBarStyleSmall"
+        style="?android:attr/ratingBarStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/applist_by_category_list_publisher"
+        android:layout_below="@+id/applist_by_category_list_publisher"
         android:layout_marginTop="@dimen/std_half_padding"
-        android:layout_alignLeft="@+id/applist_by_category_list_desc"
-        android:layout_below="@+id/applist_by_category_list_desc"
         android:isIndicator="false"
         android:numStars="5" />
 
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_by_category_type"
-        style="@style/AppTheme.Category.Desc"
+        style="@style/AppTheme.Category.Price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/applist_by_category_list_image"
         android:layout_alignParentRight="true"
         android:paddingBottom="0dp"
-        android:textSize="12sp"
-        android:text="@string/applist_default_app_price"
-        android:textColor="@android:color/holo_green_light" />
+        android:text="@string/applist_default_app_price" />
 
 </RelativeLayout>

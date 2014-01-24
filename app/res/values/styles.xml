@@ -40,7 +40,7 @@
         <item name="android:progressBarStyleHorizontal">@style/ProgressBarApptheme</item>
         <item name="android:seekBarStyle">@style/SeekBarApptheme</item>
         <item name="android:ratingBarStyle">@style/RatingBarApptheme</item>
-        <item name="android:ratingBarStyleIndicator">@style/RatingBarBigApptheme</item>
+        <item name="android:ratingBarStyleIndicator">@style/RatingBarApptheme</item>
         <item name="android:ratingBarStyleSmall">@style/RatingBarSmallApptheme</item>
         <item name="android:buttonStyleToggle">@style/ToggleApptheme</item>
     </style>
@@ -119,12 +119,7 @@
         <item name="android:thumb">@drawable/scrubber_control_selector_holo_light</item>
     </style>
 
-    <style name="RatingBarApptheme" parent="android:Widget.Holo.Light.RatingBar">
-        <item name="android:progressDrawable">@drawable/ratingbar_full_holo_light</item>
-        <item name="android:indeterminateDrawable">@drawable/ratingbar_full_holo_light</item>
-    </style>
-
-    <style name="RatingBarBigApptheme" parent="android:Widget.Holo.Light.RatingBar.Indicator">
+    <style name="RatingBarApptheme" parent="android:Widget.Holo.Light.RatingBar.Small">
         <item name="android:progressDrawable">@drawable/ratingbar_holo_light</item>
         <item name="android:indeterminateDrawable">@drawable/ratingbar_holo_light</item>
     </style>

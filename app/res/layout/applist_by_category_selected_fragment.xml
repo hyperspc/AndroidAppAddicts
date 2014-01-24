@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:divider="@android:color/transparent"
-    android:dividerHeight="@dimen/std_padding"
+    android:dividerHeight="6dp"
     android:paddingLeft="@dimen/std_padding"
     android:paddingRight="@dimen/std_padding"
     android:paddingTop="@dimen/std_padding"
