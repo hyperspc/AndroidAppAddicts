@@ -261,6 +261,7 @@ public class MainActivity extends Activity
         this.setSearchTextColour(this.mSearchView);
         this.mSearchView.setQueryHint(this.getString(R.string.menu_search_hint));
         this.mSearchView.setSuggestionsAdapter(this.mAdapter);
+        this.mSearchView.setScrollBarStyle(View.SCROLLBAR_POSITION_RIGHT);
         this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
         {
             @Override

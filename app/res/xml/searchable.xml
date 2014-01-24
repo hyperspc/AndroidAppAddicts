@@ -2,5 +2,11 @@
 <searchable xmlns:android="http://schemas.android.com/apk/res/android"
     android:hint="@string/menu_search_hint"
     android:icon="@drawable/ic_launcher"
+    android:includeInGlobalSearch="true"
     android:label="@string/menu_search_hint"
-    android:searchSuggestIntentAction="android.intent.action.VIEW"></searchable>
+    android:searchSuggestAuthority="com.sage42.androidappaddicts.app.search.SuggestionsProvider"
+    android:searchSuggestIntentAction="android.intent.action.VIEW"
+    android:searchSuggestSelection=" ?"
+    android:searchSuggestThreshold="1" >
+
+</searchable>

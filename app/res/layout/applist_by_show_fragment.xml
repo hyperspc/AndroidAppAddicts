@@ -2,9 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerHorizontal="true"
-    android:padding="@dimen/std_padding" >
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:paddingLeft="@dimen/std_padding"
+    android:paddingRight="@dimen/std_padding"
+    android:paddingBottom="@dimen/std_padding" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,12 +14,8 @@
         android:orientation="vertical" >
 
         <include
-            android:id="@+id/by_show_item"
+            android:id="@+id/by_show_item_one"
             layout="@layout/applist_by_show_listview_item" />
-
-        <include layout="@layout/applist_by_show_listview_item" />
-
-        <include layout="@layout/applist_by_show_listview_item" />
 
         <include layout="@layout/applist_by_show_listview_item" />
 
