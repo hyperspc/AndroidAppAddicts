@@ -43,13 +43,9 @@ import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 
 import com.sage42.androidappaddicts.R;
-
-
-
 import com.sage42.androidappaddicts.app.about.AboutFragment_;
 import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
 import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
-
 import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
@@ -61,22 +57,22 @@ import com.sage42.androidappaddicts.app.util.IntentUtils;
 public class MainActivity extends Activity
 {
     @ViewById(R.id.main_drawer_layout)
-    protected DrawerLayout mDrawerLayout;
+    protected DrawerLayout        mDrawerLayout;
 
     @ViewById(R.id.main_menu_layout)
-    protected ListView mMenuDrawerList;
+    protected ListView            mMenuDrawerList;
 
     private ActionBarDrawerToggle mDrawerToggle;
 
     @ViewById(R.id.main_search_result_list)
-    protected RelativeLayout mSearchResult;
-    private SearchView mSearchView;
-    private MenuItem mSearchViewMenuItem;
+    protected RelativeLayout      mSearchResult;
+    private SearchView            mSearchView;
+    private MenuItem              mSearchViewMenuItem;
 
     @InstanceState
-    protected boolean mNotFirstRun;
+    protected boolean             mNotFirstRun;
 
-    private SimpleCursorAdapter mAdapter;
+    private SimpleCursorAdapter   mAdapter;
 
     /**
      * Initialize the title, drawer, menu drawer and ActionBar.
@@ -84,9 +80,8 @@ public class MainActivity extends Activity
     @AfterViews
     protected void init()
     {
-        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout,
-                R.drawable.ic_drawer,
-                R.string.drawer_open, R.string.drawer_close);
+        this.mDrawerToggle = new MyActionBarDrawerToggle(this, this.mDrawerLayout, R.drawable.ic_drawer,
+                        R.string.drawer_open, R.string.drawer_close);
 
         // Set the drawer toggle as the DrawerListener
         this.mDrawerLayout.setDrawerListener(this.mDrawerToggle);
@@ -170,7 +165,7 @@ public class MainActivity extends Activity
 
             case R.id.action_share:
                 IntentUtils.doShare(this, this.getResources().getString(R.string.app_name)
-                        + this.getResources().getString(R.string.app_market_address));
+                                + this.getResources().getString(R.string.app_market_address));
                 break;
 
             case R.id.action_settings:
@@ -252,22 +247,18 @@ public class MainActivity extends Activity
     @OptionsItem(R.id.action_search)
     public void initSearchView(final MenuItem item)
     {
-
-        final SearchManager searchManager = (SearchManager) this
-                .getSystemService(Context.SEARCH_SERVICE);
+        final SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
 
         this.mSearchViewMenuItem = item;
         this.mSearchView = (SearchView) this.mSearchViewMenuItem.getActionView();
-        this.mSearchView
-                .setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+        this.mSearchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
         this.mSearchView.setIconifiedByDefault(true);
 
         this.setSearchTextColour(this.mSearchView);
-        this.mSearchView.setQueryHint("Search Apps"); //$NON-NLS-1$
+        this.mSearchView.setQueryHint(this.getString(R.string.menu_search_hint));
         this.mSearchView.setSuggestionsAdapter(this.mAdapter);
         this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
         {
-
             @Override
             public boolean onMenuItemActionCollapse(final MenuItem menuItem)
 
@@ -280,8 +271,7 @@ public class MainActivity extends Activity
             @Override
             public boolean onMenuItemActionExpand(final MenuItem menuItem)
             {
-                MainActivity.this.mDrawerLayout
-                        .setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                MainActivity.this.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 MainActivity.this.mSearchResult.setVisibility(View.VISIBLE);
                 return true;
             }
@@ -293,7 +283,7 @@ public class MainActivity extends Activity
     private void setSearchTextColour(final SearchView searchView)
     {
         final int searchPlateId = searchView.getContext().getResources()
-                .getIdentifier("android:id/search_src_text", null, null); //$NON-NLS-1$
+                        .getIdentifier("android:id/search_src_text", null, null); //$NON-NLS-1$
         final EditText searchPlate = (EditText) searchView.findViewById(searchPlateId);
         searchPlate.setHintTextColor(this.getResources().getColor(R.color.white));
     }
@@ -306,17 +296,12 @@ public class MainActivity extends Activity
     @SuppressWarnings("resource")
     public SimpleCursorAdapter getData()
     {
-
         final String[] columnNames =
-        {
-                "_id", "suggestion_applist_title"}; //$NON-NLS-1$//$NON-NLS-2$
+        { "_id", "suggestion_applist_title" }; //$NON-NLS-1$//$NON-NLS-2$
         final MatrixCursor cursor = new MatrixCursor(columnNames);
 
-        final String[] array = this.getResources()
-                .getStringArray(R.array.applist_by_category_array); // if
-                                                                    // strings
-                                                                    // are in
-                                                                    // resources
+        // if strings are in resources
+        final String[] array = this.getResources().getStringArray(R.array.applist_by_category_array);
         final String[] temp = new String[2];
         int id = 0;
         for (final String item : array)
@@ -326,13 +311,9 @@ public class MainActivity extends Activity
             cursor.addRow(temp);
         }
         final String[] from =
-        {
-            "suggestion_applist_title"}; //$NON-NLS-1$
+        { "suggestion_applist_title" }; //$NON-NLS-1$
         final int[] to =
-        {
-            R.id.suggestion_applist_title
-        };
+        { R.id.suggestion_applist_title };
         return new SimpleCursorAdapter(this, R.layout.suggestion_applist_item, cursor, from, to, 1);
-
     }
 }
