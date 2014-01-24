@@ -7,6 +7,7 @@
     <color name="menu_divider">#cccccc</color>
     <color name="general_text_primary">#333333</color>
     <color name="general_text_light">#999999</color>
+     <color name="general_text_light_gray">#666666</color>
     <color name="general_divider_color">#70999999</color>
     <color name="general_title_color">#aaaaaa</color>
     <color name="background_light_gray">#90eaeaea</color>

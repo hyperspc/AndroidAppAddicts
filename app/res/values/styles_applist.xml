@@ -40,7 +40,6 @@
     <style name="AppTheme.AppList.RowDesc">
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:textColor">@color/general_text_light</item>
         <item name="android:textSize">10sp</item>
     </style>
 

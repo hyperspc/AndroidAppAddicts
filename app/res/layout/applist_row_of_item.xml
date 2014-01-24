@@ -38,8 +38,8 @@
         android:id="@+id/applist_row_item_rating_star"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/applist_row_item_desc"
+        android:layout_height="8dp"
+        android:layout_marginBottom="2dp"
         android:layout_below="@+id/applist_row_item_desc"
         android:isIndicator="false"
         android:numStars="5" />
@@ -49,8 +49,8 @@
         style="@style/AppTheme.AppList.RowDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/applist_row_item_image"
-        android:layout_below="@+id/applist_row_item_desc"
         android:text="@string/applist_default_app_price"
         android:textColor="@android:color/holo_green_light" />
 
