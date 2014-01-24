@@ -2,7 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Defaults -->
-    <string name="applist_default_show_number">257</string>
+    <string name="applist_default_show_number">157</string>
     <string name="applist_default_show_title">Stupid Pointless Things</string>
     <string name="applist_default_show_description">App Author Name</string>
     <string name="applist_default_episode_title">Spencer sturgeon</string>

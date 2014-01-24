@@ -31,18 +31,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/applist_row_item_title"
-        android:paddingBottom="@dimen/content_padding"
+        android:layout_marginBottom="16dp"
         android:text="@string/applist_default_app_author" />
 
     <RatingBar
         android:id="@+id/applist_row_item_rating_star"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
-        android:layout_height="8dp"
-        android:layout_marginBottom="2dp"
+        android:layout_height="10dp"
+        android:layout_alignLeft="@+id/applist_row_item_image"
         android:layout_below="@+id/applist_row_item_desc"
         android:isIndicator="false"
-        android:numStars="5" />
+        android:numStars="5"
+        android:paddingBottom="2dp" />
 
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_price"

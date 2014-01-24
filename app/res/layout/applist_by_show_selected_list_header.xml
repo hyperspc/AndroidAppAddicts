@@ -28,7 +28,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_title"
-            style="@style/AppTheme.Show.Title"
+            style="@style/AppTheme.AppList.ShowTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -42,12 +42,11 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_duration"
-            style="@style/AppTheme.Show.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
             android:layout_toRightOf="@+id/applist_by_show_number"
-            android:fontFamily="roboto_regular"
             android:paddingBottom="@dimen/std_padding"
             android:text="@string/applist_by_show_duration" />
 
@@ -55,7 +54,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_duration_length"
-            style="@style/AppTheme.Show.Text"
+            style="@style/AppTheme.AppList.DetailsValue.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
@@ -67,12 +66,11 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_add"
-            style="@style/AppTheme.Show.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
             android:layout_toRightOf="@+id/applist_by_show_duration_length"
-            android:fontFamily="roboto_regular"
             android:paddingLeft="@dimen/std_padding"
             android:text="@string/applist_show_add" />
 
@@ -80,7 +78,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_add_date"
-            style="@style/AppTheme.Show.Text"
+            style="@style/AppTheme.AppList.DetailsValue.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
@@ -90,7 +88,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_author_title"
-            style="@style/AppTheme.Show.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_duration"
@@ -100,7 +98,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_author"
-            style="@style/AppTheme.Show.Text"
+            style="@style/AppTheme.AppList.DetailsValue.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_author_title"
@@ -118,7 +116,7 @@
 
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_by_show_grid_title"
-        style="@style/AppTheme.Show.Title"
+        style="@style/AppTheme.AppList.ShowTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/applist_by_show_header_box_layout"

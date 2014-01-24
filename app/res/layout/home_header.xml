@@ -2,21 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true" >
+    android:layout_centerHorizontal="true"
+    android:paddingBottom="@dimen/content_padding" >
 
     <RelativeLayout
         android:id="@+id/top_show_layout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:padding="@dimen/std_padding" >
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_show_listview_header"
-            style="@style/AppTheme.Show.Title"
+            style="@style/AppTheme.AppList.ShowTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:paddingLeft="@dimen/std_padding"
+            android:paddingLeft="@dimen/std_half_padding"
             android:text="@string/applist_latest_show_text"
             android:textSize="22sp" />
 
@@ -35,34 +36,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/top_show_layout"
-        android:layout_marginBottom="@dimen/std_padding"
-        android:background="@color/green_background" >
+        android:background="@color/green_background"
+        android:paddingBottom="@dimen/content_padding"
+        android:paddingLeft="@dimen/std_padding"
+        android:paddingRight="@dimen/std_padding" >
 
         <!-- show Number -->
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_number"
-            style="@style/AppTheme.AppList"
+            style="@style/AppTheme.AppList.ShowNumber.White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/content_padding"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="@dimen/std_padding"
-            android:text="@string/applist_default_show_number"
-            android:textColor="@color/white"
-            android:textSize="50sp" />
+            android:text="@string/applist_default_show_number" />
 
         <!-- show Title -->
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_title"
-            style="@style/AppTheme.Show.Title"
+            style="@style/AppTheme.AppList.ShowTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/applist_by_show_number"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/std_padding"
             android:layout_toRightOf="@+id/applist_by_show_number"
             android:ellipsize="end"
-            android:paddingTop="@dimen/std_half_padding"
             android:singleLine="true"
             android:text="@string/applist_default_show_title"
             android:textColor="@color/white" />
@@ -71,21 +72,19 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_duration"
-            style="@style/AppTheme.Show.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
             android:layout_toRightOf="@+id/applist_by_show_number"
             android:text="@string/applist_by_show_duration"
-            android:textColor="@color/white"
-            android:fontFamily="Roboto-Regular"
-             />
+            android:textColor="@color/white" />
 
         <!-- show Length -->
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_duration_length"
-            style="@style/AppTheme.Show.Text"
+            style="@style/AppTheme.AppList.DetailsValue.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/applist_by_show_author"
@@ -98,20 +97,19 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_add"
-            style="@style/AppTheme.Show.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_duration_length"
             android:layout_toRightOf="@+id/applist_by_show_number"
             android:text="@string/applist_show_add"
-            android:textColor="@color/white"
-            android:fontFamily="Roboto-Regular" />
+            android:textColor="@color/white" />
 
         <!-- show Date Added -->
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_add_date"
-            style="@style/AppTheme.Show.Text"
+            style="@style/AppTheme.AppList.DetailsValue.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/applist_by_show_author"
@@ -121,23 +119,20 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_author_title"
-            style="@style/AppTheme.Show.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_add_date"
             android:layout_toRightOf="@+id/applist_by_show_number"
             android:text="@string/applist_hosted_by"
-            android:textColor="@color/white"
-            android:fontFamily="Roboto-Regular" />
+            android:textColor="@color/white" />
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_author"
-            style="@style/AppTheme.Show.Text"
+            style="@style/AppTheme.AppList.DetailsValue.LightGray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/applist_by_author_title"
-            android:layout_marginBottom="@dimen/std_padding"
-            android:layout_marginLeft="@dimen/std_half_padding"
             android:layout_toRightOf="@+id/applist_by_author_title"
             android:text="@string/applist_default_host"
             android:textColor="@color/white" />
