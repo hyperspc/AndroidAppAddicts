@@ -43,9 +43,11 @@ import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 
 import com.sage42.androidappaddicts.R;
+
 import com.sage42.androidappaddicts.app.about.AboutFragment_;
 import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
 import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
+
 import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
@@ -259,11 +261,11 @@ public class MainActivity extends Activity
         this.mSearchView.setIconifiedByDefault(true);
 
         this.setSearchTextColour(this.mSearchView);
-        this.mSearchView.setQueryHint(this.getString(R.string.menu_search_hint));
+        this.mSearchView.setQueryHint("Search Apps"); //$NON-NLS-1$
         this.mSearchView.setSuggestionsAdapter(this.mAdapter);
-        this.mSearchView.setScrollBarStyle(View.SCROLLBAR_POSITION_RIGHT);
         this.mSearchViewMenuItem.setOnActionExpandListener(new OnActionExpandListener()
         {
+
             @Override
             public boolean onMenuItemActionCollapse(final MenuItem menuItem)
 
@@ -302,14 +304,17 @@ public class MainActivity extends Activity
     @SuppressWarnings("resource")
     public SimpleCursorAdapter getData()
     {
+
         final String[] columnNames =
         {
                 "_id", "suggestion_applist_title"}; //$NON-NLS-1$//$NON-NLS-2$
         final MatrixCursor cursor = new MatrixCursor(columnNames);
 
         final String[] array = this.getResources()
-                .getStringArray(R.array.applist_by_category_array);
-
+                .getStringArray(R.array.applist_by_category_array); // if
+                                                                    // strings
+                                                                    // are in
+                                                                    // resources
         final String[] temp = new String[2];
         int id = 0;
         for (final String item : array)
@@ -320,11 +325,12 @@ public class MainActivity extends Activity
         }
         final String[] from =
         {
-                "suggestion_applist_title"}; //$NON-NLS-1$
+            "suggestion_applist_title"}; //$NON-NLS-1$
         final int[] to =
         {
-                R.id.suggestion_applist_title
+            R.id.suggestion_applist_title
         };
         return new SimpleCursorAdapter(this, R.layout.suggestion_applist_item, cursor, from, to, 1);
+
     }
 }
