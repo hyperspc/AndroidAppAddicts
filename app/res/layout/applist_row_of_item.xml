@@ -37,7 +37,7 @@
         android:id="@+id/applist_row_item_rating_star"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
-        android:layout_height="10dp"
+        android:layout_height="12dp"
         android:layout_alignLeft="@+id/applist_row_item_image"
         android:layout_alignParentBottom="true"
         android:isIndicator="false"
@@ -45,7 +45,7 @@
 
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_price"
-        style="@style/AppTheme.AppList.RowDesc"
+        style="@style/AppTheme.AppList.RowPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
