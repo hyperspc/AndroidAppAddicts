@@ -1,89 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/content_padding" >
+    android:layout_height="wrap_content" >
 
-    <ImageView
-        android:id="@+id/about_logo"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/about_company_photo"
-        android:paddingTop="28dp"
-        android:src="@drawable/about_logo" />
+        android:padding="@dimen/content_padding" >
 
-    <!-- version number -->
-
-    <TextView
-        android:id="@+id/about_version"
-        style="@style/AppTheme.About.TopPanel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/about_logo"
-        android:gravity="right"
-        android:paddingBottom="22dp"
-        android:paddingRight="@dimen/std_half_padding"
-        android:text="@string/about_app_version_default" />
-
-    <LinearLayout
-        android:id="@+id/about_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/about_version"
-        android:orientation="vertical" >
-
-        <View
-            style="@style/AppTheme.About.Hr"
-            android:layout_width="match_parent" />
-
-        <TextView
-            android:id="@+id/about_hotline"
-            style="@style/AppTheme.About.Button"
+        <ImageView
+            android:id="@+id/about_logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_phone"
-            android:text="@string/about_call" />
+            android:contentDescription="@string/about_company_photo"
+            android:paddingTop="28dp"
+            android:src="@drawable/about_logo" />
 
-        <View
-            style="@style/AppTheme.About.Hr"
-            android:layout_width="match_parent" />
+        <!-- version number -->
 
-        <TextView
-            android:id="@+id/about_email"
-            style="@style/AppTheme.About.Button"
+        <com.sage42.android.view.fonts.MyTextView
+            android:id="@+id/about_version"
+            style="@style/AppTheme.About.TopPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_email"
-            android:text="@string/about_email" />
+            android:layout_below="@+id/about_logo"
+            android:gravity="right"
+            android:paddingBottom="22dp"
+            android:paddingRight="@dimen/std_half_padding"
+            android:text="@string/about_app_version_default" />
 
-        <View
-            style="@style/AppTheme.About.Hr"
-            android:layout_width="match_parent" />
-
-        <TextView
-            android:id="@+id/about_gplus"
-            style="@style/AppTheme.About.Button"
+        <LinearLayout
+            android:id="@+id/about_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_gplus"
-            android:text="@string/about_follow_us" />
+            android:layout_below="@+id/about_version"
+            android:orientation="vertical" >
 
-        <View
-            style="@style/AppTheme.About.Hr"
-            android:layout_width="match_parent" />
+            <View
+                style="@style/AppTheme.About.Hr"
+                android:layout_width="match_parent" />
 
-        <TextView
-            android:id="@+id/about_participate"
-            style="@style/AppTheme.About.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_social"
-            android:text="@string/about_participate" />
+            <com.sage42.android.view.fonts.MyTextView
+                android:id="@+id/about_hotline"
+                style="@style/AppTheme.About.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_phone"
+                android:text="@string/about_call" />
 
-        <View
-            style="@style/AppTheme.About.Hr"
-            android:layout_width="match_parent" />
-    </LinearLayout>
+            <View
+                style="@style/AppTheme.About.Hr"
+                android:layout_width="match_parent" />
 
-</RelativeLayout>
+            <com.sage42.android.view.fonts.MyTextView
+                android:id="@+id/about_email"
+                style="@style/AppTheme.About.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_email"
+                android:text="@string/about_email" />
+
+            <View
+                style="@style/AppTheme.About.Hr"
+                android:layout_width="match_parent" />
+
+            <com.sage42.android.view.fonts.MyTextView
+                android:id="@+id/about_gplus"
+                style="@style/AppTheme.About.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_gplus"
+                android:text="@string/about_follow_us" />
+
+            <View
+                style="@style/AppTheme.About.Hr"
+                android:layout_width="match_parent" />
+
+            <com.sage42.android.view.fonts.MyTextView
+                android:id="@+id/about_participate"
+                style="@style/AppTheme.About.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_social"
+                android:text="@string/about_participate" />
+
+            <View
+                style="@style/AppTheme.About.Hr"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
