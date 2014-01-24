@@ -14,11 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/about_company_photo"
-            android:paddingTop="28dp"
-            android:paddingBottom="48dp"
+            android:paddingBottom="@dimen/about_logo_padding_bottom"
+            android:paddingTop="@dimen/about_logo_padding_top"
             android:src="@drawable/about_logo" />
-
-
 
         <LinearLayout
             android:id="@+id/about_content"
