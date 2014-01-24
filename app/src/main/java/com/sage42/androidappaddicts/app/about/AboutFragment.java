@@ -13,52 +13,25 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package com.sage42.androidappaddicts.app.about;
 
-import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsMenu;
-import org.androidannotations.annotations.ViewById;
-
 import android.app.Fragment;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.util.Log;
-import android.widget.TextView;
-
 import com.sage42.androidappaddicts.R;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
- * The "About" page for the app. With lots of clickable links to call, email, etc.
+ * The "About" page for the app. With lots of clickable links to call, email,
+ * etc.
  */
 @OptionsMenu(R.menu.general)
 @EFragment(resName = "about_fragment")
 public class AboutFragment extends Fragment
 {
     private static final String TAG = AboutFragment.class.getSimpleName();
-
-    @ViewById(R.id.about_version)
-    protected TextView          mVersion;
-
-    /**
-     * Add data into the display.
-     */
-    @AfterViews
-    protected void init()
-    {
-        try
-        {
-            // pull version name from manifest and add to display
-            this.mVersion.setText(this.getActivity().getPackageManager()
-                            .getPackageInfo(this.getActivity().getPackageName(), 0).versionName);
-        }
-        catch (final NameNotFoundException e)
-        {
-            // this should not happen
-            Log.w(TAG, e.getMessage(), e);
-        }
-    }
 
     /**
      * Set the screen title.

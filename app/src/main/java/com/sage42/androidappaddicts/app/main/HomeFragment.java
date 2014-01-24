@@ -43,56 +43,42 @@ import com.sage42.androidappaddicts.app.main.MainActivity;
 @EFragment(R.layout.home_fragment)
 public class HomeFragment extends Fragment
 {
-
     @ViewById(R.id.home_listview)
-    ListView mListView;
+    protected ListView mListView;
 
     /**
      * Wire the data to the UI
      */
     @AfterViews
-    void init()
+    protected void init()
     {
-
         this.getActivity().getActionBar().setTitle(R.string.main_home_title);
         final String[] listviewItemCollectionDesc = new String[]
-        {
-                "applist_row_item_image", "applist_row_item_title", "applist_row_item_desc", "applist_row_item_price"}; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        { "applist_row_item_image", "applist_row_item_title", "applist_row_item_desc", "applist_row_item_price" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
         final int[] listviewItemCollection = new int[]
-        {
-                R.id.applist_row_item_image, R.id.applist_row_item_title,
-                R.id.applist_row_item_desc,
-                R.id.applist_row_item_price
-        };
+        { R.id.applist_row_item_image, R.id.applist_row_item_title, R.id.applist_row_item_desc,
+                        R.id.applist_row_item_price };
 
-        final View header = this.getActivity().getLayoutInflater()
-                .inflate(R.layout.applist_show_listview_header, null);
+        final View header = this.getActivity().getLayoutInflater().inflate(R.layout.home_header, null);
         final TextView showAll = (TextView) header.findViewById(R.id.applist_show_all);
         showAll.setOnClickListener(new OnClickListener()
         {
-
             @Override
             public void onClick(final View v)
             {
-                HomeFragment.this.showAllShows();
+                final ByShowFragment_ detailsPage = new ByShowFragment_();
+                ((MainActivity) HomeFragment.this.getActivity()).showFragment(detailsPage, true);
             }
 
         });
         this.mListView.addHeaderView(header, null, false);
         final List<HashMap<String, String>> data = this.getData();
-        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data,
-                R.layout.applist_row_of_3,
-                listviewItemCollectionDesc, listviewItemCollection);
+        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data, R.layout.applist_row_of_3,
+                        listviewItemCollectionDesc, listviewItemCollection);
 
         this.mListView.setAdapter(adapter);
 
-    }
-
-    public void showAllShows()
-    {
-        final ByShowFragment_ detailsPage = new ByShowFragment_();
-        ((MainActivity) this.getActivity()).showFragment(detailsPage, true);
     }
 
     /**
@@ -103,7 +89,7 @@ public class HomeFragment extends Fragment
     {
         super.onStart();
 
-        this.getActivity().getActionBar().setTitle(R.string.applist_by_show_title);
+        this.getActivity().getActionBar().setTitle(R.string.home_title);
     }
 
     /**
@@ -111,7 +97,7 @@ public class HomeFragment extends Fragment
      * 
      * @return
      */
-    public List<HashMap<String, String>> getData()
+    private List<HashMap<String, String>> getData()
     {
         int count = 0;
         final List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();

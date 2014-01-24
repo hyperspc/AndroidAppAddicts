@@ -4,10 +4,11 @@
     <style name="AppTheme" parent="@style/_AppTheme">
         <item name="android:windowBackground">@color/background</item>
         <item name="android:textColor">@color/general_text_primary</item>
+        <item name="fontFamily">Roboto-Light</item>
     </style>
 
     <style name="_AppTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
- 
+
         <!-- Actionbar styles -->
         <item name="android:actionBarStyle">@style/ActionBar.Solid.Apptheme</item>
         <item name="android:actionBarItemBackground">@drawable/selectable_background</item>
@@ -39,7 +40,7 @@
         <item name="android:progressBarStyleHorizontal">@style/ProgressBarApptheme</item>
         <item name="android:seekBarStyle">@style/SeekBarApptheme</item>
         <item name="android:ratingBarStyle">@style/RatingBarApptheme</item>
-        <item name="android:ratingBarStyleIndicator">@style/RatingBarBigApptheme</item>
+        <item name="android:ratingBarStyleIndicator">@style/RatingBarApptheme</item>
         <item name="android:ratingBarStyleSmall">@style/RatingBarSmallApptheme</item>
         <item name="android:buttonStyleToggle">@style/ToggleApptheme</item>
     </style>
@@ -118,12 +119,7 @@
         <item name="android:thumb">@drawable/scrubber_control_selector_holo_light</item>
     </style>
 
-    <style name="RatingBarApptheme" parent="android:Widget.Holo.Light.RatingBar">
-        <item name="android:progressDrawable">@drawable/ratingbar_full_holo_light</item>
-        <item name="android:indeterminateDrawable">@drawable/ratingbar_full_holo_light</item>
-    </style>
-
-    <style name="RatingBarBigApptheme" parent="android:Widget.Holo.Light.RatingBar.Indicator">
+    <style name="RatingBarApptheme" parent="android:Widget.Holo.Light.RatingBar.Small">
         <item name="android:progressDrawable">@drawable/ratingbar_holo_light</item>
         <item name="android:indeterminateDrawable">@drawable/ratingbar_holo_light</item>
     </style>

@@ -51,20 +51,16 @@ public class ByCategorySelectedFragment extends Fragment
 
         // Dummy Code
         final String[] listviewItemCollectionDesc = new String[]
-        {
-                "image", "title", "desc", "type"}; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        { "image", "title", "desc", "type" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
         final int[] listviewItemCollection = new int[]
-        {
-                R.id.applist_by_category_list_image, R.id.applist_by_category_list_title,
-                R.id.applist_by_category_list_desc,
-                R.id.applist_by_category_type
-        };
+        { R.id.applist_by_category_list_image, R.id.applist_by_category_list_title,
+                        R.id.applist_by_category_list_publisher, R.id.applist_by_category_type };
 
         final List<HashMap<String, String>> data = this.getData();
         final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data,
-                R.layout.applist_by_category_selected_list_item, listviewItemCollectionDesc,
-                listviewItemCollection);
+                        R.layout.applist_by_category_selected_list_item, listviewItemCollectionDesc,
+                        listviewItemCollection);
 
         this.mListView.setAdapter(adapter);
 

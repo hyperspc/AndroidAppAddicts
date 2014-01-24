@@ -16,7 +16,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_number"
-            style="@style/AppTheme.AppList.ShowNumber"
+            style="@style/AppTheme.AppList.ShowNumber.Green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/std_padding"
@@ -39,18 +39,18 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_duration"
-            style="@style/AppTheme.AppList.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.Light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
             android:layout_toRightOf="@+id/applist_by_show_number"
-            android:text="@string/applist_show_duration" />
+            android:text="@string/applist_by_show_duration" />
 
         <!-- show Length -->
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_duration_length"
-            style="@style/AppTheme.AppList.DetailsValue"
+            style="@style/AppTheme.AppList.DetailsValue.Light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
@@ -62,7 +62,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_add"
-            style="@style/AppTheme.AppList.DetailsLabel"
+            style="@style/AppTheme.AppList.DetailsLabel.Light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
@@ -74,7 +74,7 @@
 
         <com.sage42.android.view.fonts.MyTextView
             android:id="@+id/applist_by_show_add_date"
-            style="@style/AppTheme.AppList.DetailsValue"
+            style="@style/AppTheme.AppList.DetailsValue.Light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/applist_by_show_title"
