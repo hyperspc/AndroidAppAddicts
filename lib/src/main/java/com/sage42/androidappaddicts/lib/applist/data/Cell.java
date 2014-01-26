@@ -18,13 +18,15 @@ package com.sage42.androidappaddicts.lib.applist.data;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * A data cell from the AppList json.
+ * A data cell from the AppList JSON.
  */
 public class Cell
 {
-    private int    mRow;
+    @SerializedName("row")
+    private String mRow;
 
-    private int    mCol;
+    @SerializedName("col")
+    private String mCol;
 
     @SerializedName("$t")
     private String mValue;
@@ -32,15 +34,16 @@ public class Cell
     /**
      * @return the row
      */
-    public int getRow()
+    public String getRow()
     {
         return this.mRow;
     }
 
     /**
-     * @param row the row to set
+     * @param row
+     *            the row to set
      */
-    public void setRow(final int row)
+    public void setRow(final String row)
     {
         this.mRow = row;
     }
@@ -48,15 +51,16 @@ public class Cell
     /**
      * @return the col
      */
-    public int getCol()
+    public String getCol()
     {
         return this.mCol;
     }
 
     /**
-     * @param col the col to set
+     * @param col
+     *            the col to set
      */
-    public void setCol(final int col)
+    public void setCol(final String col)
     {
         this.mCol = col;
     }
@@ -70,14 +74,16 @@ public class Cell
     }
 
     /**
-     * @param value the value to set
+     * @param value
+     *            the value to set
      */
     public void setValue(final String value)
     {
         this.mValue = value;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @SuppressWarnings("nls")

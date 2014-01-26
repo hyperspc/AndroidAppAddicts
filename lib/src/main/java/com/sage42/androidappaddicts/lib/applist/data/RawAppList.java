@@ -15,35 +15,50 @@
  */
 package com.sage42.androidappaddicts.lib.applist.data;
 
-import java.util.Arrays;
-
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Data object needed to parse the AppList JSON.
  */
-public class AppList
+public class RawAppList
 {
-    @SerializedName("entry")
-    private Entry[] mEntries;
+    @SerializedName("feed")
+    private Feed mFeed;
 
-    /**
-     * @return the entries
-     */
-    public Entry[] getEntries()
+    public boolean isEmpty()
     {
-        return this.mEntries;
+        if (this.mFeed == null)
+        {
+            return true;
+        }
+        RowCountData rowCount = this.mFeed.getRowCount();
+        if ((rowCount == null) || rowCount.getValue().equals("0")) //$NON-NLS-1$
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /**
-     * @param entries the entries to set
+     * @return the feed
      */
-    public void setEntries(Entry[] entries)
+    public Feed getFeed()
     {
-        this.mEntries = entries;
+        return this.mFeed;
     }
 
-    /* (non-Javadoc)
+    /**
+     * @param feed
+     *            the feed to set
+     */
+    public void setFeed(Feed feed)
+    {
+        this.mFeed = feed;
+    }
+
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @SuppressWarnings("nls")
@@ -51,8 +66,8 @@ public class AppList
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append("AppList [mEntries=");
-        builder.append(Arrays.toString(this.mEntries));
+        builder.append("RawAppList [mFeed=");
+        builder.append(this.mFeed);
         builder.append("]");
         return builder.toString();
     }

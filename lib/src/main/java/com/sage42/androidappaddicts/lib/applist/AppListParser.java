@@ -15,7 +15,7 @@
  */
 package com.sage42.androidappaddicts.lib.applist;
 
-import com.sage42.androidappaddicts.lib.applist.data.AppList;
+import com.sage42.androidappaddicts.lib.applist.data.RawAppList;
 
 public class AppListParser
 {
@@ -24,16 +24,12 @@ public class AppListParser
     /**
      * @return
      */
-    public AppList getApplications()
+    public RawAppList getApplications()
     {
         // TODO: add check for last updated
         // TODO: add ability to pull only the update
 
         // pull the data from the web.
-
-        // parse it (gson).
-
-        // second pass over the data to put into the format we want.
 
         return null;
     }
