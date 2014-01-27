@@ -198,6 +198,8 @@ public class MainActivity extends Activity
         {
             fragmentManager.popBackStack();
 
+            this.getActionBar().setDisplayHomeAsUpEnabled(true);
+
             if (fragmentManager.getBackStackEntryCount() == 1)
             {
                 this.mDrawerToggle.syncState();
@@ -325,10 +327,10 @@ public class MainActivity extends Activity
         }
         final String[] from =
         {
-            "suggestion_applist_title"}; //$NON-NLS-1$
+                "suggestion_applist_title"}; //$NON-NLS-1$
         final int[] to =
         {
-            R.id.suggestion_applist_title
+                R.id.suggestion_applist_title
         };
         return new SimpleCursorAdapter(this, R.layout.suggestion_applist_item, cursor, from, to, 1);
 
