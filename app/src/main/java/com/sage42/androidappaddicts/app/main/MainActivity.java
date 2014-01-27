@@ -22,6 +22,7 @@ import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.res.StringArrayRes;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -63,6 +64,9 @@ public class MainActivity extends Activity
 
     @ViewById(R.id.main_menu_layout)
     protected ListView mMenuDrawerList;
+
+    @StringArrayRes(R.array.applist_by_category_array)
+    String[] mArray;
 
     private ActionBarDrawerToggle mDrawerToggle;
 
@@ -312,14 +316,9 @@ public class MainActivity extends Activity
                 "_id", "suggestion_applist_title"}; //$NON-NLS-1$//$NON-NLS-2$
         final MatrixCursor cursor = new MatrixCursor(columnNames);
 
-        final String[] array = this.getResources()
-                .getStringArray(R.array.applist_by_category_array); // if
-                                                                    // strings
-                                                                    // are in
-                                                                    // resources
         final String[] temp = new String[2];
         int id = 0;
-        for (final String item : array)
+        for (final String item : this.mArray)
         {
             temp[0] = Integer.toString(id++);
             temp[1] = item;
