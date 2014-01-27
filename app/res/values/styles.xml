@@ -126,7 +126,7 @@
 
     <style name="RatingBarSmallApptheme" parent="android:Widget.Holo.Light.RatingBar.Small">
         <item name="android:progressDrawable">@drawable/ratingbar_small_holo_light</item>
-        <item name="android:indeterminateDrawable">@drawable/ratingbar_small_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/ratingbar_small_holo_light</item>    
     </style>
 
     <style name="ToggleApptheme" parent="android:Widget.Holo.Light.Button.Toggle">
