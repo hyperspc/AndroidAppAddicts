@@ -32,7 +32,7 @@ import com.sage42.androidappaddicts.app.main.MainActivity;
 public class ByShowFragment extends Fragment
 {
 
-    @Click(R.id.by_show_item)
+    @Click(R.id.by_show_item_one)
     public void byShowClick()
     {
         final ByShowSelectedFragment_ detailsPage = new ByShowSelectedFragment_();

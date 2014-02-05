@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sage42.androidappaddicts.app.hosts.CustomGridContentView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/grid_item_1"
     android:layout_width="match_parent"
-    android:layout_height="172dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="4dp"
     android:layout_marginRight="4dp"
     android:layout_weight="1"
@@ -40,12 +40,13 @@
         android:layout_height="10dp"
         android:layout_alignLeft="@+id/applist_row_item_image"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0.5dp"
         android:isIndicator="false"
         android:numStars="5" />
 
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/applist_row_item_price"
-        style="@style/AppTheme.AppList.RowDesc"
+        style="@style/AppTheme.AppList.RowPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -53,4 +54,4 @@
         android:text="@string/applist_default_app_price"
         android:textColor="@android:color/holo_green_light" />
 
-</RelativeLayout>
+</com.sage42.androidappaddicts.app.hosts.CustomGridContentView >

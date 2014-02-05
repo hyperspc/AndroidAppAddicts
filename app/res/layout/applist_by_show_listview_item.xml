@@ -1,86 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- hack for to make the divider 6dp -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerHorizontal="true" >
+    android:layout_height="80dp"
+    android:layout_marginBottom="3dp"
+    android:layout_marginTop="3dp"
+    android:background="@drawable/card_shadow"
+    android:gravity="center_vertical"
+    tools:ignore="UselessParent" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <!-- show Number -->
+
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/applist_by_show_number"
+        style="@style/AppTheme.AppList.ShowNumber.Green"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/std_padding"
-        android:background="@drawable/card_shadow"
-        tools:ignore="UselessParent" >
+        android:layout_marginRight="@dimen/std_padding"
+        android:includeFontPadding="false"
+        android:text="@string/applist_default_show_number"
+        android:textSize="50sp" />
 
-        <!-- show Number -->
+    <!-- show Title -->
 
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/applist_by_show_number"
-            style="@style/AppTheme.AppList.ShowNumber.Green"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/std_padding"
-            android:text="@string/applist_default_show_number" />
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/applist_by_show_title"
+        style="@style/AppTheme.AppList.ShowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/applist_by_show_number"
+        android:layout_toRightOf="@+id/applist_by_show_number"
+        android:ellipsize="end"
+        android:paddingBottom="2dp"
+        android:paddingTop="@dimen/applist_by_show_title_top_padding"
+        android:singleLine="true"
+        android:text="@string/applist_default_show_title"
+        android:textSize="18sp" />
 
-        <!-- show Title -->
+    <!-- show Duration -->
 
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/applist_by_show_title"
-            style="@style/AppTheme.AppList.ShowTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/applist_by_show_number"
-            android:ellipsize="end"
-            android:paddingTop="@dimen/applist_show_title_top_padding"
-            android:singleLine="true"
-            android:text="@string/applist_default_show_title" />
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/applist_by_show_duration"
+        style="@style/AppTheme.AppList.DetailsLabel.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/applist_by_show_title"
+        android:layout_toRightOf="@+id/applist_by_show_number"
+        android:text="@string/applist_by_show_duration" />
 
-        <!-- show Duration -->
+    <!-- show Length -->
 
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/applist_by_show_duration"
-            style="@style/AppTheme.AppList.DetailsLabel.Light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/applist_by_show_title"
-            android:layout_toRightOf="@+id/applist_by_show_number"
-            android:text="@string/applist_by_show_duration" />
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/applist_by_show_duration_length"
+        style="@style/AppTheme.AppList.DetailsValue.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/applist_by_show_title"
+        android:layout_toRightOf="@+id/applist_by_show_duration"
+        android:paddingLeft="@dimen/applist_space_between_label_value"
+        android:text="@string/applist_default_show_duration_length" />
 
-        <!-- show Length -->
+    <!-- show Added -->
 
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/applist_by_show_duration_length"
-            style="@style/AppTheme.AppList.DetailsValue.Light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/applist_by_show_title"
-            android:layout_toRightOf="@+id/applist_by_show_duration"
-            android:paddingLeft="@dimen/applist_space_between_label_value"
-            android:text="@string/applist_default_show_duration_length" />
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/applist_by_show_add"
+        style="@style/AppTheme.AppList.DetailsLabel.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/applist_by_show_number"
+        android:layout_below="@+id/applist_by_show_title"
+        android:layout_toRightOf="@+id/applist_by_show_number"
+        android:paddingLeft="@dimen/applist_show_added_left_padding"
+        android:text="@string/applist_show_add"
+        android:textSize="14sp" />
 
-        <!-- show Added -->
+    <!-- show Date Added -->
 
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/applist_by_show_add"
-            style="@style/AppTheme.AppList.DetailsLabel.Light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/applist_by_show_title"
-            android:layout_toRightOf="@+id/applist_by_show_number"
-            android:paddingLeft="@dimen/applist_show_added_left_padding"
-            android:text="@string/applist_show_add" />
-
-        <!-- show Date Added -->
-
-        <com.sage42.android.view.fonts.MyTextView
-            android:id="@+id/applist_by_show_add_date"
-            style="@style/AppTheme.AppList.DetailsValue.Light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/applist_by_show_title"
-            android:layout_toRightOf="@+id/applist_by_show_add"
-            android:paddingLeft="@dimen/applist_space_between_label_value"
-            android:text="@string/applist_default_show_add_date" />
-    </RelativeLayout>
+    <com.sage42.android.view.fonts.MyTextView
+        android:id="@+id/applist_by_show_add_date"
+        style="@style/AppTheme.AppList.DetailsValue.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/applist_by_show_title"
+        android:layout_toRightOf="@+id/applist_by_show_add"
+        android:paddingLeft="@dimen/applist_space_between_label_value"
+        android:text="@string/applist_default_show_add_date"
+        android:textSize="14sp" />
 
 </RelativeLayout>
