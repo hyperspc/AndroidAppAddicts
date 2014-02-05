@@ -13,6 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+
 package com.sage42.androidappaddicts.app.hosts;
 
 import com.sage42.androidappaddicts.app.util.SizeUtils;
@@ -58,7 +59,7 @@ public class CustomGridContentView extends RelativeLayout
     @Override
     public void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec)
     {
-        final int fixHeight = widthMeasureSpec + SizeUtils.getDpi(this.getResources(), 90);
+        final int fixHeight = widthMeasureSpec + SizeUtils.getDpi(this.getResources(), 60);
         super.onMeasure(widthMeasureSpec, fixHeight);
     }
 
@@ -67,13 +68,14 @@ public class CustomGridContentView extends RelativeLayout
      * @see android.view.View#onSizeChanged(int, int, int, int)
      */
     @Override
-    protected void onSizeChanged(final int width, final int height, final int oldWidth, final int oldHeight)
+    protected void onSizeChanged(final int width, final int height, final int oldWidth,
+            final int oldHeight)
     {
         super.onSizeChanged(width, height, oldWidth, oldHeight);
 
-        if ((this.getLayoutParams() != null) && (width != height))
+        if (this.getLayoutParams() != null && width != height)
         {
-            this.getLayoutParams().height = width + SizeUtils.getDpi(this.getResources(), 90);
+            this.getLayoutParams().height = width + SizeUtils.getDpi(this.getResources(), 60);
 
             this.setLayoutParams(this.getLayoutParams());
         }

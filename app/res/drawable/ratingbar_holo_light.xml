@@ -3,9 +3,13 @@
     <item
         android:id="@android:id/background"
         android:drawable="@drawable/rate_star_big_off_holo_light" />
-    <item
+    
+        <!--
+  styles issue on on star covered by the half star with both image showing
+  <item
         android:id="@android:id/secondaryProgress"
         android:drawable="@drawable/rate_star_big_half_holo_light" />
+    -->
     <item
         android:id="@android:id/progress"
         android:drawable="@drawable/rate_star_big_on_holo_light" />

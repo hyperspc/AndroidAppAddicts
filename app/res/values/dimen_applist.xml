@@ -4,6 +4,7 @@
     <dimen name="applist_space_between_label_value">2dp</dimen>
     <dimen name="applist_show_added_left_padding">110dp</dimen>
     <dimen name="applist_show_title_top_padding">12dp</dimen>
+    <dimen name="applist_by_show_title_top_padding">6dp</dimen>
     <dimen name="applist_by_category_list_item_height">64dp</dimen>
 
 </resources>

@@ -6,13 +6,21 @@
     android:paddingLeft="@dimen/std_padding"
     android:paddingRight="@dimen/std_padding" >
 
+    <ImageView
+        android:id="@+id/suggestion_applist_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/santa" />
+
     <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/suggestion_applist_title"
         style="@style/AppTheme.Suggestion.MenuItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/ic_launcher"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/std_padding"
+        android:layout_toRightOf="@+id/suggestion_applist_image"
         android:text="@string/suggest_default_app_name" />
 
 </RelativeLayout>
