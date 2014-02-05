@@ -16,12 +16,31 @@
 
 package com.sage42.androidappaddicts.app;
 
+import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EApplication;
 
 import android.app.Application;
 
+import com.sage42.androidappaddicts.app.model.api.MyApiFactory;
+import com.sage42.androidappaddicts.app.model.api.MyApiImpl;
+
 @EApplication
 public class AndroidAppAddictsApplication extends Application
 {
-    // nothing yet
+    @Bean
+    protected MyApiImpl mDefaultApiImpl;
+
+    /*
+     * (non-Javadoc)
+     * @see android.app.Application#onCreate()
+     */
+    @Override
+    public void onCreate()
+    {
+        super.onCreate();
+
+        // setup the API factory with the default API instance
+        MyApiFactory.setApiInstance(this.mDefaultApiImpl);
+    }
+
 }
