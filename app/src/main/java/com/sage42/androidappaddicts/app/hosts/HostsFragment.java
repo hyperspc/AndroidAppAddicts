@@ -30,7 +30,7 @@ import android.widget.GridView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.R;
 
 /**
  * Hosts fragment.

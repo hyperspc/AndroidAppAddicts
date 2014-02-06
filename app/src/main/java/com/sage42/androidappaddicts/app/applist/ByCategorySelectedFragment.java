@@ -28,7 +28,8 @@ import org.androidannotations.annotations.ViewById;
 import android.app.Fragment;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import com.sage42.androidappaddicts.R;
+
+import com.sage42.androidappaddicts.app.R;
 
 /**
  * Fragment to display the list of apps by the category selected.

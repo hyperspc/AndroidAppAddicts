@@ -31,13 +31,13 @@ public class SizeUtils
     /**
      * Calculate the dpi Size on the given pixels value.
      * 
-     * @param Resources , pixelValue
+     * @param Resources
+     *            , pixelValue
      * @return dpi
      */
     public static int getDpi(final Resources resources, final int pixelValue)
     {
 
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixelValue,
-                resources.getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixelValue, resources.getDisplayMetrics());
     }
 }

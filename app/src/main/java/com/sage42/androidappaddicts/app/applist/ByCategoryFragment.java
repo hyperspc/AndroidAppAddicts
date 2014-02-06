@@ -25,7 +25,7 @@ import android.app.Fragment;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.main.MainActivity;
 
 /**

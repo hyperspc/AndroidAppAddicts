@@ -19,8 +19,10 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsMenu;
+
 import android.app.Fragment;
-import com.sage42.androidappaddicts.R;
+
+import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.main.MainActivity;
 
 /**

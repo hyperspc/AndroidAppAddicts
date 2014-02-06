@@ -19,13 +19,14 @@ package com.sage42.androidappaddicts.app.about;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsMenu;
+
 import android.app.Fragment;
-import com.sage42.androidappaddicts.R;
+
+import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
 
 /**
- * The "About" page for the app. With lots of clickable links to call, email,
- * etc.
+ * The "About" page for the app. With lots of clickable links to call, email, etc.
  */
 @OptionsMenu(R.menu.general)
 @EFragment(resName = "about_fragment")

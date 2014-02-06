@@ -16,7 +16,8 @@
 package com.sage42.androidappaddicts.app.menu;
 
 import java.util.ArrayList;
-import com.sage42.androidappaddicts.R;
+
+import com.sage42.androidappaddicts.app.R;
 
 public class MenuData
 {
