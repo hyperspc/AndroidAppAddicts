@@ -1,4 +1,4 @@
-package com.sage42.androidappaddicts.lib.applist.data;
+package com.sage42.androidappaddicts.app.model.data;
 
 import java.util.Arrays;
 
@@ -27,7 +27,7 @@ public class Feed
      * @param entries
      *            the entries to set
      */
-    public void setEntries(Entry[] entries)
+    public void setEntries(final Entry[] entries)
     {
         this.mEntries = entries;
     }
@@ -44,7 +44,7 @@ public class Feed
      * @param rowCount
      *            the rowCount to set
      */
-    public void setRowCount(RowCountData rowCount)
+    public void setRowCount(final RowCountData rowCount)
     {
         this.mRowCount = rowCount;
     }
@@ -57,7 +57,7 @@ public class Feed
     @Override
     public String toString()
     {
-        StringBuilder builder = new StringBuilder();
+        final StringBuilder builder = new StringBuilder();
         builder.append("Feed [mRowCount=");
         builder.append(this.mRowCount);
         builder.append(", mEntries=");

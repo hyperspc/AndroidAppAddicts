@@ -1,4 +1,4 @@
-package com.sage42.androidappaddicts.lib.applist.data;
+package com.sage42.androidappaddicts.app.model.data;
 
 import com.google.gson.annotations.SerializedName;
 

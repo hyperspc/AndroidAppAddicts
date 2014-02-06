@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.lib.applist.data;
+package com.sage42.androidappaddicts.app.model.data;
 
 import com.google.gson.annotations.SerializedName;
 

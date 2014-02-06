@@ -13,48 +13,33 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.lib.applist.data;
+package com.sage42.androidappaddicts.app.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Data object needed to parse the AppList JSON.
+ * An Entry in the AppList json.
  */
-public class RawAppList
+public class Entry
 {
-    @SerializedName("feed")
-    private Feed mFeed;
+    @SerializedName("gs$cell")
+    private Cell mCell;
 
-    public boolean isEmpty()
+    /**
+     * @return the cell
+     */
+    public Cell getCell()
     {
-        if (this.mFeed == null)
-        {
-            return true;
-        }
-        RowCountData rowCount = this.mFeed.getRowCount();
-        if ((rowCount == null) || rowCount.getValue().equals("0")) //$NON-NLS-1$
-        {
-            return true;
-        }
-
-        return false;
+        return this.mCell;
     }
 
     /**
-     * @return the feed
+     * @param cell
+     *            the cell to set
      */
-    public Feed getFeed()
+    public void setCell(final Cell cell)
     {
-        return this.mFeed;
-    }
-
-    /**
-     * @param feed
-     *            the feed to set
-     */
-    public void setFeed(Feed feed)
-    {
-        this.mFeed = feed;
+        this.mCell = cell;
     }
 
     /*
@@ -65,9 +50,9 @@ public class RawAppList
     @Override
     public String toString()
     {
-        StringBuilder builder = new StringBuilder();
-        builder.append("RawAppList [mFeed=");
-        builder.append(this.mFeed);
+        final StringBuilder builder = new StringBuilder();
+        builder.append("Entry [mCell=");
+        builder.append(this.mCell);
         builder.append("]");
         return builder.toString();
     }

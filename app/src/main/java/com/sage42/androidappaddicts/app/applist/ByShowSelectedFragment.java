@@ -29,7 +29,8 @@ import android.app.Fragment;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import com.sage42.androidappaddicts.R;
+
+import com.sage42.androidappaddicts.app.R;
 
 /**
  * Display list of apps by the selected show.
@@ -51,29 +52,23 @@ public class ByShowSelectedFragment extends Fragment
 
         // Dummy code.
         final String[] listviewItemCollectionDesc = new String[]
-        {
-                "applist_row_item_image1", //$NON-NLS-1$
-                "applist_row_item_title1", //$NON-NLS-1$
-                "applist_row_item_desc1", //$NON-NLS-1$
-                "applist_row_item_price1" //$NON-NLS-1$
+        { "applist_row_item_image1", //$NON-NLS-1$
+                        "applist_row_item_title1", //$NON-NLS-1$
+                        "applist_row_item_desc1", //$NON-NLS-1$
+                        "applist_row_item_price1" //$NON-NLS-1$
 
         };
         final int[] listviewItemCollection = new int[]
-        {
-                R.id.applist_row_item_image,
-                R.id.applist_row_item_title,
-                R.id.applist_row_item_desc,
-                R.id.applist_row_item_price
-        };
+        { R.id.applist_row_item_image, R.id.applist_row_item_title, R.id.applist_row_item_desc,
+                        R.id.applist_row_item_price };
 
         final View header = this.getActivity().getLayoutInflater()
-                .inflate(R.layout.applist_by_show_selected_list_header, null);
+                        .inflate(R.layout.applist_by_show_selected_list_header, null);
 
         this.mListView.addHeaderView(header, null, false);
         final List<HashMap<String, String>> data = this.getData();
-        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data,
-                R.layout.applist_row_of_3,
-                listviewItemCollectionDesc, listviewItemCollection);
+        final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data, R.layout.applist_row_of_3,
+                        listviewItemCollectionDesc, listviewItemCollection);
 
         this.mListView.setAdapter(adapter);
 

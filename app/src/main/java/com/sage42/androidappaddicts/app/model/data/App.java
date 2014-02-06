@@ -13,16 +13,35 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.lib.applist.data;
+package com.sage42.androidappaddicts.app.model.data;
 
-public class App
+public class App implements Cloneable
 {
-    private int    mEpisode;
-    private String mName;
-    private String mUri;
-    private String mSource;
-    private String mCost;
-    private String mLogoUri;
+    private int            mEpisode;
+    private String         mName;
+    private String         mUri;
+    private String         mSource;
+    private String         mCost;
+    private String         mLogoUri;
+    private HostRatingEnum mRating;
+
+    /*
+     * (non-Javadoc)
+     * @see java.lang.Object#clone()
+     */
+    @Override
+    public App clone()
+    {
+        try
+        {
+            return (App) super.clone();
+        }
+        catch (final CloneNotSupportedException e)
+        {
+            // should not happen
+            return null;
+        }
+    }
 
     /**
      * @return the episode
@@ -33,9 +52,10 @@ public class App
     }
 
     /**
-     * @param episode the episode to set
+     * @param episode
+     *            the episode to set
      */
-    public void setEpisode(int episode)
+    public void setEpisode(final int episode)
     {
         this.mEpisode = episode;
     }
@@ -49,9 +69,10 @@ public class App
     }
 
     /**
-     * @param name the name to set
+     * @param name
+     *            the name to set
      */
-    public void setName(String name)
+    public void setName(final String name)
     {
         this.mName = name;
     }
@@ -65,9 +86,10 @@ public class App
     }
 
     /**
-     * @param uri the uri to set
+     * @param uri
+     *            the uri to set
      */
-    public void setUri(String uri)
+    public void setUri(final String uri)
     {
         this.mUri = uri;
     }
@@ -81,9 +103,10 @@ public class App
     }
 
     /**
-     * @param source the source to set
+     * @param source
+     *            the source to set
      */
-    public void setSource(String source)
+    public void setSource(final String source)
     {
         this.mSource = source;
     }
@@ -97,9 +120,10 @@ public class App
     }
 
     /**
-     * @param cost the cost to set
+     * @param cost
+     *            the cost to set
      */
-    public void setCost(String cost)
+    public void setCost(final String cost)
     {
         this.mCost = cost;
     }
@@ -113,21 +137,40 @@ public class App
     }
 
     /**
-     * @param logoUri the logoUri to set
+     * @param logoUri
+     *            the logoUri to set
      */
-    public void setLogoUri(String logoUri)
+    public void setLogoUri(final String logoUri)
     {
         this.mLogoUri = logoUri;
     }
 
-    /* (non-Javadoc)
+    /**
+     * @return the rating
+     */
+    public HostRatingEnum getRating()
+    {
+        return this.mRating;
+    }
+
+    /**
+     * @param rating
+     *            the rating to set
+     */
+    public void setRating(final HostRatingEnum rating)
+    {
+        this.mRating = rating;
+    }
+
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @SuppressWarnings("nls")
     @Override
     public String toString()
     {
-        StringBuilder builder = new StringBuilder();
+        final StringBuilder builder = new StringBuilder();
         builder.append("App [mEpisode=");
         builder.append(this.mEpisode);
         builder.append(", mName=");
@@ -140,6 +183,8 @@ public class App
         builder.append(this.mCost);
         builder.append(", mLogoUri=");
         builder.append(this.mLogoUri);
+        builder.append(", mRating=");
+        builder.append(this.mRating);
         builder.append("]");
         return builder.toString();
     }

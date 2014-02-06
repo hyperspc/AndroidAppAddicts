@@ -19,6 +19,7 @@ package com.sage42.androidappaddicts.app.main;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.OptionsMenu;
@@ -31,9 +32,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.sage42.androidappaddicts.R;
-import com.sage42.androidappaddicts.app.applist.*;
-import com.sage42.androidappaddicts.app.main.MainActivity;
+import com.sage42.androidappaddicts.app.R;
+import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
 
 /**
  * Fragment to display the list of shows.

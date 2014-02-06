@@ -183,17 +183,15 @@ public final class IntentUtils
     }
 
     /**
-     * Trigger the standard android share dialog with the supplied title and
-     * payload.
+     * Trigger the standard android share dialog with the supplied title and payload.
      * 
      * @param context
      *            standard android context
      * @param title
      *            title to be displayed on the share dialog
      * @param data
-     *            data to be shared NOTE: sharing via facebook is broken by
-     *            facebook and therefore the data payload will be ignored in
-     *            that case.
+     *            data to be shared NOTE: sharing via facebook is broken by facebook and therefore the data payload will
+     *            be ignored in that case.
      */
     public static void doShare(final Context context, final String data)
     {

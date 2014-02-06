@@ -27,7 +27,8 @@ import org.androidannotations.annotations.ViewById;
 import android.app.Fragment;
 import android.widget.AutoCompleteTextView;
 import android.widget.SimpleAdapter;
-import com.sage42.androidappaddicts.R;
+
+import com.sage42.androidappaddicts.app.R;
 
 /**
  * Fragment to display the suggest an app form.

@@ -17,6 +17,7 @@
 package com.sage42.androidappaddicts.app.main;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.ItemClick;
@@ -43,13 +44,14 @@ import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 
-import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.about.AboutFragment_;
 import com.sage42.androidappaddicts.app.applist.ByCategoryFragment_;
 import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
 import com.sage42.androidappaddicts.app.hosts.HostsFragment_;
 import com.sage42.androidappaddicts.app.menu.MenuData;
 import com.sage42.androidappaddicts.app.menu.MenuListAdapter;
+import com.sage42.androidappaddicts.app.model.api.AppListLoaderImpl;
 import com.sage42.androidappaddicts.app.settings.SettingsFragment_;
 import com.sage42.androidappaddicts.app.suggestion.SuggestionFragment_;
 import com.sage42.androidappaddicts.app.util.IntentUtils;
@@ -104,6 +106,15 @@ public class MainActivity extends Activity
         this.mDrawerToggle.syncState();
         this.mAdapter = this.getData();
 
+        // TODO: remove me
+        this.loadAppList();
+        // end of remove me
+    }
+
+    @Background
+    protected void loadAppList()
+    {
+        new AppListLoaderImpl().loadAppList();
     }
 
     @ItemClick(R.id.main_menu_layout)
@@ -112,23 +123,23 @@ public class MainActivity extends Activity
         switch (position)
         {
             case MenuData.FRAGMENT_HOME:
-                this.showFragment(new HomeFragment_(), false);
+                this.showFragment(HomeFragment_.builder().build(), false);
                 break;
 
             case MenuData.FRAGMENT_SHOW:
-                this.showFragment(new ByShowFragment_(), false);
+                this.showFragment(ByShowFragment_.builder().build(), false);
                 break;
 
             case MenuData.FRAGMENT_CATEGORY:
-                this.showFragment(new ByCategoryFragment_(), false);
+                this.showFragment(ByCategoryFragment_.builder().build(), false);
                 break;
 
             case MenuData.FRAGMENT_APP_SUGGESTION:
-                this.showFragment(new SuggestionFragment_(), false);
+                this.showFragment(SuggestionFragment_.builder().build(), false);
                 break;
 
             case MenuData.FRAGMENT_HOSTS:
-                this.showFragment(new HostsFragment_(), false);
+                this.showFragment(HostsFragment_.builder().build(), false);
                 break;
 
             default:
