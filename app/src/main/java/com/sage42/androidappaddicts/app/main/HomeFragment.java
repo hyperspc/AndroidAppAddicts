@@ -33,6 +33,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.sage42.androidappaddicts.app.R;
+
 import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
 
 /**

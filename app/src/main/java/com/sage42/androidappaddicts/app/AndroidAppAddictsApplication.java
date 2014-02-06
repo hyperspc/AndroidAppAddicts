@@ -16,6 +16,7 @@
 
 package com.sage42.androidappaddicts.app;
 
+
 import org.androidannotations.annotations.EApplication;
 
 import android.app.Application;
