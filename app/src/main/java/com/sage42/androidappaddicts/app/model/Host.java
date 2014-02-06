@@ -7,8 +7,8 @@ import se.emilsjolander.sprinkles.annotations.AutoIncrementPrimaryKey;
 import se.emilsjolander.sprinkles.annotations.Column;
 import se.emilsjolander.sprinkles.annotations.Table;
 
-@Table("Show")
-public class Show extends Model
+@Table("Shows")
+public class Host extends Model
 {
 
     @AutoIncrementPrimaryKey
@@ -18,11 +18,14 @@ public class Show extends Model
     @Column("name")
     public String name;
 
-    @Column("number")
-    public String number;
+    @Column("contact")
+    public String contact;
 
-    @Column("duration")
-    public String duration;
+    @Column("email")
+    public String email;
+
+    @Column("category_id")
+    public int    categoryId;
 
     @Column("date_added")
     private Date  dateAdded = new Date();
@@ -40,6 +43,16 @@ public class Show extends Model
         this.id = id;
     }
 
+    public int getCategoryId()
+    {
+        return this.id;
+    }
+
+    public void setCategoryId(final int categoryId)
+    {
+        this.categoryId = categoryId;
+    }
+
     public String getName()
     {
         return this.name;
@@ -50,24 +63,24 @@ public class Show extends Model
         this.name = name;
     }
 
-    public String getDuration()
+    public String getEmail()
     {
-        return this.duration;
+        return this.email;
     }
 
-    public void setDuration(final String duration)
+    public void setEmail(final String email)
     {
-        this.duration = duration;
+        this.email = email;
     }
 
-    public String getNumber()
+    public String getContact()
     {
-        return this.number;
+        return this.contact;
     }
 
-    public void setNumber(final String number)
+    public void setContact(final String contact)
     {
-        this.number = number;
+        this.contact = contact;
     }
 
     public Date getDateAdded()
