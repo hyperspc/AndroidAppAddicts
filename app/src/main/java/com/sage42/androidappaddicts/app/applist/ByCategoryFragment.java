@@ -27,7 +27,7 @@ import se.emilsjolander.sprinkles.Query;
 import android.app.Fragment;
 import android.widget.ListView;
 
-import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.main.MainActivity;
 import com.sage42.androidappaddicts.app.model.App;
 

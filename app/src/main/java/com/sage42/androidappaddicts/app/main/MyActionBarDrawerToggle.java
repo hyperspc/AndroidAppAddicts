@@ -33,7 +33,7 @@ public class MyActionBarDrawerToggle extends ActionBarDrawerToggle
 
     /**
      * Called when a drawer has settled in a completely closed state.
-     *
+     * 
      * @see android.support.v4.app.ActionBarDrawerToggle#onDrawerClosed(View)
      */
     @Override
@@ -46,7 +46,7 @@ public class MyActionBarDrawerToggle extends ActionBarDrawerToggle
 
     /**
      * Called when a drawer has settled in a completely open state.
-     *
+     * 
      * @see android.support.v4.app.ActionBarDrawerToggle#onDrawerOpened(View)
      */
     @Override

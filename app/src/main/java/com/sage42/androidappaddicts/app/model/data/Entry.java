@@ -13,46 +13,46 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.sage42.androidappaddicts.lib.applist.data;
-
-import java.util.Arrays;
+package com.sage42.androidappaddicts.app.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Data object needed to parse the AppList JSON.
+ * An Entry in the AppList json.
  */
-public class AppList
+public class Entry
 {
-    @SerializedName("entry")
-    private Entry[] mEntries;
+    @SerializedName("gs$cell")
+    private Cell mCell;
 
     /**
-     * @return the entries
+     * @return the cell
      */
-    public Entry[] getEntries()
+    public Cell getCell()
     {
-        return this.mEntries;
+        return this.mCell;
     }
 
     /**
-     * @param entries the entries to set
+     * @param cell
+     *            the cell to set
      */
-    public void setEntries(Entry[] entries)
+    public void setCell(final Cell cell)
     {
-        this.mEntries = entries;
+        this.mCell = cell;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
     @SuppressWarnings("nls")
     @Override
     public String toString()
     {
-        StringBuilder builder = new StringBuilder();
-        builder.append("AppList [mEntries=");
-        builder.append(Arrays.toString(this.mEntries));
+        final StringBuilder builder = new StringBuilder();
+        builder.append("Entry [mCell=");
+        builder.append(this.mCell);
         builder.append("]");
         return builder.toString();
     }

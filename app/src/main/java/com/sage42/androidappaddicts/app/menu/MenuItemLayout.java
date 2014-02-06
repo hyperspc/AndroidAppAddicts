@@ -23,7 +23,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.R;
 
 @EViewGroup(R.layout.main_menu_item)
 public class MenuItemLayout extends RelativeLayout

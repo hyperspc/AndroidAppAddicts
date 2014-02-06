@@ -21,7 +21,7 @@ import org.androidannotations.annotations.OptionsMenu;
 
 import android.app.Fragment;
 
-import com.sage42.androidappaddicts.R;
+import com.sage42.androidappaddicts.app.R;
 
 /**
  * Fragment to display the search results
