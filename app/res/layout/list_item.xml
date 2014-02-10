@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/applist_by_category_list_item_height" >
 
-    <TextView
+    <com.sage42.android.view.fonts.MyTextView
         android:id="@+id/category_text"
         style="@style/AppTheme.Category.Item"
         android:layout_width="match_parent"

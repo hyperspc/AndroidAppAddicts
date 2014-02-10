@@ -16,14 +16,21 @@
 package com.sage42.androidappaddicts.app.applist;
 
 import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.ViewById;
+
+import se.emilsjolander.sprinkles.CursorList;
+import se.emilsjolander.sprinkles.ManyQuery;
+import se.emilsjolander.sprinkles.Query;
 
 import android.app.Fragment;
+import android.widget.ListView;
 
 import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.main.MainActivity;
+import com.sage42.androidappaddicts.app.model.data.Episode;
 
 /**
  * Fragment to display the list of shows.
@@ -34,8 +41,13 @@ import com.sage42.androidappaddicts.app.main.MainActivity;
 public class ByShowFragment extends Fragment
 {
 
-    @Click(R.id.by_show_item_one)
-    public void byShowClick()
+    public EpisodeAdapter mAdapter;
+
+    @ViewById(R.id.by_show_list)
+    protected ListView    mListView;
+
+    @ItemClick(R.id.by_show_list)
+    public void onListClick()
     {
         final ByShowSelectedFragment_ detailsPage = new ByShowSelectedFragment_();
         ((MainActivity) this.getActivity()).showFragment(detailsPage, true);
@@ -44,11 +56,28 @@ public class ByShowFragment extends Fragment
     /**
      * Wire the data to the UI
      */
+    @SuppressWarnings("unchecked")
     @AfterViews
     void init()
     {
         this.getActivity().getActionBar().setTitle(R.string.applist_by_show_title);
 
+        this.mAdapter = new EpisodeAdapter(this.getActivity());
+        this.mListView.setAdapter(this.mAdapter);
+
+        Query.many(Episode.class, "select * From Episode order by episode_id desc").getAsync(this.getLoaderManager(), this.onNotesLoaded, Episode.class); //$NON-NLS-1$
+
     }
 
+    private final ManyQuery.ResultHandler<Episode> onNotesLoaded = new ManyQuery.ResultHandler<Episode>()
+                                                                 {
+
+                                                                     @Override
+                                                                     public boolean handleResult(
+                                                                                     final CursorList<Episode> result)
+                                                                     {
+                                                                         ByShowFragment.this.mAdapter.swapNotes(result);
+                                                                         return true;
+                                                                     }
+                                                                 };
 }

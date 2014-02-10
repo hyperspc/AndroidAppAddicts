@@ -106,9 +106,6 @@ public class MainActivity extends Activity
         this.mDrawerToggle.syncState();
         this.mAdapter = this.getData();
 
-        // TODO: remove me
-        this.loadAppList();
-        // end of remove me
     }
 
     @Background
@@ -258,6 +255,14 @@ public class MainActivity extends Activity
             final int backStackId = fragmentManager.getBackStackEntryAt(i).getId();
             fragmentManager.popBackStack(backStackId, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         }
+
+    }
+
+    @OptionsItem(R.id.menu_load_data)
+    public void loadData()
+    {
+        this.loadAppList();
+        // end of remove me
 
     }
 

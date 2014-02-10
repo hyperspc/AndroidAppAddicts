@@ -21,15 +21,12 @@ import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
 
-import se.emilsjolander.sprinkles.CursorList;
-import se.emilsjolander.sprinkles.ManyQuery;
-import se.emilsjolander.sprinkles.Query;
 import android.app.Fragment;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.main.MainActivity;
-import com.sage42.androidappaddicts.app.model.App;
 
 /**
  * Fragment to display the list of app categories.
@@ -39,10 +36,10 @@ import com.sage42.androidappaddicts.app.model.App;
 public class ByCategoryFragment extends Fragment
 {
 
-    private CategoryAdapter mAdapter;
+    // private CategoryAdapter mAdapter;
 
     @ViewById(R.id.app_by_category_listview)
-    protected ListView      mListView;
+    protected ListView mListView;
 
     @ItemClick(R.id.app_by_category_listview)
     protected void onItemSelect()
@@ -51,17 +48,17 @@ public class ByCategoryFragment extends Fragment
         ((MainActivity) this.getActivity()).showFragment(detailsPage, true);
     }
 
-    private final ManyQuery.ResultHandler<App> onNotesLoaded = new ManyQuery.ResultHandler<App>()
-                                                             {
-
-                                                                 @Override
-                                                                 public boolean handleResult(
-                                                                                 final CursorList<App> result)
-                                                                 {
-                                                                     ByCategoryFragment.this.mAdapter.swapNotes(result);
-                                                                     return true;
-                                                                 }
-                                                             };
+    // private final ManyQuery.ResultHandler<App> onNotesLoaded = new ManyQuery.ResultHandler<App>()
+    // {
+    //
+    // @Override
+    // public boolean handleResult(
+    // final CursorList<App> result)
+    // {
+    // ByCategoryFragment.this.mAdapter.swapNotes(result);
+    // return true;
+    // }
+    // };
 
     /**
      * Wire the data to the UI
@@ -71,15 +68,15 @@ public class ByCategoryFragment extends Fragment
     {
         this.getActivity().getActionBar().setTitle(R.string.applist_by_category_title);
 
-        this.mAdapter = new CategoryAdapter(this.getActivity());
-        this.mListView.setAdapter(this.mAdapter);
-
-        Query.many(App.class, "select * From App").getAsync(this.getLoaderManager(), this.onNotesLoaded, App.class);
+        // this.mAdapter = new CategoryAdapter(this.getActivity());
+        // this.mListView.setAdapter(this.mAdapter);
+        //
+        //        Query.many(App.class, "select * From Episode").getAsync(this.getLoaderManager(), this.onNotesLoaded, App.class); //$NON-NLS-1$
 
         // Dummy Code for displaying list of category
-        // final ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(this.getActivity(),
-        // R.array.applist_by_category_array, R.layout.applist_by_category_list_item);
-        // this.mListView.setAdapter(adapter);
+        final ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(this.getActivity(),
+                        R.array.applist_by_category_array, R.layout.applist_by_category_list_item);
+        this.mListView.setAdapter(adapter);
     }
 
 }

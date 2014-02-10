@@ -15,15 +15,32 @@
  */
 package com.sage42.androidappaddicts.app.model.data;
 
-public class App implements Cloneable
+import se.emilsjolander.sprinkles.Model;
+import se.emilsjolander.sprinkles.annotations.AutoIncrementPrimaryKey;
+import se.emilsjolander.sprinkles.annotations.Column;
+import se.emilsjolander.sprinkles.annotations.Table;
+
+@Table("App")
+public class App extends Model implements Cloneable
 {
-    private int            mEpisode;
-    private String         mName;
-    private String         mUri;
-    private String         mSource;
-    private String         mCost;
-    private String         mLogoUri;
-    private HostRatingEnum mRating;
+
+    @AutoIncrementPrimaryKey
+    @Column("app_id")
+    private long   mId;
+
+    @Column("name")
+    private String mName;
+    @Column("url")
+    private String mUri;
+
+    @Column("cost")
+    private String mCost;
+    @Column("logoUrl")
+    private String mLogoUri;
+    @Column("rating")
+    private int    mRating;
+    @Column("category")
+    public String  mCategory;
 
     /*
      * (non-Javadoc)
@@ -43,21 +60,24 @@ public class App implements Cloneable
         }
     }
 
-    /**
-     * @return the episode
-     */
-    public int getEpisode()
+    public long getId()
     {
-        return this.mEpisode;
+        return this.mId;
     }
 
-    /**
-     * @param episode
-     *            the episode to set
-     */
-    public void setEpisode(final int episode)
+    public void setId(final long id)
     {
-        this.mEpisode = episode;
+        this.mId = id;
+    }
+
+    public String getCategory()
+    {
+        return this.mCategory;
+    }
+
+    public void setCategory(final String category)
+    {
+        this.mCategory = category;
     }
 
     /**
@@ -92,23 +112,6 @@ public class App implements Cloneable
     public void setUri(final String uri)
     {
         this.mUri = uri;
-    }
-
-    /**
-     * @return the source
-     */
-    public String getSource()
-    {
-        return this.mSource;
-    }
-
-    /**
-     * @param source
-     *            the source to set
-     */
-    public void setSource(final String source)
-    {
-        this.mSource = source;
     }
 
     /**
@@ -148,7 +151,7 @@ public class App implements Cloneable
     /**
      * @return the rating
      */
-    public HostRatingEnum getRating()
+    public int getRating()
     {
         return this.mRating;
     }
@@ -157,7 +160,7 @@ public class App implements Cloneable
      * @param rating
      *            the rating to set
      */
-    public void setRating(final HostRatingEnum rating)
+    public void setRating(final int rating)
     {
         this.mRating = rating;
     }
@@ -171,18 +174,18 @@ public class App implements Cloneable
     public String toString()
     {
         final StringBuilder builder = new StringBuilder();
-        builder.append("App [mEpisode=");
-        builder.append(this.mEpisode);
+        builder.append("App [mId=");
+        builder.append(this.mId);
         builder.append(", mName=");
         builder.append(this.mName);
         builder.append(", mUri=");
         builder.append(this.mUri);
-        builder.append(", mSource=");
-        builder.append(this.mSource);
         builder.append(", mCost=");
         builder.append(this.mCost);
         builder.append(", mLogoUri=");
         builder.append(this.mLogoUri);
+        builder.append(", mCategory=");
+        builder.append(this.mCategory);
         builder.append(", mRating=");
         builder.append(this.mRating);
         builder.append("]");

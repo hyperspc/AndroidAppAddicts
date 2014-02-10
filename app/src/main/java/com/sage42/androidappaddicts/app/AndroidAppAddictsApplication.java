@@ -16,13 +16,11 @@
 
 package com.sage42.androidappaddicts.app;
 
-import java.util.Date;
-
 import org.androidannotations.annotations.EApplication;
 
-import com.sage42.androidappaddicts.app.model.App;
-import com.sage42.androidappaddicts.app.model.Host;
-import com.sage42.androidappaddicts.app.model.Show;
+import com.sage42.androidappaddicts.app.model.data.App;
+import com.sage42.androidappaddicts.app.model.data.Episode;
+import com.sage42.androidappaddicts.app.model.data.Host;
 
 import se.emilsjolander.sprinkles.Migration;
 import se.emilsjolander.sprinkles.Sprinkles;
@@ -39,20 +37,15 @@ public class AndroidAppAddictsApplication extends Application
         final Sprinkles sprinkles = Sprinkles.init(this.getApplicationContext());
 
         final Migration initialMigration = new Migration();
+        initialMigration.dropTable(Host.class);
+        initialMigration.dropTable(Episode.class);
+        initialMigration.dropTable(App.class);
+
         initialMigration.createTable(Host.class);
-        initialMigration.createTable(Show.class);
+        initialMigration.createTable(Episode.class);
         initialMigration.createTable(App.class);
         sprinkles.addMigration(initialMigration);
 
-        this.addData();
     }
 
-    public void addData()
-    {
-        final App a1 = new App();
-        final Date date = new Date();
-        a1.name = date.toString();
-        a1.id = 222;
-        a1.save();
-    }
 }

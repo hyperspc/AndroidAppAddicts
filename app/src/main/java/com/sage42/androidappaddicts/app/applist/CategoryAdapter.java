@@ -1,6 +1,6 @@
 package com.sage42.androidappaddicts.app.applist;
 
-import com.sage42.androidappaddicts.app.model.App;
+import com.sage42.androidappaddicts.app.model.data.App;
 
 import android.content.Context;
 import android.view.View;
@@ -48,19 +48,18 @@ public class CategoryAdapter extends BaseAdapter
         return this.mApp.get(position).getId();
     }
 
-    @SuppressWarnings("null")
     @Override
     public View getView(final int position, final View convertView, final ViewGroup parent)
     {
-        ItemLayout_ itemLayout;
+        CategoryItemLayout_ itemLayout;
 
         if (convertView == null)
         {
-            itemLayout = (ItemLayout_) ItemLayout_.build(this.mContext);
+            itemLayout = (CategoryItemLayout_) CategoryItemLayout_.build(this.mContext);
         }
         else
         {
-            itemLayout = (ItemLayout_) convertView;
+            itemLayout = (CategoryItemLayout_) convertView;
         }
         itemLayout.bind(this.mApp.get(position));
 

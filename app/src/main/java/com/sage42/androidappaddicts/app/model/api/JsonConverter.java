@@ -1,11 +1,17 @@
 package com.sage42.androidappaddicts.app.model.api;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import se.emilsjolander.sprinkles.Query;
+
+import android.util.Log;
 
 import com.sage42.androidappaddicts.app.model.data.App;
 import com.sage42.androidappaddicts.app.model.data.Cell;
 import com.sage42.androidappaddicts.app.model.data.Entry;
+import com.sage42.androidappaddicts.app.model.data.Episode;
 import com.sage42.androidappaddicts.app.model.data.HostRatingEnum;
 import com.sage42.androidappaddicts.app.model.data.RawAppList;
 
@@ -30,7 +36,7 @@ public class JsonConverter
     public List<App> convert(final RawAppList rawData)
     {
         // second pass over the data to put into the format we want.
-        if ((rawData == null) || (rawData.isEmpty()))
+        if (rawData == null || rawData.isEmpty())
         {
             // no valid data
             return new ArrayList<App>();
@@ -40,6 +46,7 @@ public class JsonConverter
         final List<App> output = new ArrayList<App>();
         int lastRow = 0;
         App currentApp = new App();
+        Episode currentEpi = new Episode();
         final List<Integer> episodes = new ArrayList<Integer>();
 
         for (final Entry entry : rawData.getFeed().getEntries())
@@ -51,7 +58,21 @@ public class JsonConverter
                 // add app to the list 1 time per episode
                 for (final Integer episodeNo : episodes)
                 {
-                    currentApp.setEpisode(episodeNo);
+                    // TODO:move to EpisodeTable
+
+                    currentEpi = Query.one(Episode.class, "SELECT * FROM episode where episode_id = ?", new int[] //$NON-NLS-1$
+                                    { episodeNo }).get();
+                    if (currentEpi == null)
+                    {
+                        currentEpi = new Episode();
+                        currentEpi.setId(episodeNo);
+                        currentEpi.SetDateAdded(new Date());
+                        currentEpi.setName("Stupid things"); //$NON-NLS-1$
+                        currentEpi.setDuration("1.11.11"); //$NON-NLS-1$
+                        currentEpi.save();
+                    }
+
+                    // currentApp.setEpisode(episodeNo);
                     output.add(currentApp.clone());
                 }
 
@@ -80,11 +101,6 @@ public class JsonConverter
                 case COLUMN_URI:
                     currentApp.setUri(cell.getValue());
                     break;
-
-                case COLUMN_SOURCE:
-                    currentApp.setSource(cell.getValue());
-                    break;
-
                 case COLUMN_COST:
                     currentApp.setCost(cell.getValue());
                     break;
@@ -107,7 +123,9 @@ public class JsonConverter
                             ratingEnum = HostRatingEnum.THUMBS_DOWN;
                         }
                     }
-                    currentApp.setRating(ratingEnum);
+                    currentApp.setRating(ratingEnum.ordinal());
+                    Log.w("check", "call Saved"); //$NON-NLS-1$ //$NON-NLS-2$
+                    currentApp.save();
                     break;
 
                 default:
