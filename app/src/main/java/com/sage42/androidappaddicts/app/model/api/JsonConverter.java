@@ -6,8 +6,6 @@ import java.util.List;
 
 import se.emilsjolander.sprinkles.Query;
 
-import android.util.Log;
-
 import com.sage42.androidappaddicts.app.model.data.App;
 import com.sage42.androidappaddicts.app.model.data.Cell;
 import com.sage42.androidappaddicts.app.model.data.Entry;
@@ -124,7 +122,7 @@ public class JsonConverter
                         }
                     }
                     currentApp.setRating(ratingEnum.ordinal());
-                    Log.w("check", "call Saved"); //$NON-NLS-1$ //$NON-NLS-2$
+
                     currentApp.save();
                     break;
 
