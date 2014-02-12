@@ -20,7 +20,7 @@ import se.emilsjolander.sprinkles.annotations.AutoIncrementPrimaryKey;
 import se.emilsjolander.sprinkles.annotations.Column;
 import se.emilsjolander.sprinkles.annotations.Table;
 
-@Table("App")
+@Table("app")
 public class App extends Model implements Cloneable
 {
 

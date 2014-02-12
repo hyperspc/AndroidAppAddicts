@@ -14,7 +14,7 @@ import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.model.data.Episode;
 
 @EViewGroup(R.layout.applist_by_show_listview_item)
-public class EpisodeItemLayout extends RelativeLayout
+public class ByShowEpisodeItemLayout extends RelativeLayout
 {
     @ViewById(R.id.applist_by_show_number)
     protected TextView mEpisodeId;
@@ -33,7 +33,7 @@ public class EpisodeItemLayout extends RelativeLayout
      * 
      * @param context
      */
-    public EpisodeItemLayout(final Context context)
+    public ByShowEpisodeItemLayout(final Context context)
     {
         super(context);
     }

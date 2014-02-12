@@ -10,7 +10,7 @@ import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.model.data.App;
 
 @EViewGroup(R.layout.list_item)
-public class CategoryItemLayout extends RelativeLayout
+public class ByCategoryItemLayout extends RelativeLayout
 {
     @ViewById(R.id.category_text)
     protected TextView mTitle;
@@ -20,7 +20,7 @@ public class CategoryItemLayout extends RelativeLayout
      * 
      * @param context
      */
-    public CategoryItemLayout(final Context context)
+    public ByCategoryItemLayout(final Context context)
     {
         super(context);
     }

@@ -1,32 +1,28 @@
 package com.sage42.androidappaddicts.app.applist;
 
+import java.util.List;
+
 import com.sage42.androidappaddicts.app.model.data.App;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import se.emilsjolander.sprinkles.CursorList;
 
-public class CategoryAdapter extends BaseAdapter
+public class ByShowSelectedListCursorAdapter extends BaseAdapter
 {
 
     private final Context   mContext;
-    private CursorList<App> mApp;
+    private List<List<App>> mApp;
 
-    public CategoryAdapter(final Context context)
+    public ByShowSelectedListCursorAdapter(final Context context)
     {
         this.mContext = context;
-
     }
 
-    public void swapNotes(final CursorList<App> notes)
+    public void swapList(final List<List<App>> app)
     {
-        if (this.mApp != null)
-        {
-            this.mApp.close();
-        }
-        this.mApp = notes;
+        this.mApp = app;
         this.notifyDataSetChanged();
     }
 
@@ -37,7 +33,7 @@ public class CategoryAdapter extends BaseAdapter
     }
 
     @Override
-    public App getItem(final int position)
+    public List<App> getItem(final int position)
     {
         return this.mApp.get(position);
     }
@@ -45,21 +41,21 @@ public class CategoryAdapter extends BaseAdapter
     @Override
     public long getItemId(final int position)
     {
-        return this.mApp.get(position).getId();
+        return 0;
     }
 
     @Override
     public View getView(final int position, final View convertView, final ViewGroup parent)
     {
-        CategoryItemLayout_ itemLayout;
+        ByShowSelectedListItemTempLayout_ itemLayout;
 
         if (convertView == null)
         {
-            itemLayout = (CategoryItemLayout_) CategoryItemLayout_.build(this.mContext);
+            itemLayout = (ByShowSelectedListItemTempLayout_) ByShowSelectedListItemTempLayout_.build(this.mContext);
         }
         else
         {
-            itemLayout = (CategoryItemLayout_) convertView;
+            itemLayout = (ByShowSelectedListItemTempLayout_) convertView;
         }
         itemLayout.bind(this.mApp.get(position));
 

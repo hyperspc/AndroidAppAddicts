@@ -41,16 +41,18 @@ import com.sage42.androidappaddicts.app.model.data.Episode;
 public class ByShowFragment extends Fragment
 {
 
-    public EpisodeAdapter mAdapter;
+    public ByShowEpisodeAdapter mAdapter;
 
     @ViewById(R.id.by_show_list)
     protected ListView    mListView;
 
     @ItemClick(R.id.by_show_list)
-    public void onListClick()
+    public void onListClick(final int position)
     {
         final ByShowSelectedFragment_ detailsPage = new ByShowSelectedFragment_();
         ((MainActivity) this.getActivity()).showFragment(detailsPage, true);
+        detailsPage.bind(this.mAdapter.getItem(position));
+
     }
 
     /**
@@ -62,10 +64,14 @@ public class ByShowFragment extends Fragment
     {
         this.getActivity().getActionBar().setTitle(R.string.applist_by_show_title);
 
-        this.mAdapter = new EpisodeAdapter(this.getActivity());
-        this.mListView.setAdapter(this.mAdapter);
+        if (this.mAdapter == null)
+        {
+            this.mAdapter = new ByShowEpisodeAdapter(this.getActivity());
+            Query.many(Episode.class, "select * From Episode order by episode_id desc").getAsync(this.getLoaderManager(), this.onNotesLoaded, Episode.class); //$NON-NLS-1$
 
-        Query.many(Episode.class, "select * From Episode order by episode_id desc").getAsync(this.getLoaderManager(), this.onNotesLoaded, Episode.class); //$NON-NLS-1$
+        }
+
+        this.mListView.setAdapter(this.mAdapter);
 
     }
 

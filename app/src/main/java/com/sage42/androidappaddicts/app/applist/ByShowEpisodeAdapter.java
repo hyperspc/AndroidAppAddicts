@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import se.emilsjolander.sprinkles.CursorList;
 
-public class EpisodeAdapter extends BaseAdapter
+public class ByShowEpisodeAdapter extends BaseAdapter
 {
 
     private final Context       mContext;
     private CursorList<Episode> mEpisode;
 
-    public EpisodeAdapter(final Context context)
+    public ByShowEpisodeAdapter(final Context context)
     {
         this.mContext = context;
 
@@ -51,15 +51,15 @@ public class EpisodeAdapter extends BaseAdapter
     @Override
     public View getView(final int position, final View convertView, final ViewGroup parent)
     {
-        EpisodeItemLayout_ itemLayout;
+        ByShowEpisodeItemLayout_ itemLayout;
 
         if (convertView == null)
         {
-            itemLayout = (EpisodeItemLayout_) EpisodeItemLayout_.build(this.mContext);
+            itemLayout = (ByShowEpisodeItemLayout_) ByShowEpisodeItemLayout_.build(this.mContext);
         }
         else
         {
-            itemLayout = (EpisodeItemLayout_) convertView;
+            itemLayout = (ByShowEpisodeItemLayout_) convertView;
         }
         itemLayout.bind(this.mEpisode.get(position));
 

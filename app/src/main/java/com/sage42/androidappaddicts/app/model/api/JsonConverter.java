@@ -7,6 +7,7 @@ import java.util.List;
 import se.emilsjolander.sprinkles.Query;
 
 import com.sage42.androidappaddicts.app.model.data.App;
+import com.sage42.androidappaddicts.app.model.data.AppEpisodeRelation;
 import com.sage42.androidappaddicts.app.model.data.Cell;
 import com.sage42.androidappaddicts.app.model.data.Entry;
 import com.sage42.androidappaddicts.app.model.data.Episode;
@@ -56,7 +57,6 @@ public class JsonConverter
                 // add app to the list 1 time per episode
                 for (final Integer episodeNo : episodes)
                 {
-                    // TODO:move to EpisodeTable
 
                     currentEpi = Query.one(Episode.class, "SELECT * FROM episode where episode_id = ?", new int[] //$NON-NLS-1$
                                     { episodeNo }).get();
@@ -82,9 +82,13 @@ public class JsonConverter
             switch (Integer.valueOf(cell.getCol()))
             {
                 case COLUMN_EPISODE_NO:
+
+                    // TODO:add data to AppEpisodeRelation Table.
+
                     // parse out extra chars caused by the duplicates
                     final String value = cell.getValue().replace("'", "").replace("&", ","); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$//$NON-NLS-4$
                     final String[] episodesList = value.split(","); //$NON-NLS-1$
+
                     episodes.clear();
                     for (final String episodeString : episodesList)
                     {
@@ -122,8 +126,25 @@ public class JsonConverter
                         }
                     }
                     currentApp.setRating(ratingEnum.ordinal());
-
                     currentApp.save();
+                    final long tempAppId = currentApp.getId();
+                    for (final Integer episodeNo : episodes)
+                    {
+
+                        final Episode TempEpi = Query.one(Episode.class,
+                                        "SELECT * FROM episode where episode_id = ?", new int[] //$NON-NLS-1$
+                                        { episodeNo }).get();
+                        if (currentEpi != null && currentEpi.getId() > 0)
+                        {
+                            // add data to Episode App relation table.
+                            final AppEpisodeRelation appEpi = new AppEpisodeRelation();
+                            appEpi.setAppId(tempAppId);
+                            appEpi.setEpisodeId(currentEpi.getId());
+                            appEpi.saveAsync();
+                        }
+
+                    }
+
                     break;
 
                 default:

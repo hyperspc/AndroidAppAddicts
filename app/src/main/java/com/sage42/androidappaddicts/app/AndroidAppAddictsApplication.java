@@ -19,6 +19,7 @@ package com.sage42.androidappaddicts.app;
 import org.androidannotations.annotations.EApplication;
 
 import com.sage42.androidappaddicts.app.model.data.App;
+import com.sage42.androidappaddicts.app.model.data.AppEpisodeRelation;
 import com.sage42.androidappaddicts.app.model.data.Episode;
 import com.sage42.androidappaddicts.app.model.data.Host;
 
@@ -39,10 +40,12 @@ public class AndroidAppAddictsApplication extends Application
         final Migration initialMigration = new Migration();
         initialMigration.dropTable(Host.class);
         initialMigration.dropTable(Episode.class);
+        initialMigration.dropTable(AppEpisodeRelation.class);
         initialMigration.dropTable(App.class);
 
         initialMigration.createTable(Host.class);
         initialMigration.createTable(Episode.class);
+        initialMigration.createTable(AppEpisodeRelation.class);
         initialMigration.createTable(App.class);
         sprinkles.addMigration(initialMigration);
 
