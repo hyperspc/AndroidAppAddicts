@@ -1,4 +1,4 @@
-package com.sage42.androidappaddicts.app.applist;
+package com.sage42.androidappaddicts.app.main;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -8,15 +8,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sage42.androidappaddicts.app.R;
+import com.sage42.androidappaddicts.app.applist.ByShowFragment_;
 import com.sage42.androidappaddicts.app.model.data.Episode;
 
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 import org.apache.commons.lang3.StringUtils;
 
-@EViewGroup(R.layout.applist_by_show_selected_list_header)
-public class ByShowSelectedListHeader extends RelativeLayout
+@EViewGroup(R.layout.home_header)
+public class HomeListHeader extends RelativeLayout
 {
+
     @ViewById(R.id.applist_by_show_number)
     protected TextView mHeaderNumber;
 
@@ -34,7 +37,14 @@ public class ByShowSelectedListHeader extends RelativeLayout
 
     private Episode    mEpisode;
 
-    public ByShowSelectedListHeader(final Context context)
+    @Click(R.id.applist_show_all)
+    public void onClick()
+    {
+        final ByShowFragment_ detailsPage = new ByShowFragment_();
+        ((MainActivity) this.getContext()).showFragment(detailsPage, true);
+    }
+
+    public HomeListHeader(final Context context)
     {
         super(context);
     }
@@ -42,10 +52,10 @@ public class ByShowSelectedListHeader extends RelativeLayout
     public void bind(final Episode episode)
     {
         this.mEpisode = episode;
-        this.buildUi();
+        this.setTexts();
     }
 
-    private void buildUi()
+    public void setTexts()
     {
 
         if (this.mHeaderNumber != null && this.mEpisode != null)

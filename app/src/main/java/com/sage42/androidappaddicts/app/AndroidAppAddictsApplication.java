@@ -22,6 +22,7 @@ import com.sage42.androidappaddicts.app.model.data.App;
 import com.sage42.androidappaddicts.app.model.data.AppEpisodeRelation;
 import com.sage42.androidappaddicts.app.model.data.Episode;
 import com.sage42.androidappaddicts.app.model.data.Host;
+import com.squareup.picasso.Picasso;
 
 import se.emilsjolander.sprinkles.Migration;
 import se.emilsjolander.sprinkles.Sprinkles;
@@ -49,6 +50,7 @@ public class AndroidAppAddictsApplication extends Application
         initialMigration.createTable(App.class);
         sprinkles.addMigration(initialMigration);
 
-    }
+        Picasso.with(this).setDebugging(true);
 
+    }
 }

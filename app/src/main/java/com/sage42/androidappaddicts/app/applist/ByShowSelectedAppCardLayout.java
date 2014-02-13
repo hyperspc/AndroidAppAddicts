@@ -1,6 +1,8 @@
 package com.sage42.androidappaddicts.app.applist;
 
 import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -9,7 +11,6 @@ import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.model.data.App;
 import com.squareup.picasso.Picasso;
 
-import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 import org.apache.commons.lang3.StringUtils;
@@ -31,24 +32,46 @@ public class ByShowSelectedAppCardLayout extends RelativeLayout
 
     private App         mApp;
 
+    /**
+     * constructor accept one parameter.
+     * 
+     * @param context
+     */
     public ByShowSelectedAppCardLayout(final Context context)
     {
         super(context);
     }
 
-    @AfterViews()
-    protected void init()
+    /**
+     * constructor accept two parameter (for xml class).
+     * 
+     * @param context
+     * @param attrs
+     */
+    public ByShowSelectedAppCardLayout(final Context context, final AttributeSet attrs)
     {
-        this.initUi();
+        super(context, attrs);
+    }
+
+    /**
+     * constructor accept three parameter (for xml class).
+     * 
+     * @param context
+     * @param attrs
+     * @param defStyle
+     */
+    public ByShowSelectedAppCardLayout(final Context context, final AttributeSet attrs, final int defStyle)
+    {
+        super(context, attrs, defStyle);
     }
 
     public void bind(final App app)
     {
         this.mApp = app;
-        this.initUi();
+        this.buildUi();
     }
 
-    public void initUi()
+    private void buildUi()
     {
 
         if (this.mCardTitle != null && this.mApp != null)
@@ -75,7 +98,8 @@ public class ByShowSelectedAppCardLayout extends RelativeLayout
             {
                 this.mCardPrice.setText(cost);
             }
-
+            this.setVisibility(View.VISIBLE);
+            this.invalidate();
         }
 
     }

@@ -17,11 +17,11 @@
 package com.sage42.androidappaddicts.app.applist;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
 
@@ -29,8 +29,8 @@ import se.emilsjolander.sprinkles.CursorList;
 import se.emilsjolander.sprinkles.ManyQuery;
 import se.emilsjolander.sprinkles.Query;
 import android.app.Fragment;
-import android.util.Log;
 import android.widget.ListView;
+
 import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.model.data.App;
 import com.sage42.androidappaddicts.app.model.data.Episode;
@@ -43,11 +43,13 @@ import com.sage42.androidappaddicts.app.model.data.Episode;
 public class ByShowSelectedFragment extends Fragment
 {
     @ViewById(R.id.app_by_show_selected_listview)
-    protected ListView                     mListView;
+    protected ListView               mListView;
 
-    private Episode                        mEpisode;
-    private final List<List<App>>          mListApp = new ArrayList<List<App>>();
-    public ByShowSelectedListCursorAdapter mAdapter;
+    @InstanceState
+    protected Episode                mEpisode;
+
+    public final List<List<App>>     mListApp = new ArrayList<List<App>>();
+    public ByShowSelectedListAdapter mAdapter;
 
     /**
      * Wire the data to the UI
@@ -57,27 +59,6 @@ public class ByShowSelectedFragment extends Fragment
     {
         this.getActivity().getActionBar().setTitle(R.string.applist_by_show_selected_title);
         this.buildUi();
-        // Dummy code.
-        // final String[] listviewItemCollectionDesc = new String[]
-        //        { "applist_row_item_image1", //$NON-NLS-1$
-        //                        "applist_row_item_title1", //$NON-NLS-1$
-        //                        "applist_row_item_desc1", //$NON-NLS-1$
-        //                        "applist_row_item_price1" //$NON-NLS-1$
-        //
-        // };
-        // final int[] listviewItemCollection = new int[]
-        // { R.id.applist_row_item_image, R.id.applist_row_item_title, R.id.applist_row_item_desc,
-        // R.id.applist_row_item_price };
-        //
-        // final View header = this.getActivity().getLayoutInflater()
-        // .inflate(R.layout.applist_by_show_selected_list_header, null);
-        //
-        // this.mListView.addHeaderView(header, null, false);
-        // final List<HashMap<String, String>> data = this.getData();
-        // final SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), data, R.layout.applist_row_of_3,
-        // listviewItemCollectionDesc, listviewItemCollection);
-        //
-        // this.mListView.setAdapter(adapter);
 
     }
 
@@ -86,7 +67,7 @@ public class ByShowSelectedFragment extends Fragment
         this.mEpisode = episode;
     }
 
-    public void buildUi()
+    private void buildUi()
     {
         if (this.mEpisode != null && this.mListView != null)
         {
@@ -94,13 +75,12 @@ public class ByShowSelectedFragment extends Fragment
                             .getActivity());
             header.bind(this.mEpisode);
             this.mListView.addHeaderView(header, null, false);
-
+            this.mAdapter = new ByShowSelectedListAdapter(this.getActivity());
             Query.many(App.class,
-                            "select * from app as A join  app_episode_relation as aer on a.app_id = aer.app_id AND aer.episode_id = ?",
+                            "select * from app as A join  app_episode_relation as aer on a.app_id = aer.app_id AND aer.episode_id = ?", //$NON-NLS-1$
                             new Long[]
                             { this.mEpisode.getId() }).getAsync(this.getLoaderManager(), this.onAppLoaded, App.class);
 
-            this.mAdapter = new ByShowSelectedListCursorAdapter(this.getActivity());
             this.mListView.setAdapter(this.mAdapter);
         }
     }
@@ -115,12 +95,8 @@ public class ByShowSelectedFragment extends Fragment
                                                                    for (int loop = 0; loop < result.size(); loop += 3)
                                                                    {
 
-                                                                       Log.w("LIST", result.get(loop).getName() + " = "
-                                                                                       + result.get(loop + 1).getName()
-                                                                                       + " = "
-                                                                                       + result.get(loop + 2).getName());
-
                                                                        final List<App> templist = new ArrayList<App>();
+
                                                                        templist.add(result.get(loop));
                                                                        if (loop + 1 < result.size())
                                                                        {
@@ -133,6 +109,7 @@ public class ByShowSelectedFragment extends Fragment
 
                                                                        ByShowSelectedFragment.this.mListApp
                                                                                        .add(templist);
+
                                                                    }
                                                                    ByShowSelectedFragment.this.mAdapter
                                                                                    .swapList(ByShowSelectedFragment.this.mListApp);
@@ -151,27 +128,4 @@ public class ByShowSelectedFragment extends Fragment
         this.getActivity().getActionBar().setTitle(R.string.applist_by_show_title);
     }
 
-    /**
-     * Dummy code just for display purpose.
-     * 
-     * @return
-     */
-    public List<HashMap<String, String>> getData()
-    {
-        int count = 0;
-        final List<HashMap<String, String>> fillMaps = new ArrayList<HashMap<String, String>>();
-        for (int loop = 0; loop < 20; loop++)
-        {
-            final HashMap<String, String> map = new HashMap<String, String>();
-            count += 1;
-            map.put("applist_row_item_image1", Integer.toString(R.drawable.santa)); //$NON-NLS-1$
-            map.put("applist_row_item_title1", "Santa No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_desc1", "App Maker No :" + count); //$NON-NLS-1$ //$NON-NLS-2$
-            map.put("applist_row_item_price1", "FREE"); //$NON-NLS-1$//$NON-NLS-2$
-
-            fillMaps.add(map);
-
-        }
-        return fillMaps;
-    }
 }

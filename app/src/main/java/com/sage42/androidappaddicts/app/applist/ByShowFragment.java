@@ -41,10 +41,10 @@ import com.sage42.androidappaddicts.app.model.data.Episode;
 public class ByShowFragment extends Fragment
 {
 
-    public ByShowEpisodeAdapter mAdapter;
+    public ByShowAdapter mAdapter;
 
     @ViewById(R.id.by_show_list)
-    protected ListView    mListView;
+    protected ListView          mListView;
 
     @ItemClick(R.id.by_show_list)
     public void onListClick(final int position)
@@ -64,26 +64,26 @@ public class ByShowFragment extends Fragment
     {
         this.getActivity().getActionBar().setTitle(R.string.applist_by_show_title);
 
-        if (this.mAdapter == null)
+        if (this.mListView != null)
         {
-            this.mAdapter = new ByShowEpisodeAdapter(this.getActivity());
-            Query.many(Episode.class, "select * From Episode order by episode_id desc").getAsync(this.getLoaderManager(), this.onNotesLoaded, Episode.class); //$NON-NLS-1$
-
+            this.mAdapter = new ByShowAdapter(this.getActivity());
+            Query.many(Episode.class, "select * From Episode order by episode_id desc").getAsync(this.getLoaderManager(), this.onEpisodeLoaded, Episode.class); //$NON-NLS-1$
+            this.mListView.setAdapter(this.mAdapter);
         }
-
-        this.mListView.setAdapter(this.mAdapter);
-
     }
 
-    private final ManyQuery.ResultHandler<Episode> onNotesLoaded = new ManyQuery.ResultHandler<Episode>()
-                                                                 {
+    private final ManyQuery.ResultHandler<Episode> onEpisodeLoaded = new ManyQuery.ResultHandler<Episode>()
+                                                                   {
 
-                                                                     @Override
-                                                                     public boolean handleResult(
-                                                                                     final CursorList<Episode> result)
-                                                                     {
-                                                                         ByShowFragment.this.mAdapter.swapNotes(result);
-                                                                         return true;
-                                                                     }
-                                                                 };
+                                                                       @Override
+                                                                       public boolean handleResult(
+                                                                                       final CursorList<Episode> result)
+                                                                       {
+
+                                                                           ByShowFragment.this.mAdapter
+                                                                                           .swapNotes(result);
+
+                                                                           return true;
+                                                                       }
+                                                                   };
 }

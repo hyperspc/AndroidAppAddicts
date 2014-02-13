@@ -60,6 +60,13 @@ public class ByCategoryFragment extends Fragment
     // }
     // };
 
+    // @Override
+    // public void onPause()
+    // {
+    // super.onPause();
+    // System.gc();
+    // }
+
     /**
      * Wire the data to the UI
      */
