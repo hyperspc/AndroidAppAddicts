@@ -46,7 +46,6 @@ public class ByShowSelectedListItemLayout extends RelativeLayout
 
         if (this.mGrid1 != null && this.mData != null)
         {
-
             this.mGrid1.setVisibility(View.INVISIBLE);
             this.mGrid2.setVisibility(View.INVISIBLE);
             this.mGrid3.setVisibility(View.INVISIBLE);
