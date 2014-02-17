@@ -126,20 +126,19 @@ public class JsonConverter
                         }
                     }
                     currentApp.setRating(ratingEnum.ordinal());
+
                     currentApp.save();
+
                     final long tempAppId = currentApp.getId();
                     for (final Integer episodeNo : episodes)
                     {
 
-                        final Episode TempEpi = Query.one(Episode.class,
-                                        "SELECT * FROM episode where episode_id = ?", new int[] //$NON-NLS-1$
-                                        { episodeNo }).get();
-                        if (currentEpi != null && currentEpi.getId() > 0)
+                        if (episodeNo > 0)
                         {
                             // add data to Episode App relation table.
                             final AppEpisodeRelation appEpi = new AppEpisodeRelation();
                             appEpi.setAppId(tempAppId);
-                            appEpi.setEpisodeId(currentEpi.getId());
+                            appEpi.setEpisodeId(episodeNo);
                             appEpi.saveAsync();
                         }
 

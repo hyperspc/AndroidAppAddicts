@@ -44,7 +44,7 @@ public class ByShowFragment extends Fragment
     public ByShowAdapter mAdapter;
 
     @ViewById(R.id.by_show_list)
-    protected ListView          mListView;
+    protected ListView   mListView;
 
     @ItemClick(R.id.by_show_list)
     public void onListClick(final int position)

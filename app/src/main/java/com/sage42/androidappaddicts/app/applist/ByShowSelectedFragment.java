@@ -48,7 +48,6 @@ public class ByShowSelectedFragment extends Fragment
     @InstanceState
     protected Episode                mEpisode;
 
-    public final List<List<App>>     mListApp = new ArrayList<List<App>>();
     public ByShowSelectedListAdapter mAdapter;
 
     /**
@@ -71,6 +70,7 @@ public class ByShowSelectedFragment extends Fragment
     {
         if (this.mEpisode != null && this.mListView != null)
         {
+
             final ByShowSelectedListHeader_ header = (ByShowSelectedListHeader_) ByShowSelectedListHeader_.build(this
                             .getActivity());
             header.bind(this.mEpisode);
@@ -91,7 +91,7 @@ public class ByShowSelectedFragment extends Fragment
                                                                @Override
                                                                public boolean handleResult(final CursorList<App> result)
                                                                {
-
+                                                                   final List<List<App>> listApp = new ArrayList<List<App>>();
                                                                    for (int loop = 0; loop < result.size(); loop += 3)
                                                                    {
 
@@ -107,12 +107,11 @@ public class ByShowSelectedFragment extends Fragment
                                                                            templist.add(result.get(loop + 2));
                                                                        }
 
-                                                                       ByShowSelectedFragment.this.mListApp
-                                                                                       .add(templist);
+                                                                       listApp.add(templist);
 
                                                                    }
                                                                    ByShowSelectedFragment.this.mAdapter
-                                                                                   .swapList(ByShowSelectedFragment.this.mListApp);
+                                                                                   .swapList(listApp);
                                                                    return true;
                                                                }
                                                            };

@@ -45,9 +45,8 @@ import com.sage42.androidappaddicts.app.model.data.Episode;
 public class HomeFragment extends Fragment
 {
     @ViewById(R.id.home_listview)
-    protected ListView                     mListView;
+    protected ListView               mListView;
 
-    public final List<List<App>>           mListApp = new ArrayList<List<App>>();
     public ByShowSelectedListAdapter mAdapter;
 
     /**
@@ -66,17 +65,26 @@ public class HomeFragment extends Fragment
         if (this.mListView != null)
         {
             final HomeListHeader_ header = (HomeListHeader_) HomeListHeader_.build(this.getActivity());
+            try
+            {
+                // TODO:prevent empty data calling
+                final Episode episode = Query.one(Episode.class,
+                                " select * , max(episode_id) as episode_id From Episode") //$NON-NLS-1$
+                                .get();
 
-            final Episode episode = Query.one(Episode.class, " select * , max(episode_id) as episode_id From Episode") //$NON-NLS-1$
-                            .get();
+                header.bind(episode);
+                this.mListView.addHeaderView(header, null, false);
+                this.mAdapter = new ByShowSelectedListAdapter(this.getActivity());
 
-            header.bind(episode);
-            this.mListView.addHeaderView(header, null, false);
-            this.mAdapter = new ByShowSelectedListAdapter(this.getActivity());
-            Query.many(App.class,
-                            "select * from app as A join  app_episode_relation as aer on a.app_id = aer.app_id AND aer.episode_id = ?", //$NON-NLS-1$
-                            new Long[]
-                            { episode.getId() }).getAsync(this.getLoaderManager(), this.onAppLoaded, App.class);
+                Query.many(App.class,
+                                "select * from app as A join  app_episode_relation as aer on a.app_id = aer.app_id AND aer.episode_id = ?", //$NON-NLS-1$
+                                new Long[]
+                                { episode.getId() }).getAsync(this.getLoaderManager(), this.onAppLoaded, App.class);
+            }
+            catch (final Exception e)
+            {
+                // do nothing
+            }
 
             this.mListView.setAdapter(this.mAdapter);
         }
@@ -88,6 +96,7 @@ public class HomeFragment extends Fragment
                                                                @Override
                                                                public boolean handleResult(final CursorList<App> result)
                                                                {
+                                                                   final List<List<App>> listApp = new ArrayList<List<App>>();
                                                                    for (int loop = 0; loop < result.size(); loop += 3)
                                                                    {
 
@@ -103,11 +112,10 @@ public class HomeFragment extends Fragment
                                                                            templist.add(result.get(loop + 2));
                                                                        }
 
-                                                                       HomeFragment.this.mListApp.add(templist);
+                                                                       listApp.add(templist);
 
                                                                    }
-                                                                   HomeFragment.this.mAdapter
-                                                                                   .swapList(HomeFragment.this.mListApp);
+                                                                   HomeFragment.this.mAdapter.swapList(listApp);
                                                                    return true;
                                                                }
                                                            };
