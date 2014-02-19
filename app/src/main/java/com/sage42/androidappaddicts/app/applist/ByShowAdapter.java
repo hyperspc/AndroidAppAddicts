@@ -1,27 +1,28 @@
 package com.sage42.androidappaddicts.app.applist;
 
+import com.sage42.androidappaddicts.app.model.dao.CursorListAdapter;
 import com.sage42.androidappaddicts.app.model.data.Episode;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import se.emilsjolander.sprinkles.CursorList;
+import se.emilsjolander.sprinkles.QueryResult;
 
-public class ByShowAdapter extends BaseAdapter
+public class ByShowAdapter extends CursorListAdapter
 {
 
-    private final Context       mContext;
     private CursorList<Episode> mEpisode;
 
     public ByShowAdapter(final Context context)
     {
-        this.mContext = context;
+        super(context);
     }
 
-    public void swapNotes(final CursorList<Episode> notes)
+    @Override
+    public void swapNotes(final CursorList<? extends QueryResult> notes)
     {
-        this.mEpisode = notes;
+        this.mEpisode = (CursorList<Episode>) notes;
         this.notifyDataSetChanged();
     }
 

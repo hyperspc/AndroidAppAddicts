@@ -48,25 +48,6 @@ public class ByCategoryFragment extends Fragment
         ((MainActivity) this.getActivity()).showFragment(detailsPage, true);
     }
 
-    // private final ManyQuery.ResultHandler<App> onNotesLoaded = new ManyQuery.ResultHandler<App>()
-    // {
-    //
-    // @Override
-    // public boolean handleResult(
-    // final CursorList<App> result)
-    // {
-    // ByCategoryFragment.this.mAdapter.swapNotes(result);
-    // return true;
-    // }
-    // };
-
-    // @Override
-    // public void onPause()
-    // {
-    // super.onPause();
-    // System.gc();
-    // }
-
     /**
      * Wire the data to the UI
      */
@@ -74,11 +55,6 @@ public class ByCategoryFragment extends Fragment
     void init()
     {
         this.getActivity().getActionBar().setTitle(R.string.applist_by_category_title);
-
-        // this.mAdapter = new CategoryAdapter(this.getActivity());
-        // this.mListView.setAdapter(this.mAdapter);
-        //
-        //        Query.many(App.class, "select * From Episode").getAsync(this.getLoaderManager(), this.onNotesLoaded, App.class); //$NON-NLS-1$
 
         // Dummy Code for displaying list of category
         final ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(this.getActivity(),
