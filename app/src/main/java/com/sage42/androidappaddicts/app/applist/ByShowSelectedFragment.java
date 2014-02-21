@@ -27,11 +27,11 @@ import org.androidannotations.annotations.ViewById;
 
 import se.emilsjolander.sprinkles.CursorList;
 import se.emilsjolander.sprinkles.ManyQuery;
-import se.emilsjolander.sprinkles.Query;
 import android.app.Fragment;
 import android.widget.ListView;
 
 import com.sage42.androidappaddicts.app.R;
+import com.sage42.androidappaddicts.app.model.dao.AppDao;
 import com.sage42.androidappaddicts.app.model.data.App;
 import com.sage42.androidappaddicts.app.model.data.Episode;
 
@@ -76,10 +76,11 @@ public class ByShowSelectedFragment extends Fragment
             header.bind(this.mEpisode);
             this.mListView.addHeaderView(header, null, false);
             this.mAdapter = new ByShowSelectedListAdapter(this.getActivity());
-            Query.many(App.class,
-                            "select * from app as A join  app_episode_relation as aer on a.app_id = aer.app_id AND aer.episode_id = ?", //$NON-NLS-1$
+            AppDao.retrieveDataCustomRawQuery(
+                            this.getLoaderManager(),
+                            "select * from app as A join  app_episode_relation as aer on a.app_id = aer.app_id AND aer.episode_id = ?",
                             new Long[]
-                            { this.mEpisode.getId() }).getAsync(this.getLoaderManager(), this.onAppLoaded, App.class);
+                            { this.mEpisode.getId() }, this.onAppLoaded, this.mAdapter);
 
             this.mListView.setAdapter(this.mAdapter);
         }

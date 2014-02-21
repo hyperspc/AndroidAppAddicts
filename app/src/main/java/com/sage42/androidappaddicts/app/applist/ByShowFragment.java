@@ -21,16 +21,12 @@ import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
 
-import se.emilsjolander.sprinkles.CursorList;
-import se.emilsjolander.sprinkles.ManyQuery;
-import se.emilsjolander.sprinkles.Query;
-
 import android.app.Fragment;
 import android.widget.ListView;
 
 import com.sage42.androidappaddicts.app.R;
 import com.sage42.androidappaddicts.app.main.MainActivity;
-import com.sage42.androidappaddicts.app.model.data.Episode;
+import com.sage42.androidappaddicts.app.model.dao.EpisodeDao;
 
 /**
  * Fragment to display the list of shows.
@@ -58,7 +54,6 @@ public class ByShowFragment extends Fragment
     /**
      * Wire the data to the UI
      */
-    @SuppressWarnings("unchecked")
     @AfterViews
     void init()
     {
@@ -67,23 +62,11 @@ public class ByShowFragment extends Fragment
         if (this.mListView != null)
         {
             this.mAdapter = new ByShowAdapter(this.getActivity());
-            Query.many(Episode.class, "select * From Episode order by episode_id desc").getAsync(this.getLoaderManager(), this.onEpisodeLoaded, Episode.class); //$NON-NLS-1$
+
+            EpisodeDao.retrieveData(this.getLoaderManager(), null, null, "episode_id desc", this.mAdapter); //$NON-NLS-1$
+            //Query.many(Episode.class, "select * From Episode order by episode_id desc").getAsync(this.getLoaderManager(), this.onEpisodeLoaded, Episode.class); //$NON-NLS-1$
             this.mListView.setAdapter(this.mAdapter);
         }
     }
 
-    private final ManyQuery.ResultHandler<Episode> onEpisodeLoaded = new ManyQuery.ResultHandler<Episode>()
-                                                                   {
-
-                                                                       @Override
-                                                                       public boolean handleResult(
-                                                                                       final CursorList<Episode> result)
-                                                                       {
-
-                                                                           ByShowFragment.this.mAdapter
-                                                                                           .swapNotes(result);
-
-                                                                           return true;
-                                                                       }
-                                                                   };
 }

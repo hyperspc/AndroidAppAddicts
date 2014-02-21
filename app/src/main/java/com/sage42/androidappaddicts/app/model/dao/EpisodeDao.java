@@ -18,8 +18,8 @@ public class EpisodeDao
     }
 
     @SuppressWarnings("unchecked")
-    public void retrieveData(final LoaderManager loaderManager, final String whereCondition, final Object[] whereArgs,
-                    final CursorListAdapter adapter)
+    public static void retrieveData(final LoaderManager loaderManager, final String whereCondition,
+                    final Object[] whereArgs, final String order, final CursorListAdapter adapter)
     {
         final ManyQuery.ResultHandler<Episode> onLoad = new ManyQuery.ResultHandler<Episode>()
         {
@@ -35,11 +35,15 @@ public class EpisodeDao
         {
             string.append(" where ").append(whereCondition).append(" = ?"); //$NON-NLS-1$//$NON-NLS-2$
         }
+        if (StringUtils.isNotEmpty(order))
+        {
+            string.append(" order by ").append(order); //$NON-NLS-1$
+        }
         Query.many(Episode.class, string.toString(), whereArgs).getAsync(loaderManager, onLoad, Episode.class);
 
     }
 
-    public Object retrieveSingleData(final String whereCondition, final Object[] whereArgs)
+    public static Object retrieveSingleData(final String whereCondition, final Object[] whereArgs)
     {
 
         final StringBuilder string = new StringBuilder("select * From episode"); //$NON-NLS-1$

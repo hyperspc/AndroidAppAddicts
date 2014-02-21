@@ -2,22 +2,21 @@ package com.sage42.androidappaddicts.app.applist;
 
 import java.util.List;
 
+import com.sage42.androidappaddicts.app.model.dao.CursorListAdapter;
 import com.sage42.androidappaddicts.app.model.data.App;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 
-public class ByShowSelectedListAdapter extends BaseAdapter
+public class ByShowSelectedListAdapter extends CursorListAdapter
 {
 
-    private final Context   mContext;
     private List<List<App>> mApp;
 
     public ByShowSelectedListAdapter(final Context context)
     {
-        this.mContext = context;
+        super(context);
     }
 
     public void swapList(final List<List<App>> app)

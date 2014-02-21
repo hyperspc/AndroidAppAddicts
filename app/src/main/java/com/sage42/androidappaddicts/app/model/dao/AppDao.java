@@ -18,8 +18,8 @@ public class AppDao
     }
 
     @SuppressWarnings("unchecked")
-    public void retrieveData(final LoaderManager loaderManager, final String whereCondition, final Object[] whereArgs,
-                    final CursorListAdapter adapter)
+    public static void retrieveData(final LoaderManager loaderManager, final String whereCondition,
+                    final Object[] whereArgs, final CursorListAdapter adapter)
     {
         final ManyQuery.ResultHandler<App> onLoad = new ManyQuery.ResultHandler<App>()
         {
@@ -39,7 +39,17 @@ public class AppDao
 
     }
 
-    public Object retrieveSingleData(final String whereCondition, final Object[] whereArgs)
+    @SuppressWarnings("unchecked")
+    public static void retrieveDataCustomRawQuery(final LoaderManager loaderManager, final String sqlQuery,
+                    final Object[] whereArgs, final ManyQuery.ResultHandler<App> onAppLoaded,
+                    final CursorListAdapter adapter)
+    {
+
+        Query.many(App.class, sqlQuery, whereArgs).getAsync(loaderManager, onAppLoaded, App.class);
+
+    }
+
+    public static Object retrieveSingleData(final String whereCondition, final Object[] whereArgs)
     {
 
         final StringBuilder string = new StringBuilder("select * From app"); //$NON-NLS-1$
